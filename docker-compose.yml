@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:18
+
+    environment:
+      POSTGRES_DB: pharma_guide_ai
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+
+    ports:
+      - "5432:5432"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: medicine_ai_api
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      - postgres
+
+    env_file:
+      - .env
+
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./rag.db:/app/rag.db
+
+    command: >
+      uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+    restart: unless-stopped

@@ -14,3 +14,9 @@ loguru
 pydantic-settings
 pymupdf
 ragas
+psycopg2-binary
+alembic
+python-jose
+passlib[bcrypt]
+python-multipart
+pydantic[email]
