@@ -1,0 +1,16 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+logs
+# Virtual environments
+.venv
+# Data files
+data/bm25
+data/vector_store
+data/products.json
+# Environment variables
+.env
