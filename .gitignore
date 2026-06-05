@@ -14,3 +14,5 @@ data/vector_store
 data/products.json
 # Environment variables
 .env
+
+test.ipynb

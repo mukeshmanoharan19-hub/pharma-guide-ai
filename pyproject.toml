@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "alembic>=1.18.4",
+    "argon2-cffi>=25.1.0",
     "cohere>=7.0.3",
     "faiss-cpu>=1.14.2",
     "fastapi>=0.136.3",
@@ -22,7 +23,6 @@ dependencies = [
     "python-dotenv>=1.2.2",
     "python-jose>=3.5.0",
     "python-multipart>=0.0.31",
-    "ragas>=0.4.3",
     "rank-bm25>=0.2.2",
     "sentence-transformers>=5.5.1",
     "sqlalchemy>=2.0.50",

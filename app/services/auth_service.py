@@ -10,6 +10,7 @@ def register_user(
     password: str,
     full_name: str
 ):
+    print(f"Password length: {len(password.encode('utf-8'))}")
 
     user = User(
         email=email,

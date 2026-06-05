@@ -1,5 +1,5 @@
-# Use a lightweight Python 3.12 base image
-FROM python:3.12-slim  
+# Use a lightweight Python 3.14 base image
+FROM python:3.14-slim  
 # Disable writing .pyc files to disk
 ENV PYTHONDONTWRITEBYTECODE=1
 # Ensure Python output is sent straight to the terminal without buffering
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 # Copy dependency list first for better Docker layer caching
 COPY requirements.txt .  
 # Install Python dependencies without cache
-RUN pip install -r requirements.txt 
+RUN pip install --no-cache-dir -r requirements.txt
 # Copy application source code into the container
 COPY . .  
 # Create persistent data directories used by the app

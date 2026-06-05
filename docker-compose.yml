@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
 
   postgres:
@@ -18,7 +16,7 @@ services:
       context: .
       dockerfile: Dockerfile
 
-    container_name: medicine_ai_api
+    container_name: pharma-guide-api
 
     ports:
       - "8000:8000"
@@ -32,7 +30,6 @@ services:
     volumes:
       - .:/app
       - ./data:/app/data
-      - ./rag.db:/app/rag.db
 
     command: >
       uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
