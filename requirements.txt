@@ -12,7 +12,6 @@ sentence-transformers
 python-dotenv
 loguru
 pydantic-settings
-pymupdf
 psycopg2-binary
 alembic
 python-jose
