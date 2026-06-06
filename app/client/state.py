@@ -1,13 +1,16 @@
+from app.core.config import settings
 import streamlit as st
 
 from app.client.api import load_token
 
 
 def init_session() -> None:
-    try:
-        backend_url = st.secrets.get("BACKEND_URL", "http://localhost:8000")
-    except Exception:
-        backend_url = "http://localhost:8000"
+    backend_url = settings.BACKEND_URL
+    if not backend_url:
+        try:
+            backend_url = st.secrets.get("BACKEND_URL", settings.BACKEND_URL)
+        except Exception:
+            backend_url = "http://localhost:8000"
     
     defaults = {
         "backend_url": backend_url,

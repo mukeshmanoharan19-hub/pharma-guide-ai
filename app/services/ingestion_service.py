@@ -6,13 +6,11 @@ from app.retrieval.bm25_store import BM25Store
 class IngestionService:
 
     @staticmethod
-    def ingest(file_path: str):
-
-        logger.info(f"Starting ingestion for file: {file_path}")
+    def ingest():
 
         try:
 
-            chunks = process_document(file_path)
+            chunks = process_document()
 
             logger.info(
                 f"Document processed successfully. "
@@ -54,7 +52,6 @@ class IngestionService:
 
             logger.success(
                 f"Ingestion completed successfully "
-                f"for file: {file_path}"
             )
 
             return {

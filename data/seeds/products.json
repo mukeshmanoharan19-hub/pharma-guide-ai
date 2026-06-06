@@ -1,79 +1,43 @@
 [
   {
-    "_id": {
-      "$oid": "671ceece0d66586673434dc2"
-    },
-    "title": "Instant Mouth Freshner Strip -Super Mint",
-    "description": "25 strips in 1 pack",
-    "compositions": "Instant Mouth Freshner Strip - super mint",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "Freshening breath",
-      "Fresh"
+    "info": "<p><strong>Instant Mouth Freshener Strip – Super Mint</strong> is a sugar-free, fast-dissolving strip that delivers a powerful burst of peppermint for immediate breath freshness. Designed for convenience, it’s perfect for on-the-go use, helping eliminate bad breath after meals, during travel, or before important moments. Compact, calorie-free, and long-lasting, it keeps you feeling confident anytime, anywhere.</p>",
+    "suitableFor": [
+      "Adults and teenagers looking for quick breath freshening",
+      "Individuals who prefer a sugar-free, low-calorie alternative to chewing gum or mints",
+      "People on-the-go, especially for use after meals or during travel",
+      "Suitable for vegetarians"
     ],
+    "dosage": [
+      "Place one strip on your tongue and allow it to dissolve for instant fresh breath.",
+      "Use as required. Do not exceed more than 6 strips in an hour."
+    ],
+    "cautions": [
+      "For oral use only.",
+      "Keep out of reach of children under 5 years.",
+      "Store in a cool, dry place.",
+      "Avoid contact with eyes or skin.",
+      "If irritation occurs, discontinue use and consult a doctor."
+    ],
+    "benefits": [
+      "Instant Freshness: Provides instant minty fresh breath within seconds.",
+      "Portable: Easy-to-carry strips that fit perfectly in pockets or purses.",
+      "Sugar-Free: No added sugar, suitable for diabetics or those on sugar-restricted diets.",
+      "Natural Ingredients: Made with natural mint extracts for a refreshing and healthy choice.",
+      "Long-Lasting Flavor: The Super Mint flavor offers long-lasting freshness without the need for chewing gum."
+    ],
+    "sideEffects": [
+      "Mild irritation in sensitive individuals",
+      "Temporary numbness in the mouth"
+    ],
+    "sellerInfo": "zota health care\n",
+    "manufacturerInfo": "Shilpa Therapeutics\n",
+    "packagedByInfo": "Shilpa Therapeutics\n",
+    "directionsForUse": "Tear open the pouch, place a strip on your tongue, and enjoy instant freshness as it dissolves.",
+    "title": "Instant Mouth Freshner Strip -Super Mint",
+    "compositions": "Instant Mouth Freshner Strip - super mint",
     "sku": "4378",
-    "seo": {
-      "url": "instantmouthfreshenerstripsupermint",
-      "metaTitle": "Instant Mouth Freshener Strip - Super Mint | Sugar-Free Instant Freshness",
-      "metaDescription": "Buy Instant Mouth Freshener Strip in Super Mint flavor for quick, long-lasting fresh breath. Sugar-free, dissolvable strips made with natural mint extracts, perfect for on-the-go use.",
-      "keywords": [
-        "Instant mouth freshener, mint breath strips, super mint freshener, sugar-free mouth strips, dissolvable breath strips, fresh breath on-the-go, natural mint freshener, breath freshening strips"
-      ]
-    },
-    "unitPrice": 50.5,
-    "maximumRetailPrice": 60,
-    "discount": 0,
     "finalPrice": 60,
     "thumbnail": "https://media.davaindia.com/davaindia/01kUO323ZeaAU8-pAnYJM-image 53.png",
-    "subCategoryId": {
-      "$oid": "672dc4649e6772e68562617c"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<p><strong>Instant Mouth Freshener Strip – Super Mint</strong> is a sugar-free, fast-dissolving strip that delivers a powerful burst of peppermint for immediate breath freshness. Designed for convenience, it’s perfect for on-the-go use, helping eliminate bad breath after meals, during travel, or before important moments. Compact, calorie-free, and long-lasting, it keeps you feeling confident anytime, anywhere.</p>",
-      "suitableFor": [
-        "Adults and teenagers looking for quick breath freshening",
-        "Individuals who prefer a sugar-free, low-calorie alternative to chewing gum or mints",
-        "People on-the-go, especially for use after meals or during travel",
-        "Suitable for vegetarians"
-      ],
-      "dosage": [
-        "Place one strip on your tongue and allow it to dissolve for instant fresh breath.",
-        "Use as required. Do not exceed more than 6 strips in an hour."
-      ],
-      "cautions": [
-        "For oral use only.",
-        "Keep out of reach of children under 5 years.",
-        "Store in a cool, dry place.",
-        "Avoid contact with eyes or skin.",
-        "If irritation occurs, discontinue use and consult a doctor."
-      ],
-      "benefits": [
-        "Instant Freshness: Provides instant minty fresh breath within seconds.",
-        "Portable: Easy-to-carry strips that fit perfectly in pockets or purses.",
-        "Sugar-Free: No added sugar, suitable for diabetics or those on sugar-restricted diets.",
-        "Natural Ingredients: Made with natural mint extracts for a refreshing and healthy choice.",
-        "Long-Lasting Flavor: The Super Mint flavor offers long-lasting freshness without the need for chewing gum."
-      ],
-      "sideEffects": [
-        "Mild irritation in sensitive individuals",
-        "Temporary numbness in the mouth"
-      ],
-      "sellerInfo": "zota health care\n",
-      "manufacturerInfo": "Shilpa Therapeutics\n",
-      "packagedByInfo": "Shilpa Therapeutics\n",
-      "directionsForUse": "Tear open the pouch, place a strip on your tongue, and enjoy instant freshness as it dissolves."
-    },
-    "taxes": [
-      {
-        "$oid": "67972779f0d6590049ea4c95"
-      }
-    ],
-    "createdAt": "2024-10-26T13:29:50.705Z",
-    "updatedAt": "2026-04-09T09:55:47.129Z",
-    "discountType": "percentage",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
     "brandTags": [
       "I-Strip",
       "Freshee",
@@ -87,97 +51,50 @@
       "Instan",
       "Inst",
       "Ins"
-    ],
-    "hsnNumber": "21069099",
-    "scheduledDrug": "None",
-    "saltType": "None",
-    "prescriptionReq": false,
-    "packingType": "pouch",
-    "clinicalProductKey": "mint:0unknown|oral_solution|oral",
-    "compositionKey": "mint:0unknown",
-    "dosageForm": "oral_solution",
-    "releaseType": "unknown",
-    "route": "oral"
+    ]
   },
   {
-    "_id": {
-      "$oid": "671cf0510d66586673434ea8"
-    },
-    "title": "A2 Cow Ghee",
-    "description": "1 litre per container",
-    "compositions": "A2 Cow Ghee - 1 Ltr",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "Cooking",
-      "Flavoring",
-      "Baking"
+    "info": "<p><strong>A2 Cow Ghee</strong> is a pure, traditionally prepared ghee made from the milk of Indian desi cows. Rich in essential nutrients and free from chemicals, it promotes overall wellness and is ideal for daily cooking, Ayurvedic rituals, and holistic living.</p>",
+    "suitableFor": [
+      "Individuals seeking high-quality, natural ghee for cooking and dietary use",
+      "People on Ayurvedic or keto diets",
+      "Lactose-intolerant individuals (A2 Ghee is usually easier to digest)",
+      "Those looking for a nutritious fat source to boost immunity and overall health"
     ],
+    "dosage": [
+      "For Daily Use: 1 to 2 teaspoons with meals or as per dietary requirements.",
+      "For Cooking: Use as a cooking medium or to top over warm rice, rotis, or dals.",
+      "For Medicinal Use: Can be consumed in small amounts for digestive or immune health benefits as recommended by an Ayurvedic practitioner."
+    ],
+    "cautions": [
+      "Store in a cool, dry place away from direct sunlight.",
+      "Ensure the lid is tightly closed after each use to maintain freshness.",
+      "Do not refrigerate.",
+      "Use a dry spoon to avoid contamination.",
+      "Keep out of reach of children."
+    ],
+    "benefits": [
+      "Rich in Nutrients: Contains Omega-3 fatty acids, vitamins A, D, E, and K, which promote good health.",
+      "Promotes Digestion: Helps improve digestion and absorption of nutrients.",
+      "Boosts Immunity: Strengthens the immune system due to its antioxidant properties.",
+      "Good for Skin: Nourishes the skin when consumed or applied externally.",
+      "Supports Bone Health: Vitamin K in ghee helps in calcium absorption, leading to stronger bones.",
+      "Ayurvedic Superfood: Known for balancing the body’s doshas (Vata, Pitta, Kapha) in Ayurvedic practice."
+    ],
+    "sideEffects": [
+      "May cause allergic reactions in sensitive individuals",
+      "Excessive consumption may lead to weight gain"
+    ],
+    "productInfo": "A2 Cow Ghee is made from the milk of cows that produce the A2 beta-casein protein, making it a preferred choice for many health-conscious consumers. It is free of harmful additives and preservatives.",
+    "sellerInfo": "zota health care Ltd",
+    "manufacturerInfo": "Everyday Herbal Beauty care\n",
+    "packagedByInfo": "Everyday Herbal Beauty care\n",
+    "directionsForUse": "Use A2 Cow Ghee as a cooking oil, a spread on bread or rotis, or as an ingredient in various recipes. Store in a cool, dry place.",
+    "title": "A2 Cow Ghee",
+    "compositions": "A2 Cow Ghee - 1 Ltr",
     "sku": "4460",
-    "seo": {
-      "url": "a2-cow-ghee",
-      "metaTitle": "A2 Cow Ghee - 1 Ltr | Pure, Grass-Fed, Traditional Bilona Ghee",
-      "metaDescription": "Buy A2 Cow Ghee (1 Ltr) made from the milk of grass-fed A2 cows using the traditional bilona method. Rich in Omega-3, vitamins, and nutrients for better digestion and immunity.",
-      "keywords": [
-        "A2 cow ghee, pure ghee, traditional bilona ghee, grass-fed cow ghee, organic A2 ghee, healthy ghee, natural ghee, ayurvedic ghee, immunity-boosting ghee, Omega-3 rich ghee"
-      ]
-    },
-    "unitPrice": 2231,
-    "maximumRetailPrice": 2499,
-    "discount": 0,
     "finalPrice": 2499,
     "thumbnail": "https://media.davaindia.com/davaindia/O62tp_Kte9NkqF0DjE1cC-4460--1.png",
-    "subCategoryId": {
-      "$oid": "6721f6368037ddc939b35e71"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<p><strong>A2 Cow Ghee</strong> is a pure, traditionally prepared ghee made from the milk of Indian desi cows. Rich in essential nutrients and free from chemicals, it promotes overall wellness and is ideal for daily cooking, Ayurvedic rituals, and holistic living.</p>",
-      "suitableFor": [
-        "Individuals seeking high-quality, natural ghee for cooking and dietary use",
-        "People on Ayurvedic or keto diets",
-        "Lactose-intolerant individuals (A2 Ghee is usually easier to digest)",
-        "Those looking for a nutritious fat source to boost immunity and overall health"
-      ],
-      "dosage": [
-        "For Daily Use: 1 to 2 teaspoons with meals or as per dietary requirements.",
-        "For Cooking: Use as a cooking medium or to top over warm rice, rotis, or dals.",
-        "For Medicinal Use: Can be consumed in small amounts for digestive or immune health benefits as recommended by an Ayurvedic practitioner."
-      ],
-      "cautions": [
-        "Store in a cool, dry place away from direct sunlight.",
-        "Ensure the lid is tightly closed after each use to maintain freshness.",
-        "Do not refrigerate.",
-        "Use a dry spoon to avoid contamination.",
-        "Keep out of reach of children."
-      ],
-      "benefits": [
-        "Rich in Nutrients: Contains Omega-3 fatty acids, vitamins A, D, E, and K, which promote good health.",
-        "Promotes Digestion: Helps improve digestion and absorption of nutrients.",
-        "Boosts Immunity: Strengthens the immune system due to its antioxidant properties.",
-        "Good for Skin: Nourishes the skin when consumed or applied externally.",
-        "Supports Bone Health: Vitamin K in ghee helps in calcium absorption, leading to stronger bones.",
-        "Ayurvedic Superfood: Known for balancing the body’s doshas (Vata, Pitta, Kapha) in Ayurvedic practice."
-      ],
-      "sideEffects": [
-        "May cause allergic reactions in sensitive individuals",
-        "Excessive consumption may lead to weight gain"
-      ],
-      "productInfo": "A2 Cow Ghee is made from the milk of cows that produce the A2 beta-casein protein, making it a preferred choice for many health-conscious consumers. It is free of harmful additives and preservatives.",
-      "sellerInfo": "zota health care Ltd",
-      "manufacturerInfo": "Everyday Herbal Beauty care\n",
-      "packagedByInfo": "Everyday Herbal Beauty care\n",
-      "directionsForUse": "Use A2 Cow Ghee as a cooking oil, a spread on bread or rotis, or as an ingredient in various recipes. Store in a cool, dry place."
-    },
-    "taxes": [
-      {
-        "$oid": "67972779f0d6590049ea4c95"
-      }
-    ],
-    "createdAt": "2024-10-26T13:36:17.704Z",
-    "updatedAt": "2026-04-23T10:56:08.861Z",
-    "discountType": "flat",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
     "brandTags": [
       "Amul A2 Cow Ghee",
       "Patanjali A2 Ghee",
@@ -188,94 +105,46 @@
       "A2",
       "A2 Cow",
       "A2 Cow Ghee"
-    ],
-    "hsnNumber": "4059020",
-    "scheduledDrug": "None",
-    "saltType": "None",
-    "packingType": "jar",
-    "clinicalProductKey": "cow ghee:1unknown|oral_solution|unknown",
-    "compositionKey": "cow ghee:1unknown",
-    "dosageForm": "oral_solution",
-    "releaseType": "unknown",
-    "route": "unknown"
+    ]
   },
   {
-    "_id": {
-      "$oid": "671cf2490d66586673435092"
-    },
-    "title": "Baby Diaper Pants (XL) - JUMBO",
-    "description": "26 pieces per pack",
-    "compositions": "Baby Diaper Pants (XL) (26/28Pcs) - JUMBO",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "Absorption of Urine and Feces",
-      "Potty Training",
-      "Ease of Movement",
-      "On-the-Go Diapering",
-      "Comfort"
+    "info": "<p><strong>Baby Diaper Pants (XL) – JUMBO Pack</strong> are designed for babies weighing <strong>12–17 kg</strong>, offering up to <strong>12 hours of dryness</strong> with <strong>leak-proof protection</strong>. These pants are <strong>soft, breathable</strong>, and often infused with <strong>Aloe Vera lotion</strong> to prevent rashes. Ideal for overnight use and long outings, the <strong>jumbo pack</strong> ensures better value with a higher quantity, reducing the need for frequent purchases. Perfect for active babies, these diaper pants provide comfort, convenience, and all-day freshness.</p>",
+    "suitableFor": [
+      "Babies weighing between 12 to 17 kg",
+      "Active toddlers who move and play a lot",
+      "Day and night use for up to 12 hours of protection",
+      "Sensitive baby skin (hypoallergenic materials)"
     ],
+    "dosage": [
+      "Change diapers regularly as needed or at least every 3-4 hours to avoid diaper rash.",
+      "For night use, one diaper can last up to 12 hours but monitor for any signs of discomfort."
+    ],
+    "cautions": [
+      "Change the diaper immediately if soiled to prevent rashes.",
+      "Discard used diapers in a proper waste bin; do not flush.",
+      "Keep diapers out of reach of children when not in use.",
+      "Store in a cool, dry place away from direct sunlight."
+    ],
+    "benefits": [
+      "12-Hour Dryness: Long-lasting absorbency keeps your baby dry day and night.",
+      "Comfortable Fit: The stretchable waistband offers a snug yet comfortable fit for active babies.",
+      "Easy to Use: Pull-up style for quick and easy diaper changes, perfect for on-the-go parents.",
+      "Skin-Friendly: Made with soft, breathable materials that are gentle on delicate skin.",
+      "Leak Protection: Double leak guards prevent side leakage, ensuring maximum dryness."
+    ],
+    "sideEffects": [
+      ""
+    ],
+    "productInfo": "Size: XL (Extra Large)\nPack Size: 26/28 Pcs\nBaby Weight: 12-17 kg\nType: Diaper Pants\nAbsorption Time: Up to 12 hours\nMaterial: Soft, breathable, and hypoallergenic materials\nStretchable Waistband: Yes\nLeak Protection: Double leak guards for extra protection\nWetness Indicator: No",
+    "sellerInfo": "zota healthcare",
+    "manufacturerInfo": "Manufacturer: Swara Baby Products\n",
+    "packagedByInfo": "Packaged By: Swara Baby Products",
+    "directionsForUse": "Remove the diaper from the pack, place it under your baby ensuring the back is higher, adjust the waistband, and secure. \nDispose of the used diaper properly.",
+    "title": "Baby Diaper Pants (XL) - JUMBO",
+    "compositions": "Baby Diaper Pants (XL) (26/28Pcs) - JUMBO",
     "sku": "3648",
-    "seo": {
-      "url": "baby-diaper-pants-xl-jumbo",
-      "metaTitle": "Baby Diaper Pants (XL) JUMBO (26/28 Pcs) | Soft, Leak-Proof, 12-Hour Protection",
-      "metaDescription": "Buy Baby Diaper Pants (XL) JUMBO pack (26/28 pcs) for babies weighing 12-17 kg. Ultra-absorbent, soft, breathable, and leak-proof diaper pants with up to 12 hours of protection.",
-      "keywords": [
-        "Baby diaper pants, XL baby diapers, jumbo diaper pack, leak-proof diaper pants, 12-hour diaper protection, soft baby diapers, comfortable diaper pants, baby diapers for 12-17kg"
-      ]
-    },
-    "unitPrice": 285.7,
-    "maximumRetailPrice": 300,
-    "discount": 0,
     "finalPrice": 300,
     "thumbnail": "https://media.davaindia.com/davaindia/qsZ_0DcebuxWmtybloXQ2-3648-1.jpg",
-    "subCategoryId": {
-      "$oid": "672b5069c90f35c2169e25a6"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<p><strong>Baby Diaper Pants (XL) – JUMBO Pack</strong> are designed for babies weighing <strong>12–17 kg</strong>, offering up to <strong>12 hours of dryness</strong> with <strong>leak-proof protection</strong>. These pants are <strong>soft, breathable</strong>, and often infused with <strong>Aloe Vera lotion</strong> to prevent rashes. Ideal for overnight use and long outings, the <strong>jumbo pack</strong> ensures better value with a higher quantity, reducing the need for frequent purchases. Perfect for active babies, these diaper pants provide comfort, convenience, and all-day freshness.</p>",
-      "suitableFor": [
-        "Babies weighing between 12 to 17 kg",
-        "Active toddlers who move and play a lot",
-        "Day and night use for up to 12 hours of protection",
-        "Sensitive baby skin (hypoallergenic materials)"
-      ],
-      "dosage": [
-        "Change diapers regularly as needed or at least every 3-4 hours to avoid diaper rash.",
-        "For night use, one diaper can last up to 12 hours but monitor for any signs of discomfort."
-      ],
-      "cautions": [
-        "Change the diaper immediately if soiled to prevent rashes.",
-        "Discard used diapers in a proper waste bin; do not flush.",
-        "Keep diapers out of reach of children when not in use.",
-        "Store in a cool, dry place away from direct sunlight."
-      ],
-      "benefits": [
-        "12-Hour Dryness: Long-lasting absorbency keeps your baby dry day and night.",
-        "Comfortable Fit: The stretchable waistband offers a snug yet comfortable fit for active babies.",
-        "Easy to Use: Pull-up style for quick and easy diaper changes, perfect for on-the-go parents.",
-        "Skin-Friendly: Made with soft, breathable materials that are gentle on delicate skin.",
-        "Leak Protection: Double leak guards prevent side leakage, ensuring maximum dryness."
-      ],
-      "sideEffects": [
-        ""
-      ],
-      "productInfo": "Size: XL (Extra Large)\nPack Size: 26/28 Pcs\nBaby Weight: 12-17 kg\nType: Diaper Pants\nAbsorption Time: Up to 12 hours\nMaterial: Soft, breathable, and hypoallergenic materials\nStretchable Waistband: Yes\nLeak Protection: Double leak guards for extra protection\nWetness Indicator: No",
-      "sellerInfo": "zota healthcare",
-      "manufacturerInfo": "Manufacturer: Swara Baby Products\n",
-      "packagedByInfo": "Packaged By: Swara Baby Products",
-      "directionsForUse": "Remove the diaper from the pack, place it under your baby ensuring the back is higher, adjust the waistband, and secure. \nDispose of the used diaper properly."
-    },
-    "taxes": [
-      {
-        "$oid": "67972779f0d6590049ea4c95"
-      }
-    ],
-    "createdAt": "2024-10-26T13:44:41.985Z",
-    "updatedAt": "2026-04-09T09:56:17.502Z",
-    "discountType": "flat",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
     "brandTags": [
       "Pampers",
       "Huggies",
@@ -283,375 +152,178 @@
       "Whisper",
       "Little Angel",
       "Bambo Nature"
-    ],
-    "hsnNumber": "30049099",
-    "scheduledDrug": "None",
-    "saltType": "Single Salt",
-    "dosageForm": "unknown",
-    "releaseType": "unknown",
-    "route": "unknown",
-    "packingType": "pack"
+    ]
   },
   {
-    "_id": {
-      "$oid": "671cf3920d665866734350e4"
-    },
-    "title": "Cervical Collar Soft Support(L)",
-    "description": "1 piece",
-    "compositions": "Cervical Collar Soft With Support(L)",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "Neck Pain Relief",
-      "Post-Injury Support",
-      "Post-Surgery Recovery",
-      "Relief from Conditions like Cervical Spondylosis or Herniated Discs"
+    "info": "<p>The <strong>Cervical Collar Soft Support (L)</strong> provides gentle neck stabilization and pain relief for conditions like cervical spondylosis, neck strain, or post-injury recovery. Made with high-density foam and a breathable, hypoallergenic fabric, it offers firm yet comfortable support. The adjustable Velcro closure ensures a secure, customized fit, making it ideal for everyday use under medical guidance.</p><p><br></p>",
+    "suitableFor": [
+      "Individuals with mild to moderate neck pain",
+      "Patients recovering from cervical spine surgery or injury",
+      "Those suffering from cervical spondylosis or stiff neck",
+      "Suitable for long-duration use during recovery"
     ],
+    "dosage": [
+      "Wearing Duration: Should be worn as directed by a healthcare professional. Typically, the collar is worn during the day and may be removed at night unless otherwise instructed.",
+      "Usage: Adjust the collar snugly around the neck but avoid over-tightening to ensure comfort and proper support."
+    ],
+    "cautions": [
+      "Do not wear the collar for extended periods without consulting a doctor.",
+      "Ensure the collar is not too tight to avoid restricting blood circulation.",
+      "Remove and clean the collar regularly to maintain hygiene.",
+      "If irritation or discomfort occurs, discontinue use and consult your physician."
+    ],
+    "benefits": [
+      "Neck Support: Provides firm yet gentle support to the cervical region, promoting recovery from neck injuries and conditions.",
+      "Pain Relief: Helps reduce neck pain and stiffness by immobilizing the neck and limiting excessive movement.",
+      "Comfortable Fit: Soft, breathable foam and adjustable closure ensure a comfortable fit for long-term use.",
+      "Post-Surgical Care: Aids in recovery after cervical spine surgeries by supporting the neck during healing.",
+      "Improved Posture: Encourages proper alignment of the cervical spine, reducing stress on the neck and shoulder muscles."
+    ],
+    "sideEffects": [
+      "Skin irritation or rash",
+      "Discomfort if worn too tightly",
+      "Reduced mobility if used for extended periods",
+      "Possible muscle stiffness from prolonged use"
+    ],
+    "productInfo": "Size: Large (L)\nMaterial: Soft, breathable foam with cotton lining\nClosure Type: Hook-and-loop fastener\nType: Soft cervical collar with additional support\nColor: Beige\nIndications: Neck pain, cervical spondylosis, mild neck injuries, post-operative support",
+    "sellerInfo": "Seller: davaindia generic pharmacy ",
+    "manufacturerInfo": "Manufacturer: Osteoplast",
+    "packagedByInfo": "Packaged By: Osteoplast\n",
+    "directionsForUse": "Place the collar around the neck, ensuring a snug yet comfortable fit. Adjust as necessary for optimal support. Remove the collar while sleeping unless otherwise directed by a healthcare professional.",
+    "title": "Cervical Collar Soft Support(L)",
+    "compositions": "Cervical Collar Soft With Support(L)",
     "sku": "340",
-    "seo": {
-      "url": "collar-soft-with-support-large",
-      "metaTitle": "Cervical Collar Soft With Support (L) | Neck Pain Relief & Support",
-      "metaDescription": "Buy Cervical Collar Soft With Support (L) for neck pain relief and stabilization. Soft, breathable material with adjustable fit for cervical spondylosis, injuries, or post-surgical support.",
-      "keywords": [
-        "Cervical collar, soft neck support, large cervical collar, neck pain relief, cervical spondylosis support, post-surgery neck brace, soft cervical collar, neck immobilizer"
-      ]
-    },
-    "unitPrice": 190.48,
-    "maximumRetailPrice": 200,
-    "discount": 0,
     "finalPrice": 200,
     "thumbnail": "https://media.davaindia.com/davaindia/RSKKlIDVoeoztxsdwfX1o-985.jpg",
-    "subCategoryId": {
-      "$oid": "67213a9353448ecbcd6711f6"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<p>The <strong>Cervical Collar Soft Support (L)</strong> provides gentle neck stabilization and pain relief for conditions like cervical spondylosis, neck strain, or post-injury recovery. Made with high-density foam and a breathable, hypoallergenic fabric, it offers firm yet comfortable support. The adjustable Velcro closure ensures a secure, customized fit, making it ideal for everyday use under medical guidance.</p><p><br></p>",
-      "suitableFor": [
-        "Individuals with mild to moderate neck pain",
-        "Patients recovering from cervical spine surgery or injury",
-        "Those suffering from cervical spondylosis or stiff neck",
-        "Suitable for long-duration use during recovery"
-      ],
-      "dosage": [
-        "Wearing Duration: Should be worn as directed by a healthcare professional. Typically, the collar is worn during the day and may be removed at night unless otherwise instructed.",
-        "Usage: Adjust the collar snugly around the neck but avoid over-tightening to ensure comfort and proper support."
-      ],
-      "cautions": [
-        "Do not wear the collar for extended periods without consulting a doctor.",
-        "Ensure the collar is not too tight to avoid restricting blood circulation.",
-        "Remove and clean the collar regularly to maintain hygiene.",
-        "If irritation or discomfort occurs, discontinue use and consult your physician."
-      ],
-      "benefits": [
-        "Neck Support: Provides firm yet gentle support to the cervical region, promoting recovery from neck injuries and conditions.",
-        "Pain Relief: Helps reduce neck pain and stiffness by immobilizing the neck and limiting excessive movement.",
-        "Comfortable Fit: Soft, breathable foam and adjustable closure ensure a comfortable fit for long-term use.",
-        "Post-Surgical Care: Aids in recovery after cervical spine surgeries by supporting the neck during healing.",
-        "Improved Posture: Encourages proper alignment of the cervical spine, reducing stress on the neck and shoulder muscles."
-      ],
-      "sideEffects": [
-        "Skin irritation or rash",
-        "Discomfort if worn too tightly",
-        "Reduced mobility if used for extended periods",
-        "Possible muscle stiffness from prolonged use"
-      ],
-      "productInfo": "Size: Large (L)\nMaterial: Soft, breathable foam with cotton lining\nClosure Type: Hook-and-loop fastener\nType: Soft cervical collar with additional support\nColor: Beige\nIndications: Neck pain, cervical spondylosis, mild neck injuries, post-operative support",
-      "sellerInfo": "Seller: davaindia generic pharmacy ",
-      "manufacturerInfo": "Manufacturer: Osteoplast",
-      "packagedByInfo": "Packaged By: Osteoplast\n",
-      "directionsForUse": "Place the collar around the neck, ensuring a snug yet comfortable fit. Adjust as necessary for optimal support. Remove the collar while sleeping unless otherwise directed by a healthcare professional."
-    },
-    "taxes": [
-      {
-        "$oid": "67972779f0d6590049ea4c95"
-      }
-    ],
-    "createdAt": "2024-10-26T13:50:10.996Z",
-    "updatedAt": "2026-04-23T07:06:54.937Z",
-    "discountType": "flat",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
     "brandTags": [
       "Tynor",
       "Vissco",
       "RehabPro",
       "Cervical",
       "Cerv"
-    ],
-    "hsnNumber": "90211000",
-    "scheduledDrug": "None",
-    "saltType": "Single Salt",
-    "dosageForm": "unknown",
-    "releaseType": "unknown",
-    "route": "unknown",
-    "packingType": "pack"
+    ]
   },
   {
-    "_id": {
-      "$oid": "6721c70ca5a7de7fa38cdfb6"
-    },
-    "title": "Conditioner Keratin & Argan Oil Spa Hair Treatment Therapy",
-    "description": "200ml per container",
-    "compositions": "Conditioner Keratin & Argan Oil Spa Hair Treatment Therapy (200 ml) (Khadi-Davaindia)",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "hair care",
-      "hair strengthen",
-      "hair",
-      "spa conditioner",
-      "conditioner"
+    "info": "<p><strong>Conditioner Keratin &amp; Argan Oil Spa Hair Treatment Therapy</strong> is a premium hair care product designed to provide deep nourishment and rejuvenation for your hair. This conditioner combines the powerful benefits of <strong>keratin</strong> and <strong>argan oil</strong>, two well-known ingredients that work together to repair, hydrate, and enhance the health of your hair.</p><p><strong>Keratin Infusion</strong>:</p><ul><li><p><strong>Keratin</strong> is a protein that naturally makes up the structure of your hair. The conditioner infuses hair with keratin, which helps to rebuild damaged strands, reduce frizz, and improve the overall texture.</p></li><li><p>It can help restore strength to weak, brittle hair, promoting healthier, shinier hair with less breakage.</p></li><li><p>Keratin helps to smooth the hair cuticle, making hair feel softer and look more polished.</p></li></ul><p><strong>Argan Oil</strong>:</p><ul><li><p>Known as \"liquid gold,\" <strong>argan oil</strong> is rich in <strong>vitamins (E and A), essential fatty acids, and antioxidants</strong>, which help to hydrate and nourish the hair.</p></li><li><p>It helps to replenish moisture, leaving hair soft, shiny, and more manageable, while also preventing dryness and frizz.</p></li><li><p>Argan oil can also help to repair damage from heat styling, environmental stress, and chemical treatments, making it great for color-treated hair.</p></li></ul><p><strong>Spa-Like Treatment</strong>:</p><ul><li><p>This conditioner provides a luxurious, spa-like experience, offering salon-quality results from the comfort of your home.</p></li><li><p>It deeply conditions hair, adding softness, smoothness, and shine without weighing it down.</p></li></ul><p><strong>Deep Hydration &amp; Moisture Lock</strong>:</p><ul><li><p>Both keratin and argan oil provide intense hydration, helping to lock moisture into the hair shaft. This is particularly beneficial for dry, coarse, or damaged hair, providing long-lasting softness and manageability.</p></li><li><p>Argan oil helps to seal moisture into the hair, preventing further dryness and split ends.</p></li></ul><p><strong>Frizz Control &amp; Smoothing</strong>:</p><ul><li><p>The combination of keratin and argan oil helps to smooth the hair cuticle, providing frizz control and a sleek, shiny finish.</p></li><li><p>It works to tame unruly hair, making it more manageable and easier to style.</p></li></ul><p><strong>Restores Shine and Softness</strong>:</p><ul><li><p>With regular use, this conditioner can restore the natural shine and softness to your hair, giving it a healthy, vibrant look.</p></li><li><p>It also helps to improve the elasticity and overall strength of your hair, reducing the likelihood of damage.</p></li></ul><p><strong>Suitable for All Hair Types</strong>:</p><ul><li><p>Whether your hair is straight, curly, wavy, or color-treated, this conditioner is designed to nourish and restore all hair types.</p></li><li><p>It is especially beneficial for dry, frizzy, or chemically treated hair, offering a way to revive and rejuvenate tired strands.</p></li></ul><p><strong>Protects Against Heat Damage</strong>:</p><ul><li><p>The conditioning properties of keratin and argan oil help protect hair from damage caused by heat styling tools like blow dryers, straighteners, and curling irons.</p></li></ul><p></p>",
+    "suitableFor": [
+      "Ideal for individuals with dry, frizzy, or damaged hair seeking intensive hydration and repair."
     ],
+    "dosage": [
+      "After shampooing, apply a generous amount of the conditioner to damp hair, focusing on lengths and ends. Leave it on for 3-5 minutes, then rinse thoroughly with water. For best results, use twice or thrice a week."
+    ],
+    "cautions": [
+      "For external use only. Avoid contact with eyes; in case of contact, rinse immediately with water. Discontinue use if irritation or allergic reaction occurs. Keep out of reach of children."
+    ],
+    "benefits": [
+      "Intensive Hydration: Deeply moisturizes dry and damaged hair, restoring softness and shine.",
+      "Strengthens Hair: Keratin Protein fortifies hair strands, reducing breakage and split ends.",
+      "Frizz Control: Argan Oil smooths hair cuticles, minimizing frizz and enhancing manageability.",
+      "Repair and Restoration: Revives dull hair, improving elasticity and overall hair health."
+    ],
+    "sideEffects": [
+      "May cause allergic reactions in some individuals",
+      "Consult a physician if irritation occurs"
+    ],
+    "productInfo": "",
+    "sellerInfo": "Zota Health Care Ltd\n\n",
+    "manufacturerInfo": "Everyday Herbal Beauty Care\n",
+    "packagedByInfo": "Everyday Herbal Beauty Care\n",
+    "directionsForUse": "After shampooing, apply Conditioner Keratin & Argan Oil Spa Hair Treatment Therapy evenly through damp hair, leave it in for 5-10 minutes, then rinse off completely for best results.",
+    "title": "Conditioner Keratin & Argan Oil Spa Hair Treatment Therapy",
+    "compositions": "Conditioner Keratin & Argan Oil Spa Hair Treatment Therapy (200 ml) (Khadi-Davaindia)",
     "sku": "4369",
-    "seo": {
-      "url": "khadi-veda-conditioner-keratin-argan-oil-hydrating-200ml",
-      "metaTitle": "Khadi Veda Conditioner with Keratin Protein and Argan Oil - 200 ml",
-      "metaDescription": "Restore and hydrate your hair with Khadi Veda's Conditioner enriched with Keratin Protein and Argan Oil. Ideal for dry and damaged hair, this 200 ml conditioner offers intensive hydration and repair.",
-      "keywords": [
-        "Khadi Veda Conditioner",
-        "Argan Oil",
-        "Hair Repair"
-      ]
-    },
-    "unitPrice": 550,
-    "maximumRetailPrice": 550,
-    "discount": 40,
     "finalPrice": 330,
     "thumbnail": "https://media.davaindia.com/davaindia/ymQFn4_-UpPiI2ad9b0Og-oil spa 1 .jpg",
-    "subCategoryId": {
-      "$oid": "672b4a5bc90f35c2169e1b04"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<p><strong>Conditioner Keratin &amp; Argan Oil Spa Hair Treatment Therapy</strong> is a premium hair care product designed to provide deep nourishment and rejuvenation for your hair. This conditioner combines the powerful benefits of <strong>keratin</strong> and <strong>argan oil</strong>, two well-known ingredients that work together to repair, hydrate, and enhance the health of your hair.</p><p><strong>Keratin Infusion</strong>:</p><ul><li><p><strong>Keratin</strong> is a protein that naturally makes up the structure of your hair. The conditioner infuses hair with keratin, which helps to rebuild damaged strands, reduce frizz, and improve the overall texture.</p></li><li><p>It can help restore strength to weak, brittle hair, promoting healthier, shinier hair with less breakage.</p></li><li><p>Keratin helps to smooth the hair cuticle, making hair feel softer and look more polished.</p></li></ul><p><strong>Argan Oil</strong>:</p><ul><li><p>Known as \"liquid gold,\" <strong>argan oil</strong> is rich in <strong>vitamins (E and A), essential fatty acids, and antioxidants</strong>, which help to hydrate and nourish the hair.</p></li><li><p>It helps to replenish moisture, leaving hair soft, shiny, and more manageable, while also preventing dryness and frizz.</p></li><li><p>Argan oil can also help to repair damage from heat styling, environmental stress, and chemical treatments, making it great for color-treated hair.</p></li></ul><p><strong>Spa-Like Treatment</strong>:</p><ul><li><p>This conditioner provides a luxurious, spa-like experience, offering salon-quality results from the comfort of your home.</p></li><li><p>It deeply conditions hair, adding softness, smoothness, and shine without weighing it down.</p></li></ul><p><strong>Deep Hydration &amp; Moisture Lock</strong>:</p><ul><li><p>Both keratin and argan oil provide intense hydration, helping to lock moisture into the hair shaft. This is particularly beneficial for dry, coarse, or damaged hair, providing long-lasting softness and manageability.</p></li><li><p>Argan oil helps to seal moisture into the hair, preventing further dryness and split ends.</p></li></ul><p><strong>Frizz Control &amp; Smoothing</strong>:</p><ul><li><p>The combination of keratin and argan oil helps to smooth the hair cuticle, providing frizz control and a sleek, shiny finish.</p></li><li><p>It works to tame unruly hair, making it more manageable and easier to style.</p></li></ul><p><strong>Restores Shine and Softness</strong>:</p><ul><li><p>With regular use, this conditioner can restore the natural shine and softness to your hair, giving it a healthy, vibrant look.</p></li><li><p>It also helps to improve the elasticity and overall strength of your hair, reducing the likelihood of damage.</p></li></ul><p><strong>Suitable for All Hair Types</strong>:</p><ul><li><p>Whether your hair is straight, curly, wavy, or color-treated, this conditioner is designed to nourish and restore all hair types.</p></li><li><p>It is especially beneficial for dry, frizzy, or chemically treated hair, offering a way to revive and rejuvenate tired strands.</p></li></ul><p><strong>Protects Against Heat Damage</strong>:</p><ul><li><p>The conditioning properties of keratin and argan oil help protect hair from damage caused by heat styling tools like blow dryers, straighteners, and curling irons.</p></li></ul><p></p>",
-      "suitableFor": [
-        "Ideal for individuals with dry, frizzy, or damaged hair seeking intensive hydration and repair."
-      ],
-      "dosage": [
-        "After shampooing, apply a generous amount of the conditioner to damp hair, focusing on lengths and ends. Leave it on for 3-5 minutes, then rinse thoroughly with water. For best results, use twice or thrice a week."
-      ],
-      "cautions": [
-        "For external use only. Avoid contact with eyes; in case of contact, rinse immediately with water. Discontinue use if irritation or allergic reaction occurs. Keep out of reach of children."
-      ],
-      "benefits": [
-        "Intensive Hydration: Deeply moisturizes dry and damaged hair, restoring softness and shine.",
-        "Strengthens Hair: Keratin Protein fortifies hair strands, reducing breakage and split ends.",
-        "Frizz Control: Argan Oil smooths hair cuticles, minimizing frizz and enhancing manageability.",
-        "Repair and Restoration: Revives dull hair, improving elasticity and overall hair health."
-      ],
-      "sideEffects": [
-        "May cause allergic reactions in some individuals",
-        "Consult a physician if irritation occurs"
-      ],
-      "productInfo": "",
-      "sellerInfo": "Zota Health Care Ltd\n\n",
-      "manufacturerInfo": "Everyday Herbal Beauty Care\n",
-      "packagedByInfo": "Everyday Herbal Beauty Care\n",
-      "directionsForUse": "After shampooing, apply Conditioner Keratin & Argan Oil Spa Hair Treatment Therapy evenly through damp hair, leave it in for 5-10 minutes, then rinse off completely for best results."
-    },
-    "taxes": [
-      {
-        "$oid": "671f7b6cab35257dc5439ab2"
-      }
-    ],
-    "createdAt": "2024-10-30T05:41:32.888Z",
-    "updatedAt": "2026-04-09T09:57:13.781Z",
-    "discountType": "percentage",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
-    "hsnNumber": "33049910",
-    "scheduledDrug": "None",
-    "saltType": "None",
     "brandTags": [
       "Conditioner",
       "Cond"
-    ],
-    "clinicalProductKey": "argan oil:0unknown|keratin:0unknown|unknown|topical",
-    "compositionKey": "argan oil:0unknown|keratin:0unknown",
-    "dosageForm": "unknown",
-    "releaseType": "unknown",
-    "route": "topical",
-    "packingType": "pack"
+    ]
   },
   {
-    "_id": {
-      "$oid": "6721c8d2a5a7de7fa38ce171"
-    },
-    "title": "Dava Pure Syrup",
-    "description": "200ml pack per bottle",
-    "compositions": "BLOOD PURIFIER SYP",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "Detoxification",
-      "Improved Skin Health",
-      "Boosted Immune System",
-      "Increased Energy",
-      "Better Digestion"
+    "info": "<p>&nbsp;Dava Pure Syrup&nbsp;is a type of herbal or medicinal syrup designed to help cleanse the blood by removing toxins and improving overall skin and health. These syrups often contain natural ingredients like herbs, fruits, and extracts known for their detoxifying and purifying properties.</p>",
+    "suitableFor": [
+      "Individuals experiencing skin issues like acne, pimples, and skin infections.",
+      "Those seeking to improve liver function and digestion.",
+      "Anyone looking for a natural remedy to purify the blood and enhance skin health."
     ],
+    "dosage": [
+      "Adults: 10 ml (2 teaspoonfuls) once a day with 1 glass (250 ml) of fresh water.",
+      "Children: Consult a healthcare professional before use."
+    ],
+    "cautions": [
+      "Read the label carefully before use.",
+      "Store in a cool and dry place.",
+      "Keep out of reach of children.",
+      "Not recommended for pregnant or breastfeeding women without medical advice.",
+      "Discontinue use and consult a doctor if any adverse reactions occur.",
+      "SCHEDULE H PRESCRIPTION DRUG  To be sold by retail on the prescription of a Registered  Medical Practitioner only"
+    ],
+    "benefits": [
+      "Blood Purification: Assists in eliminating toxins from the blood, promoting clearer skin.",
+      "Skin Health: Helps in treating skin conditions like acne and pimples, leading to radiant skin.",
+      "Liver Support: Supports liver function, aiding in the detoxification process.",
+      "Digestive Aid: Contains ingredients that help in digestion and clear the stomach."
+    ],
+    "sideEffects": [
+      "Muscle fatigue, Diarrhea, Drowsiness, Vomitting"
+    ],
+    "productInfo": "",
+    "sellerInfo": "Zota Health Care Ltd\n\n",
+    "manufacturerInfo": "Bhavani Pharma\n",
+    "packagedByInfo": "Bhavani Pharma\n",
+    "directionsForUse": "Shake well before use.\nMeasure the dose as recommended and consume. \nFor best results, take on an empty stomach.",
+    "title": "Dava Pure Syrup",
+    "compositions": "BLOOD PURIFIER SYP",
     "sku": "478",
-    "seo": {
-      "url": "hamdard-safi-natural-blood-purifier-syrup-500ml",
-      "metaTitle": "Hamdard Safi Natural Blood Purifier Syrup - 500ml",
-      "metaDescription": "Hamdard Safi Natural Blood Purifier Syrup is a herbal formulation that cleanses the blood, supports liver function, and promotes healthy, glowing skin. Available in a 500ml pack.",
-      "keywords": [
-        "Hamdard Safi",
-        "blood purifier syrup",
-        "skin health"
-      ]
-    },
-    "unitPrice": 62.4,
-    "maximumRetailPrice": 70,
-    "discount": 0,
     "finalPrice": 70,
     "thumbnail": "https://media.davaindia.com/davaindia/EtqHhcPi7MdpymgkifAYh-image-1737710559124-d461hm.png",
-    "subCategoryId": {
-      "$oid": "6721f6368037ddc939b35e71"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<p>&nbsp;Dava Pure Syrup&nbsp;is a type of herbal or medicinal syrup designed to help cleanse the blood by removing toxins and improving overall skin and health. These syrups often contain natural ingredients like herbs, fruits, and extracts known for their detoxifying and purifying properties.</p>",
-      "suitableFor": [
-        "Individuals experiencing skin issues like acne, pimples, and skin infections.",
-        "Those seeking to improve liver function and digestion.",
-        "Anyone looking for a natural remedy to purify the blood and enhance skin health."
-      ],
-      "dosage": [
-        "Adults: 10 ml (2 teaspoonfuls) once a day with 1 glass (250 ml) of fresh water.",
-        "Children: Consult a healthcare professional before use."
-      ],
-      "cautions": [
-        "Read the label carefully before use.",
-        "Store in a cool and dry place.",
-        "Keep out of reach of children.",
-        "Not recommended for pregnant or breastfeeding women without medical advice.",
-        "Discontinue use and consult a doctor if any adverse reactions occur.",
-        "SCHEDULE H PRESCRIPTION DRUG  To be sold by retail on the prescription of a Registered  Medical Practitioner only"
-      ],
-      "benefits": [
-        "Blood Purification: Assists in eliminating toxins from the blood, promoting clearer skin.",
-        "Skin Health: Helps in treating skin conditions like acne and pimples, leading to radiant skin.",
-        "Liver Support: Supports liver function, aiding in the detoxification process.",
-        "Digestive Aid: Contains ingredients that help in digestion and clear the stomach."
-      ],
-      "sideEffects": [
-        "Muscle fatigue, Diarrhea, Drowsiness, Vomitting"
-      ],
-      "productInfo": "",
-      "sellerInfo": "Zota Health Care Ltd\n\n",
-      "manufacturerInfo": "Bhavani Pharma\n",
-      "packagedByInfo": "Bhavani Pharma\n",
-      "directionsForUse": "Shake well before use.\nMeasure the dose as recommended and consume. \nFor best results, take on an empty stomach."
-    },
-    "taxes": [
-      {
-        "$oid": "67972779f0d6590049ea4c95"
-      }
-    ],
-    "createdAt": "2024-10-30T05:49:06.410Z",
-    "updatedAt": "2026-04-23T12:39:11.422Z",
-    "discountType": "flat",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
     "brandTags": [
       "Giloy",
       "Guduchi",
       "Tulsi",
       "Bhringraj",
       "Dava"
-    ],
-    "hsnNumber": "30049099",
-    "scheduledDrug": "None",
-    "saltType": "None",
-    "clinicalProductKey": "unknown:0unknown|syrup|oral",
-    "compositionKey": "unknown:0unknown",
-    "dosageForm": "syrup",
-    "releaseType": "unknown",
-    "route": "oral",
-    "packingType": "bottle"
+    ]
   },
   {
-    "_id": {
-      "$oid": "6721d391f93b19ebb8864dfa"
-    },
-    "title": "Calamine Rose Lotion",
-    "description": "100ml per container",
-    "compositions": "Calamine Lotion",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "Soothing Itchy Skin",
-      "Treating Rashes",
-      "Sunburn Relief",
-      "Drying Out and Healing Blisters",
-      "Minor Skin Irritations",
-      "Treating Acne"
+    "info": "<p>Calamine Rose Lotion sounds like an interesting product! Calamine lotion is typically used for soothing skin irritations, like itching from bug bites, rashes, or mild burns. If it has rose in it, it might include additional soothing and moisturizing benefits from the rose extract or rose water. The rose element could also add a pleasant fragrance and extra hydration.</p>",
+    "suitableFor": [
+      "Individuals experiencing minor skin irritations, including:",
+      "Insect bites",
+      "Poisonous plant rashes (e.g., poison ivy, poison oak)",
+      "Sunburn",
+      "Chickenpox",
+      "Other minor skin conditions causing itchiness"
     ],
+    "dosage": [
+      "Application: Shake the bottle well before use. Clean the affected area with soap and water, then allow it to dry completely. Apply Calamine Lotion directly to the skin using a cotton ball or pad, gently rubbing it in and allowing it to dry. Repeat this process as needed, typically up to three to four times daily"
+    ],
+    "cautions": [
+      "For external use only; avoid ingestion.",
+      "Do not apply to the eyes, mouth, or mucous membranes.",
+      "Discontinue use if the condition worsens or if symptoms persist for more than seven days.",
+      "If you experience any adverse reactions, such as increased redness, swelling, or irritation, discontinue use and consult a healthcare professional.",
+      "Keep out of reach of children."
+    ],
+    "benefits": [
+      "Provides relief from itching and discomfort associated with minor skin irritations.",
+      "Assists in drying out oozing and weeping caused by reactions to poisonous plants.",
+      "Offers a cooling sensation that soothes the skin upon application.",
+      "Contains mild antiseptic properties that help protect the skin."
+    ],
+    "sideEffects": [
+      ""
+    ],
+    "productInfo": "Calamine Rose Lotion is a premium formulation combining the benefits of Calamine with the soothing properties of rose extracts. It is presented in a convenient 100ml bottle, ideal for home use.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Bhavani Pharma\n",
+    "packagedByInfo": "Bhavani Pharma\n",
+    "directionsForUse": "Shake well before use. Apply the lotion to clean, dry skin in a thin layer over the affected area. Gently rub in until absorbed. Reapply as necessary.",
+    "title": "Calamine Rose Lotion",
+    "compositions": "Calamine Lotion",
     "sku": "2177",
-    "seo": {
-      "url": "calamine-lotion",
-      "metaTitle": "Calamine Lotion - Itch Relief and Skin Protectant",
-      "metaDescription": "Calamine Lotion is a topical medication designed to relieve itching and discomfort from minor skin irritations such as insect bites, poison ivy, and sunburn. It provides a cooling sensation and has mild antiseptic properties to soothe and protect the skin.",
-      "keywords": [
-        "Calamine Lotion",
-        "Itch Relief",
-        "Skin Protectant",
-        "calamine rose lotion sunburn relief skin irritation soothing lotion 100 ml Nutravedic anti-itch lotion rose extract skincare lotion skin soothing lotion"
-      ]
-    },
-    "unitPrice": 54.8,
-    "maximumRetailPrice": 65,
-    "discount": 0,
     "finalPrice": 65,
     "thumbnail": "https://media.davaindia.com/davaindia/x-JVV4lYKODq7t4GsqkFy-Lotion 1.jpg",
-    "subCategoryId": {
-      "$oid": "672b4b2cc90f35c2169e1c7d"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<p>Calamine Rose Lotion sounds like an interesting product! Calamine lotion is typically used for soothing skin irritations, like itching from bug bites, rashes, or mild burns. If it has rose in it, it might include additional soothing and moisturizing benefits from the rose extract or rose water. The rose element could also add a pleasant fragrance and extra hydration.</p>",
-      "suitableFor": [
-        "Individuals experiencing minor skin irritations, including:",
-        "Insect bites",
-        "Poisonous plant rashes (e.g., poison ivy, poison oak)",
-        "Sunburn",
-        "Chickenpox",
-        "Other minor skin conditions causing itchiness"
-      ],
-      "dosage": [
-        "Application: Shake the bottle well before use. Clean the affected area with soap and water, then allow it to dry completely. Apply Calamine Lotion directly to the skin using a cotton ball or pad, gently rubbing it in and allowing it to dry. Repeat this process as needed, typically up to three to four times daily"
-      ],
-      "cautions": [
-        "For external use only; avoid ingestion.",
-        "Do not apply to the eyes, mouth, or mucous membranes.",
-        "Discontinue use if the condition worsens or if symptoms persist for more than seven days.",
-        "If you experience any adverse reactions, such as increased redness, swelling, or irritation, discontinue use and consult a healthcare professional.",
-        "Keep out of reach of children."
-      ],
-      "benefits": [
-        "Provides relief from itching and discomfort associated with minor skin irritations.",
-        "Assists in drying out oozing and weeping caused by reactions to poisonous plants.",
-        "Offers a cooling sensation that soothes the skin upon application.",
-        "Contains mild antiseptic properties that help protect the skin."
-      ],
-      "sideEffects": [
-        ""
-      ],
-      "productInfo": "Calamine Rose Lotion is a premium formulation combining the benefits of Calamine with the soothing properties of rose extracts. It is presented in a convenient 100ml bottle, ideal for home use.",
-      "sellerInfo": "Zota Health Care Ltd\n",
-      "manufacturerInfo": "Bhavani Pharma\n",
-      "packagedByInfo": "Bhavani Pharma\n",
-      "directionsForUse": "Shake well before use. Apply the lotion to clean, dry skin in a thin layer over the affected area. Gently rub in until absorbed. Reapply as necessary."
-    },
-    "taxes": [
-      {
-        "$oid": "671f7b6cab35257dc5439ab2"
-      }
-    ],
-    "createdAt": "2024-10-30T06:34:57.287Z",
-    "updatedAt": "2026-04-23T09:32:57.477Z",
-    "discountType": "flat",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
-    "hsnNumber": "30049099",
-    "scheduledDrug": "None",
     "brandTags": [
       "Caladryl Lotion",
       "BoroPlus Calamine Lotion",
@@ -659,261 +331,110 @@
       "Himalaya Calamine Lotion",
       "Calamine",
       "Cala"
-    ],
-    "saltType": "Single Salt",
-    "clinicalProductKey": "calamine:0unknown|lotion|topical",
-    "compositionKey": "calamine:0unknown",
-    "dosageForm": "lotion",
-    "releaseType": "unknown",
-    "route": "topical",
-    "packingType": "pack"
+    ]
   },
   {
-    "_id": {
-      "$oid": "6721e82b8037ddc939b34dee"
-    },
-    "title": "Baby Toothgel",
-    "description": "50gm per pack",
-    "compositions": "Baby Toothgel 50 gm",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "Safe for Babies to Swallow",
-      "Good for Early Development of Healthy Teeth",
-      "Pleasant Taste:",
-      "Gently Cleans and Freshens Breath",
-      "Pediatrician and Dentist Recommended"
+    "info": "<h3><strong>Baby Tooth Gel</strong> is specially formulated to provide gentle and effective oral care for infants and toddlers.Designed for babies aged 6 months and above, this fluoride-free gel ensures the safety and comfort of your child's first dental experiences.</h3>",
+    "suitableFor": [
+      " Infants and children aged 0-3 years."
     ],
+    "dosage": [
+      "Use a pea-sized amount on a soft-bristled baby toothbrush or finger brush, twice daily or as directed by a pediatric dentist."
+    ],
+    "cautions": [
+      "For external use only.",
+      "Supervise children during use to prevent ingestion of large amounts.",
+      "Store in a cool, dry place, away from direct sunlight."
+    ],
+    "benefits": [
+      "Promotes healthy oral hygiene from a young age.",
+      "Safe if swallowed.",
+      "Free from fluoride, parabens, and artificial colors.",
+      "Mild flavors make brushing enjoyable for babies."
+    ],
+    "sideEffects": [
+      ""
+    ],
+    "productInfo": "Baby Toothgel 50gm is safe for infants and toddlers, ensuring effective cleaning without the hazards of fluoride. Its gentle formula is designed to protect the delicate mouth of young children.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Arogya Formulations\n",
+    "packagedByInfo": "Arogya Formulations\n",
+    "directionsForUse": "Apply a small amount of Baby Toothgel to a soft toothbrush. Gently brush the teeth for two minutes, ensuring all areas are cleaned. Rinse afterward, and limit swallowing.",
+    "title": "Baby Toothgel",
+    "compositions": "Baby Toothgel 50 gm",
     "sku": "4211",
-    "seo": {
-      "url": "baby-toothgel-50-gm",
-      "metaTitle": "Baby Toothgel 50 gm - Safe & Gentle Toothgel for Babies | Fluoride-Free",
-      "metaDescription": "Discover Baby Toothgel 50 gm, a fluoride-free, safe, and gentle oral care solution designed for infants and toddlers. Promotes healthy dental habits from the start!",
-      "keywords": [
-        "Baby Toothgel",
-        "Baby Toothpaste",
-        "Fluoride-Free Toothgel",
-        "Baby care",
-        "oral care"
-      ]
-    },
-    "unitPrice": 41.9,
-    "maximumRetailPrice": 44,
-    "discount": 0,
     "finalPrice": 44,
     "thumbnail": "https://media.davaindia.com/davaindia/JN5YGzytUUqUwSfcuiDOE-4211-4.jpg",
-    "subCategoryId": {
-      "$oid": "672b5069c90f35c2169e25a6"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<h3><strong>Baby Tooth Gel</strong> is specially formulated to provide gentle and effective oral care for infants and toddlers.Designed for babies aged 6 months and above, this fluoride-free gel ensures the safety and comfort of your child's first dental experiences.</h3>",
-      "suitableFor": [
-        " Infants and children aged 0-3 years."
-      ],
-      "dosage": [
-        "Use a pea-sized amount on a soft-bristled baby toothbrush or finger brush, twice daily or as directed by a pediatric dentist."
-      ],
-      "cautions": [
-        "For external use only.",
-        "Supervise children during use to prevent ingestion of large amounts.",
-        "Store in a cool, dry place, away from direct sunlight."
-      ],
-      "benefits": [
-        "Promotes healthy oral hygiene from a young age.",
-        "Safe if swallowed.",
-        "Free from fluoride, parabens, and artificial colors.",
-        "Mild flavors make brushing enjoyable for babies."
-      ],
-      "sideEffects": [
-        ""
-      ],
-      "productInfo": "Baby Toothgel 50gm is safe for infants and toddlers, ensuring effective cleaning without the hazards of fluoride. Its gentle formula is designed to protect the delicate mouth of young children.",
-      "sellerInfo": "Zota Health Care Ltd\n",
-      "manufacturerInfo": "Arogya Formulations\n",
-      "packagedByInfo": "Arogya Formulations\n",
-      "directionsForUse": "Apply a small amount of Baby Toothgel to a soft toothbrush. Gently brush the teeth for two minutes, ensuring all areas are cleaned. Rinse afterward, and limit swallowing."
-    },
-    "taxes": [
-      {
-        "$oid": "67972779f0d6590049ea4c95"
-      }
-    ],
-    "createdAt": "2024-10-30T08:02:51.697Z",
-    "updatedAt": "2026-04-09T09:58:16.939Z",
-    "discountType": "flat",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
-    "brandTags": [],
-    "hsnNumber": "33061090",
-    "scheduledDrug": "None",
-    "saltType": "None",
-    "clinicalProductKey": "unknown:50g|gel|topical",
-    "compositionKey": "unknown:50g",
-    "dosageForm": "gel",
-    "releaseType": "unknown",
-    "route": "topical",
-    "packingType": "pack"
+    "brandTags": []
   },
   {
-    "_id": {
-      "$oid": "6721ec968037ddc939b352ff"
-    },
-    "title": "Advance Herbal Toothpaste",
-    "description": "200gm pack",
-    "compositions": "Herbal Toothpaste 200 gm",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "Gentler on Gums and Teeth",
-      "Reduces Plaque and Tarta",
-      "Prevents Bad Breath",
-      "Fights Tooth Decay and Gum Disease",
-      "Whitens Teeth Naturally",
-      "No Artificial Chemicals"
+    "info": "<p>Herbal Toothpaste 200 gm is a natural and eco-friendly toothpaste formulated with herbal ingredients to promote oral health. It typically contains ingredients such as neem, clove, mint, tea tree oil, aloevera, and baking soda, all known for their ability to clean teeth, prevent cavities, freshen breath, and soothe gums.</p>",
+    "suitableFor": [
+      "Adults and children aged 6 and above."
     ],
+    "dosage": [
+      "Use a pea-sized amount on a toothbrush and brush twice daily, or as recommended by a dentist."
+    ],
+    "cautions": [
+      "For external use only.",
+      "Not recommended for children under 6 without dentist approval.",
+      "Store in a cool, dry place, away from sunlight."
+    ],
+    "benefits": [
+      "Promotes oral health naturally.",
+      "Contains antibacterial and anti-inflammatory herbs.",
+      "Safe for fluoride-sensitive users.",
+      "Naturally refreshing flavor."
+    ],
+    "sideEffects": [
+      "Mild gum irritation (rare)",
+      "Allergic reaction to herbal ingredients (very rare)"
+    ],
+    "productInfo": "",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Arogya Formulations\n",
+    "packagedByInfo": "Arogya Formulations\n",
+    "directionsForUse": "Apply a pea-sized amount of Advance Herbal Toothpaste on a soft-bristled toothbrush. Brush thoroughly for at least two minutes and rinse your mouth with water. For best results, use twice daily.",
+    "title": "Advance Herbal Toothpaste",
+    "compositions": "Herbal Toothpaste 200 gm",
     "sku": "3734",
-    "seo": {
-      "url": "herbal-toothpaste-200-gm",
-      "metaTitle": "Herbal Toothpaste 200 gm - Natural & Fluoride-Free Oral Care | Neem & Clove",
-      "metaDescription": "Herbal Toothpaste 200 gm with Neem, Clove, and Mint provides natural, fluoride-free care for healthy teeth and gums. Perfect for a refreshing, herbal oral hygiene routine.",
-      "keywords": [
-        "Herbal Toothpaste",
-        "Natural Toothpaste",
-        "Fluoride-Free"
-      ]
-    },
-    "unitPrice": 76.2,
-    "maximumRetailPrice": 80,
-    "discount": 0,
     "finalPrice": 80,
     "thumbnail": "https://media.davaindia.com/davaindia/NrEicNP-uviNz7Xlv6fx3-Herbal Toothpaste 1.jpg",
-    "subCategoryId": {
-      "$oid": "672dc4649e6772e68562617c"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<p>Herbal Toothpaste 200 gm is a natural and eco-friendly toothpaste formulated with herbal ingredients to promote oral health. It typically contains ingredients such as neem, clove, mint, tea tree oil, aloevera, and baking soda, all known for their ability to clean teeth, prevent cavities, freshen breath, and soothe gums.</p>",
-      "suitableFor": [
-        "Adults and children aged 6 and above."
-      ],
-      "dosage": [
-        "Use a pea-sized amount on a toothbrush and brush twice daily, or as recommended by a dentist."
-      ],
-      "cautions": [
-        "For external use only.",
-        "Not recommended for children under 6 without dentist approval.",
-        "Store in a cool, dry place, away from sunlight."
-      ],
-      "benefits": [
-        "Promotes oral health naturally.",
-        "Contains antibacterial and anti-inflammatory herbs.",
-        "Safe for fluoride-sensitive users.",
-        "Naturally refreshing flavor."
-      ],
-      "sideEffects": [
-        "Mild gum irritation (rare)",
-        "Allergic reaction to herbal ingredients (very rare)"
-      ],
-      "productInfo": "",
-      "sellerInfo": "Zota Health Care Ltd\n",
-      "manufacturerInfo": "Arogya Formulations\n",
-      "packagedByInfo": "Arogya Formulations\n",
-      "directionsForUse": "Apply a pea-sized amount of Advance Herbal Toothpaste on a soft-bristled toothbrush. Brush thoroughly for at least two minutes and rinse your mouth with water. For best results, use twice daily."
-    },
-    "taxes": [
-      {
-        "$oid": "67972779f0d6590049ea4c95"
-      }
-    ],
-    "createdAt": "2024-10-30T08:21:42.560Z",
-    "updatedAt": "2026-04-09T09:58:44.497Z",
-    "discountType": "flat",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
-    "hsnNumber": "33061020",
-    "scheduledDrug": "None",
-    "saltType": "None",
     "brandTags": [
       "Advance",
       "Adva"
-    ],
-    "clinicalProductKey": "herbal toothpaste:200g|paste|topical",
-    "compositionKey": "herbal toothpaste:200g",
-    "dosageForm": "paste",
-    "releaseType": "unknown",
-    "route": "topical",
-    "packingType": "pack"
+    ]
   },
   {
-    "_id": {
-      "$oid": "6721ef598037ddc939b3569d"
-    },
-    "title": "All Day Ashwagandha Capsule",
-    "description": "60 capsule per bottle",
-    "compositions": "All Day Ashwagandha Capsule",
-    "searchSuggestionKeywords": [],
-    "tags": [
-      "Stress and Anxiety Reduction",
-      "Improve Energy and Vitality",
-      "Enhance Mental Clarity and Cognitive Function",
-      "Support Immune System Health",
-      "Promote Better Sleep"
+    "info": "<p>All Day Ashwagandha Capsule is a dietary supplement that contains Ashwagandha, a well-known herb used in Ayurvedic medicine for its numerous health benefits. Ashwagandha (Withania somnifera) is considered an adaptogen, meaning it helps the body adapt to stress and maintain balance in various physiological functions.</p><h3><strong>Uses of All Day Ashwagandha Capsule:</strong></h3><p>Stress Relief: Helps reduce anxiety and stress by balancing cortisol levels.</p><p>Boosts Energy and Stamina: Enhances physical endurance and energy levels, promoting active and healthy lifestyles.</p><p>Cognitive Support: Improves concentration, memory, and cognitive performance.</p><p>Promotes Relaxation and Better Sleep: It has a calming effect that can help reduce insomnia and promote a peaceful sleep.</p><p>Supports Immune Health: Helps to strengthen the immune system by boosting the body’s natural defenses.</p><p>Improves Mental Clarity and Mood: Ashwagandha is known to improve mood and mental clarity, reducing mental fatigue.</p>",
+    "suitableFor": [
+      "Adults seeking natural support for stress management, focus, and energy."
     ],
+    "dosage": [
+      "Take one capsule daily with water or as advised by a healthcare professional."
+    ],
+    "cautions": [
+      "Consult a physician if pregnant, nursing, or on medication.",
+      "Store in a cool, dry place away from direct sunlight."
+    ],
+    "benefits": [
+      "Supports stress relief and mental clarity.",
+      "Boosts energy and stamina naturally.",
+      "Promotes balanced mood and cognitive health.",
+      "Contains pure Ashwagandha extract, traditionally valued for adaptogenic benefits."
+    ],
+    "sideEffects": [
+      ""
+    ],
+    "productInfo": "Energy  Fat & Fatty Acids Carbohydrate 0.19 gms. Cholesterol 0.00 mg. Protein ",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "WALPAR WELLNESS PVT LTD\n",
+    "packagedByInfo": "WALPAR WELLNESS PVT LTD\n\n",
+    "title": "All Day Ashwagandha Capsule",
+    "compositions": "All Day Ashwagandha Capsule",
     "sku": "4399",
-    "seo": {
-      "url": "all-day-ashwagandha-capsule",
-      "metaTitle": "All Day Ashwagandha Capsule - Natural Stress & Energy Support | Herbal Supplement",
-      "metaDescription": "Discover All Day Ashwagandha Capsule for natural stress management, mental clarity, and energy. A trusted adaptogen to help you balance and thrive!",
-      "keywords": [
-        "Ashwagandha Capsules",
-        "Natural Stress Relief",
-        "Adaptogen Supplement"
-      ]
-    },
-    "unitPrice": 249.5,
-    "maximumRetailPrice": 524,
-    "discount": 50,
     "finalPrice": 262,
     "thumbnail": "https://media.davaindia.com/davaindia/jzeVwq9M2H_zvmgi4_0Js-All Day Ashwagandha Capsule 1.jpg",
-    "subCategoryId": {
-      "$oid": "6721f6368037ddc939b35e71"
-    },
-    "isActive": true,
-    "aboutProduct": {
-      "info": "<p>All Day Ashwagandha Capsule is a dietary supplement that contains Ashwagandha, a well-known herb used in Ayurvedic medicine for its numerous health benefits. Ashwagandha (Withania somnifera) is considered an adaptogen, meaning it helps the body adapt to stress and maintain balance in various physiological functions.</p><h3><strong>Uses of All Day Ashwagandha Capsule:</strong></h3><p>Stress Relief: Helps reduce anxiety and stress by balancing cortisol levels.</p><p>Boosts Energy and Stamina: Enhances physical endurance and energy levels, promoting active and healthy lifestyles.</p><p>Cognitive Support: Improves concentration, memory, and cognitive performance.</p><p>Promotes Relaxation and Better Sleep: It has a calming effect that can help reduce insomnia and promote a peaceful sleep.</p><p>Supports Immune Health: Helps to strengthen the immune system by boosting the body’s natural defenses.</p><p>Improves Mental Clarity and Mood: Ashwagandha is known to improve mood and mental clarity, reducing mental fatigue.</p>",
-      "suitableFor": [
-        "Adults seeking natural support for stress management, focus, and energy."
-      ],
-      "dosage": [
-        "Take one capsule daily with water or as advised by a healthcare professional."
-      ],
-      "cautions": [
-        "Consult a physician if pregnant, nursing, or on medication.",
-        "Store in a cool, dry place away from direct sunlight."
-      ],
-      "benefits": [
-        "Supports stress relief and mental clarity.",
-        "Boosts energy and stamina naturally.",
-        "Promotes balanced mood and cognitive health.",
-        "Contains pure Ashwagandha extract, traditionally valued for adaptogenic benefits."
-      ],
-      "sideEffects": [
-        ""
-      ],
-      "productInfo": "Energy  Fat & Fatty Acids Carbohydrate 0.19 gms. Cholesterol 0.00 mg. Protein ",
-      "sellerInfo": "Zota Health Care Ltd\n",
-      "manufacturerInfo": "WALPAR WELLNESS PVT LTD\n",
-      "packagedByInfo": "WALPAR WELLNESS PVT LTD\n\n"
-    },
-    "taxes": [
-      {
-        "$oid": "67972779f0d6590049ea4c95"
-      }
-    ],
-    "createdAt": "2024-10-30T08:33:29.074Z",
-    "updatedAt": "2026-04-09T09:59:35.977Z",
-    "discountType": "percentage",
-    "maxOrderQuantity": 10,
-    "minOrderQuantity": 1,
     "brandTags": [
       "Himalaya Ashwagandha",
       "Organic India Ashwagandha",
@@ -924,15 +445,2064 @@
       "Improve Physical Performance and Muscle Strength",
       "All",
       "All Day"
+    ]
+  },
+  {
+    "info": "<p>Baby Massage Oil 100ml (Khadi-Davaindia) is a gentle, natural oil designed specifically for babies' delicate skin. Made with a blend of herbal and organic ingredients, this oil helps to moisturize, soothe, and protect your baby’s skin while promoting healthy growth. Khadi-Davaindia is known for its commitment to producing chemical-free and natural products, and their baby massage oil is no exception, offering a safe and nourishing option for baby care.</p><h3><strong>Benefits of Baby Massage Oil 100ml (Khadi-Davaindia):</strong></h3><p>Promotes Relaxation: Regular massage with this oil helps soothe the baby, improve sleep, and reduce stress.</p><p>Skin Moisturization: Keeps the baby’s skin soft and hydrated, reducing dryness or rough patches.</p><p>Improves Circulation: Gentle massaging with this oil can help stimulate blood circulation, promoting overall health.</p><p>Relieves Dryness and Itchiness: Helps relieve the discomfort caused by dry or itchy skin, common in babies.</p>",
+    "suitableFor": [
+      "Newborns and toddlers with all skin types."
     ],
-    "hsnNumber": "21069099",
-    "scheduledDrug": "None",
-    "saltType": "Single Salt",
-    "clinicalProductKey": "ashwagandha:0unknown|capsule|oral",
-    "compositionKey": "ashwagandha:0unknown",
-    "dosageForm": "capsule",
-    "releaseType": "unknown",
-    "route": "oral",
-    "packingType": "bottle"
+    "dosage": [
+      "Pour a small amount onto your palm and gently massage over baby’s body. Use daily or as needed."
+    ],
+    "cautions": [
+      "For external use only.",
+      "Perform a patch test on a small skin area before full application.",
+      "Store in a cool, dry place away from sunlight."
+    ],
+    "benefits": [
+      "Promotes soft, hydrated, and healthy skin.",
+      "Made with natural oils and free from harmful chemicals.",
+      "Supports relaxation and enhances bonding through gentle massage.",
+      "Enriched with Ayurvedic ingredients for safe, nurturing care."
+    ],
+    "sideEffects": [
+      "May cause irritation in case of allergic reaction.",
+      "Stop use if redness or rash occurs."
+    ],
+    "productInfo": "Ayurvedic, natural massage oil for babies, enriched with nourishing oils to support skin hydration and relaxation.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Everyday Herbal Beauty Care\n",
+    "packagedByInfo": "Everyday Herbal Beauty Care\n",
+    "directionsForUse": "Pour a small amount of oil onto your hand, warm it by rubbing, and gently massage your baby in a circular motion, focusing on legs, arms, and back.",
+    "title": "Baby Massage Oil",
+    "compositions": "Baby Massage Oil 100ml (Khadi-Davaindia)",
+    "sku": "3278",
+    "finalPrice": 85,
+    "thumbnail": "https://media.davaindia.com/davaindia/OdW3DZcjgPUYSxMKj3Z8U-Baby Massage Oil 100ml (Khadi-Davaindia) 1.jpg",
+    "brandTags": [
+      "Baby",
+      "Massa"
+    ]
+  },
+  {
+    "info": "<p>Bournvedic Powder (500 gm) (F) is a traditional herbal product that is typically used for promoting overall health and wellness. It is often marketed as a health tonic or a wellness powder with a focus on balancing various bodily functions, especially in women. The exact composition may vary by brand, but such products typically contain a blend of Ayurvedic herbs known for their therapeutic properties.</p><h3><strong>Uses of Bournvedic Powder 500gm:</strong></h3><p><strong>Improves Digestion</strong>: Helps regulate digestive processes and is used to address digestive issues like constipation and indigestion.</p><p><strong>Boosts Immunity</strong>: Regular use can strengthen the immune system, helping to ward off common illnesses and infections.</p><p><strong>Energy and Vitality</strong>: Enhances energy levels and combats fatigue, making it ideal for individuals feeling low on energy or dealing with stress.</p><p><strong>Promotes Healthy Skin</strong>: The herbs in Bournvedic Powder can also contribute to healthy, glowing skin by promoting internal detoxification</p>",
+    "suitableFor": [
+      "Children (5 years+), adults, and elderly individuals seeking an energy and immunity boost."
+    ],
+    "dosage": [
+      "Mix 1-2 teaspoons in a glass of warm or cold milk, or as directed by a healthcare professional. Consume once daily."
+    ],
+    "cautions": [
+      "Not recommended for children under 5 years.",
+      "Store in a cool, dry place, away from sunlight."
+    ],
+    "benefits": [
+      "Boosts energy levels and stamina.",
+      "Supports immune health and mental clarity.",
+      "Made with natural cocoa for an enjoyable flavor.",
+      "Blends traditional Ayurvedic ingredients with essential nutrients."
+    ],
+    "sideEffects": [
+      "May cause mild gastrointestinal discomfort in some individuals",
+      "Allergic reactions in susceptible individuals"
+    ],
+    "productInfo": "Ayurvedic health drink powder made with traditional herbs and fortified with vitamins and minerals for daily wellness.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Continental Milkose\n",
+    "packagedByInfo": "Continental Milkose",
+    "directionsForUse": "Mix one tablespoon (15 g) of Bournvedic Powder with water or milk. Stir well and consume once daily. Adjust dosage as recommended by a healthcare provider.",
+    "title": "Bournvedic Powder",
+    "compositions": "Bournvedic Powder (500gm)",
+    "sku": "2674",
+    "finalPrice": 205,
+    "thumbnail": "https://media.davaindia.com/davaindia/PucvEmVmsfKxcO6gAU2PT-image-1737955731422-7hjst.png",
+    "brandTags": [
+      "Bournvedic",
+      "Bour"
+    ]
+  },
+  {
+    "info": "<p>Aloe Vera Gel 500gm is a natural and versatile skincare product derived from the Aloe Vera plant, known for its soothing, hydrating, and healing properties. Aloe Vera gel is widely used in skincare routines for its ability to moisturize, heal, and refresh the skin. It can be applied directly to the skin or used in various beauty and health treatments.</p><h3><strong>Uses of Aloe Vera Gel 500gm:</strong></h3><p>Moisturizing Skin: Use Aloe Vera gel as a daily moisturizer to keep your skin hydrated and smooth.</p><p>Sunburn Relief: Apply Aloe Vera gel to sunburned skin to soothe and reduce the discomfort of sunburns.</p><p>Acne Treatment: Aloe Vera can help reduce acne-related redness and inflammation while moisturizing the skin without clogging pores.</p><p>After-Shave Gel: It can be used as an after-shave treatment to calm and hydrate the skin.</p><p>Hair Care: Aloe Vera gel can be used to soothe the scalp, reduce dandruff, and condition the hair for a shiny, healthy appearance.</p>",
+    "suitableFor": [
+      "All skin types, including sensitive skin. Safe for adults and children."
+    ],
+    "dosage": [
+      "Apply a small amount on the desired area and gently massage until absorbed. Use as needed."
+    ],
+    "cautions": [
+      "For external use only.",
+      "Avoid contact with eyes.",
+      "Store in a cool, dry place, away from direct sunlight."
+    ],
+    "benefits": [
+      "Soothes and hydrates skin.",
+      "Provides relief from sunburn, irritation, and dryness.",
+      "Suitable for use on face, body, and hair.",
+      "Free from artificial colors and parabens."
+    ],
+    "sideEffects": [
+      ""
+    ],
+    "productInfo": "Aloe Vera Gel (500 gm) is composed entirely of pure Aloe Vera extract, known for its skin healing properties. It is free from harmful chemicals and suitable for regular use.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Everyday Herbal Beauty Care\n\n",
+    "packagedByInfo": "Everyday Herbal Beauty Care\n",
+    "directionsForUse": "Clean the affected area before application. Take a sufficient amount of Aloe Vera Gel and gently massage it into the skin until fully absorbed. Reapply as needed.",
+    "title": "Aloevera Gel",
+    "compositions": "Aloe Vera Gel (500gm) ",
+    "sku": "2329",
+    "finalPrice": 315,
+    "thumbnail": "https://media.davaindia.com/davaindia/CDCecOl8D8BFumq4ymqr6-unnamed (1).png",
+    "brandTags": [
+      "Aloevera",
+      "Aloev"
+    ]
+  },
+  {
+    "info": "<p>The Air Guard Combi Pack (Machine + Liquid Vaporizer Refill 45ml) is a highly effective and convenient solution for maintaining a mosquito-free environment at home or office. This pack includes an electric vaporizer machine along with a 45ml refill liquid, which can be used to effectively repel mosquitoes and other flying insects. The combination of the machine and liquid provides long-lasting protection</p><p><strong>USES...</strong></p><p><strong>Dual Action Protection</strong>: Includes a vaporizer machine and a liquid refill to provide continuous and long-lasting mosquito protection.</p><p><strong>Effective Against Mosquitoes</strong>: The liquid vaporizer works by releasing a mosquito-repelling vapor, which is highly effective in keeping mosquitoes at bay.</p><p><strong>Easy to Use</strong>: Simply plug in the machine and insert the refill bottle for continuous protection against mosquitoes.</p><p><strong>Long-Lasting</strong>: Each 45ml refill lasts for a significant amount of time, making it a cost-effective solution for ongoing mosquito control.</p>",
+    "suitableFor": [
+      "Homes, offices, and indoor spaces where mosquito protection is needed."
+    ],
+    "dosage": [
+      "Insert the liquid refill into the vaporizer machine and plug it into an electrical outlet. The vaporizer should be used continuously for best results."
+    ],
+    "cautions": [
+      "Keep out of reach of children and pets.",
+      "Avoid direct contact with skin and eyes.",
+      "Ensure proper ventilation when using the product."
+    ],
+    "benefits": [
+      "Provides effective protection against mosquitoes and other insects.",
+      "Easy to use with a simple plug-in mechanism.",
+      "Long-lasting formula with pleasant aroma.",
+      "Suitable for continuous use in indoor spaces."
+    ],
+    "sideEffects": [
+      ""
+    ],
+    "productInfo": "Electric vaporizer machine with a liquid refill designed to repel mosquitoes and ensure a pest-free environment.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Groundstate Chemical\n",
+    "packagedByInfo": "Groundstate Chemical\n",
+    "directionsForUse": "Place the machine in an outlet, insert the liquid refill, and switch on. Allow the vaporizer to operate continuously for optimal insect repelling. Replace the refill when empty.",
+    "title": "Air Guard Combo Pack (Machine + Liquid Vaporizer Refill)",
+    "compositions": "Air Guard Combi Pack (Machine+Liquid Vaporizer Refill 45ml)",
+    "sku": "3441",
+    "finalPrice": 80,
+    "thumbnail": "https://media.davaindia.com/davaindia/I1uv2Wjjc1ISJQSAQAQbO-3441-1.jpg",
+    "brandTags": [
+      "Air Guard",
+      "Air"
+    ]
+  },
+  {
+    "info": "<p>Dava-Joint Tablet is a medication typically used to manage symptoms associated with joint pain, inflammation, and stiffness, often in conditions like osteoarthritis and rheumatoid arthritis. It is a combination medication, and the exact formulation may vary depending on the manufacturer, but it generally includes ingredients that help with joint health and inflammation reduction.</p><h3><strong>Uses of Dava-Joint Tablet:</strong></h3><ul><li>Arthritis Management: It may be used to alleviate pain and stiffness from conditions like osteoarthritis or rheumatoid arthritis.</li><li>Joint Health Support: It is often used to support overall joint health and improve mobility, particularly in people with aging-related joint issues.</li><li>Inflammation Reduction: It helps in reducing inflammation around the joints, leading to less pain and improved function.</li></ul>",
+    "suitableFor": [
+      "Adults, especially those experiencing joint pain, stiffness, or arthritis."
+    ],
+    "dosage": [
+      "Take 1-2 tablets daily with water, preferably after meals, or as directed by a healthcare professional."
+    ],
+    "cautions": [
+      "Consult a healthcare provider before use, especially if pregnant, nursing, or taking other medications.",
+      "Keep out of reach of children.",
+      "Store in a cool, dry place away from sunlight."
+    ],
+    "benefits": [
+      "Supports joint health and mobility.",
+      "Reduces inflammation and discomfort associated with joint pain.",
+      "Provides essential nutrients for bone health.",
+      "Promotes an active lifestyle and improves quality of life."
+    ],
+    "sideEffects": [
+      "Mild gastrointestinal upset",
+      "Allergic reactions in sensitive individuals"
+    ],
+    "productInfo": "Herbal joint support tablet with a blend of glucosamine, chondroitin, and other natural ingredients to promote joint health and mobility.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Vox Dei Labs\n",
+    "packagedByInfo": "Vox Dei Labs\n",
+    "directionsForUse": "Take 1 tablet twice a day with meals or as directed by a healthcare professional. Ensure adequate water intake while taking this supplement.",
+    "title": "Dava-Joint Tablet",
+    "compositions": "Cissus Quadrangularis 500mg & Moringa Oleifera 100mg & Calcium Citrate 500mg",
+    "sku": "3426",
+    "finalPrice": 80,
+    "thumbnail": "https://media.davaindia.com/davaindia/UJoHtPXqZfSjja0Pdy3qE-image-1749907286526-trmma.png",
+    "brandTags": [
+      "Himalaya Joint Care",
+      "Flexi Joint Care",
+      "Osteo Bi-Flex",
+      "Healthvit Glucosamine MSM",
+      "Cissus"
+    ]
+  },
+  {
+    "info": "<p>AAceclofenac 100mg &amp; Paracetamol 325mg is a combination medication used for the treatment of pain and inflammation. This combination of drugs works together to provide fast and effective relief from a variety of conditions associated with pain and inflammation, such as arthritis, muscle pain, joint pain, back pain, and headaches.</p><h3><strong>Uses of Aceclofenac 100mg &amp; Paracetamol 325mg:</strong></h3><p>Arthritis: Used to relieve pain and inflammation associated with osteoarthritis, rheumatoid arthritis, and other joint-related conditions.</p><p>Muscle Pain: Effective in reducing pain and swelling from muscle strains, sprains, and injuries.</p><p>Back Pain: Provides relief from acute and chronic back pain.</p><p>Headache: Helps alleviate headaches, including tension headaches and migraines.</p>",
+    "suitableFor": [
+      "Adults and children over 12 years. Not recommended for use in children below this age without medical advice."
+    ],
+    "dosage": [
+      "Adults: 1 tablet every 8-12 hours as needed, not exceeding 3 tablets in 24 hours.",
+      "Children (12 years and above): 1 tablet every 8-12 hours as needed, not exceeding 3 tablets in 24 hours."
+    ],
+    "cautions": [
+      "Consult a healthcare provider before use, especially for individuals with a history of liver disease, kidney disease, or gastrointestinal disorders.",
+      "Avoid use in combination with other NSAIDs.",
+      "Keep out of reach of children."
+    ],
+    "benefits": [
+      "Provides rapid relief from pain and inflammation.",
+      "Dual action of an anti-inflammatory and analgesic for comprehensive pain management.",
+      "Suitable for various types of pain including joint pain, headache, and muscle aches."
+    ],
+    "sideEffects": [
+      "Nausea",
+      "Dizziness",
+      "Stomach pain",
+      "Headache",
+      "Allergic reactions may occur"
+    ],
+    "productInfo": "A combination analgesic and anti-inflammatory tablet for the relief of pain and inflammation.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Aagya Biotech\n",
+    "packagedByInfo": "Aagya Biotech\n",
+    "directionsForUse": "Take the tablet with a full glass of water. It can be taken with or without food. Follow the prescribed dosage or the instructions on the packaging.",
+    "title": "Aceclofenac 100mg & Paracetamol 325mg Tablet",
+    "compositions": "Aceclofenac 100Mg & Paracetamol 325Mg",
+    "sku": "4132",
+    "finalPrice": 14,
+    "thumbnail": "https://media.davaindia.com/davaindia/daOqkaxL9f73kJVFyAQrQ-Aceclofenac 100Mg & Paracetamol 325Mg 1.jpg",
+    "brandTags": [
+      "Voveran Plus",
+      "Flexon",
+      "Acelon-P",
+      "Dolorace",
+      "Aceclofenac",
+      "Acecl",
+      "Zerodol-P Tablet",
+      "Topnac P Tablet",
+      "Apfide 100mg/325mg Tablet",
+      "Arflur-P Tablet",
+      "Zidnac-P Tablet",
+      "Stalace-TR Tablet",
+      "Acekyor Forte Tablet",
+      "Cyclofit TD Tablet",
+      "Tramib AP Tablet",
+      "Movon PT Tablet"
+    ]
+  },
+  {
+    "info": "<p>Calcium Syrup is a liquid supplement formulated to provide the body with an adequate amount of calcium, a vital mineral necessary for various bodily functions. Calcium plays a key role in maintaining strong bones and teeth, muscle function, nerve transmission, and cardiovascular health. This syrup is commonly used to treat or prevent calcium deficiency in children, adults, and elderly individuals.</p><h3><strong>Uses of Calcium Syrup:</strong></h3><p>Calcium Deficiency: Helps in the treatment and prevention of calcium deficiency in both children and adults.</p><p>Bone Strength: Supports healthy bone growth in children and helps in the maintenance of bone density in adults and seniors.</p><p>Osteoporosis: Used as a supplemental treatment for osteoporosis to strengthen bones and reduce the risk of fractures.</p><p>Pregnancy and Lactation: During pregnancy and breastfeeding, calcium syrup can help meet the increased calcium requirements.</p><p><strong>﻿</strong></p>",
+    "suitableFor": [
+      "Individuals with Increased Calcium Needs",
+      "People with Calcium Deficiencies",
+      "Growing Children and Teens",
+      "Pregnant and Lactating Women",
+      "Elderly Individuals"
+    ],
+    "dosage": [
+      "Recommended Dosage: Shake the bottle well before each use. Take 1–2 teaspoons daily, or as prescribed by a healthcare provider.",
+      "Dosage for children should be advised by a healthcare provider based on their age and specific needs.",
+      "Adults: Typically, 1-2 teaspoons daily or as directed by a physician."
+    ],
+    "cautions": [
+      "Do Not Overdose: Taking excessive amounts of calcium can lead to health issues such as kidney stones or hypercalcemia. Stick to the prescribed dosage.",
+      "Allergic Reactions: Discontinue use and consult a doctor if you experience any signs of an allergic reaction, such as rash, itching, or swelling.",
+      "Interactions with Other Medications: Inform your healthcare provider if you are on any other medications, as calcium supplements can interfere with certain medications.",
+      "Avoid on an Empty Stomach: Take with or after a meal for better absorption and to reduce potential stomach discomfort.",
+      "Not Suitable for Infants: Consult a pediatrician before use for children under 1 year"
+    ],
+    "benefits": [
+      "Bone Health Support: Calcium is essential for building and maintaining strong bones and teeth, especially in growing children, adults, and elderly individuals.",
+      "Supports Bone Density: Helps maintain bone density, reducing the risk of bone weakening or fractures with age.",
+      "Promotes Dental Health: Calcium is vital for teeth health, aiding in the prevention of dental issues.",
+      "Easily Absorbed Liquid Form: The suspension form allows for easier swallowing and faster absorption, especially for children and elderly individuals."
+    ],
+    "sideEffects": [
+      "Constipation",
+      "Nausea",
+      "Stomach upset",
+      "Dry mouth",
+      "Metallic taste"
+    ],
+    "productInfo": "Dava Calcium Suspension is a well-balanced formulation of Calcium Carbonate and Vitamin D3, making it ideal for individuals needing additional support for their bone health.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Sunlife Sciences\n",
+    "packagedByInfo": "Sunlife Sciences",
+    "directionsForUse": "Shake well before use. Measure the recommended dosage using the provided measuring spoon. Consume orally, preferably after meals.",
+    "title": "Dava Calcium Suspension",
+    "compositions": "calcium syrup",
+    "sku": "3247",
+    "finalPrice": 61,
+    "thumbnail": "https://media.davaindia.com/davaindia/XpHgqVqE3Ls5FqNEHGcfX-288.jpg",
+    "brandTags": [
+      "Shelcal Syrup",
+      "Calcirol Syrup",
+      "Bonecal Syrup",
+      "OsteoCal Syrup",
+      "Calcimax Syrup",
+      "T-Cal Syrup",
+      "calcium",
+      "calcium syrup"
+    ]
+  },
+  {
+    "info": "<p>The combination of Cilnidipine 10mg, Olmesartan Medoxomil 40mg, and Chlorthalidone 12.5mg is an antihypertensive medication used for the management of high blood pressure (hypertension). This combination therapy works synergistically by using three different mechanisms to lower blood pressure and maintain a healthy cardiovascular system.</p><h3><strong>Uses of Cilnidipine 10mg, Olmesartan Medoxomil 40mg, &amp; Chlorthalidone 12.5mg:</strong></h3><p>Management of Hypertension: This combination is primarily used for the management of high blood pressure (hypertension), helping to keep blood pressure within a healthy range.</p><p>Prevention of Cardiovascular Events: Helps reduce the risk of complications from high blood pressure, such as stroke, heart failure, and kidney damage.</p><p>Effective Blood Pressure Control: Ideal for patients who are not adequately controlled by a single antihypertensive agent or need a combination of drugs for better blood pressure management.</p>",
+    "suitableFor": [
+      "Adults"
+    ],
+    "dosage": [
+      "Cilnidipine 10mg ",
+      "Olmesartan Medoxomil 40mg",
+      "Chlorthalidone 12.5mg"
+    ],
+    "cautions": [
+      "Pregnancy - Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet is not recommended for use in pregnant women. Consult your doctor before taking.",
+      "Breastfeeding - Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet is not recommended for use in breastfeeding women as it may pass through the breastmilk to the baby. Consult your doctor before taking.",
+      "Driving and using machines - Avoid alcohol consumption as it may aggravate the side effects of Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet",
+      "Kidney - Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg is not recommended in patients with anuria (failure of the kidneys to produce urine). It should be used with caution in patients with severe renal disease. Consult your doctor before taking",
+      "Liver - Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet is not recommended for use in patients with liver failure and it should be used with caution in patients with mild to moderate liver disease. Consult your doctor before taking",
+      "Allergy - Do not take, if you are allergic to Chlorthalidone, Cilnidipine and Olmesartan or any other ingredients of this medicine.",
+      "Heart disease - Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet is not recommended for patients who had cardiogenic shock, myocardial infarction (heart attack), acute unstable angina, and aortic stenosis (blocked blood supply in heart). Consult your doctor for advice.",
+      "Others - Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet is not recommended for use if you:  - have decreased levels of potassium and sodium, - have increased levels of calcium and urea,  - have gout,    have addison’s disease",
+      "Before taking Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet , inform your doctor if you have:  diabetes and problems with adrenal glands",
+      "Use in pediatrics:  Safety and efficacy in pediatric patients is not established. Consult your doctor before taking Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet.",
+      "Use in geriatrics: Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet should be used with caution in elderly patients of 65 years and above. Before taking Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet, consult your doctor."
+    ],
+    "benefits": [
+      "Used to manage essential hypertension (high blood pressure)"
+    ],
+    "sideEffects": [
+      ""
+    ],
+    "productInfo": "Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg tablet is an anti-hypertensive medicine used for the treatment of high blood pressure. It contains a combination of three active ingredients- olmesartan, cilnidipine and chlorthalidone. High blood pressure is one of the critical health condition that, if not treated, it may affect organs like the brain, kidneys, etc. Taking this medicine regularly as prescribed by your doctor along with other lifestyle modifications can help you control your blood pressure. It is recommended to limit alcohol consumption and avoid smoking.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Ria Biosciences Pvt Ltd.\n",
+    "packagedByInfo": "Ria Biosciences Pvt Ltd.\n",
+    "directionsForUse": "Take one tablet orally once a day, preferably at the same time each day. Swallow the tablet whole with water and do not crush or chew.",
+    "title": "Cilnidipine 10mg Olmesartan Medoxomil 40mg & Chlorthalidone 12.5 mg Tablet",
+    "compositions": "Cilnidipine 10mg & Olmesartan Medoxomil 40mg & Chlorthalidone 12.5mg",
+    "sku": "3744",
+    "finalPrice": 51.5,
+    "thumbnail": "https://media.davaindia.com/davaindia/pjoEnJnamqHkLhA1LyCL6-image-1738047892798-wnh6p.png",
+    "brandTags": [
+      "Olmesar-CV",
+      "Cilnidipine",
+      "Cilnidi",
+      "Olmevac Trio",
+      "Olmistrum Trio",
+      "Olkem Trio",
+      "Nulong Trio",
+      "Olnyd Trio",
+      "Olsong Trio",
+      "Olvan Trio",
+      "Olmin Trio",
+      "Trinexovas"
+    ]
+  },
+  {
+    "info": "<p>Mometasone Furoate 0.1% &amp; Fusidic Acid 2% Cream is a topical combination medication designed for the treatment of various skin conditions that involve inflammation and infection. This cream combines a corticosteroid (Mometasone Furoate) with an antibiotic (Fusidic Acid) to effectively manage both the inflammatory and infectious aspects of skin disorders. It is primarily used for conditions like eczema, dermatitis, infections, and psoriasis where secondary bacterial infections might occur.</p><h3><strong>Uses of Mometasone Furoate 0.1% &amp; Fusidic Acid 2% Cream:</strong></h3><p>Eczema and Dermatitis: Used to treat eczema, contact dermatitis, and other inflammatory skin conditions that are also prone to bacterial infections.</p><p>Psoriasis: Helps manage the symptoms of psoriasis, including inflammation, flaking, and redness.</p><p>Skin Infections: Treats bacterial infections associated with conditions like impetigo, infected cuts, and scratches.</p>",
+    "suitableFor": [
+      "Adults and Children Over 2 Years: This cream is designed for use in individuals aged two and older who are experiencing inflammatory skin conditions with bacterial infections.",
+      "Individuals with Inflammatory Skin Conditions: It is particularly effective for those suffering from:",
+      "Eczema complicated by bacterial infections",
+      "Dermatitis, including contact dermatitis and seborrheic dermatitis",
+      "Psoriasis with secondary bacterial infections",
+      "Patients Requiring Dual Action Treatment: Those who need both anti-inflammatory and antibacterial treatment for skin conditions will benefit from the combination of Mometasone Furoate and Fusidic Acid.",
+      "Not Suitable For:",
+      "Individuals with viral or fungal skin infections.",
+      "Children under the age of 2 without prior medical advice.",
+      "People who have shown hypersensitivity or allergic reactions to any of the components of the cream."
+    ],
+    "dosage": [
+      "Apply a thin layer of Mometasone Furoate IP 0.1% & Fusidic Acid IP 2% Cream to the affected area of the skin once or twice daily, as directed by a healthcare professional."
+    ],
+    "cautions": [
+      "Prolonged Use: Avoid prolonged use of the cream unless advised by a healthcare professional, as long-term application can lead to skin thinning or other side effects.",
+      "Application on Broken Skin: Do not apply the cream to broken, damaged skin, or open wounds to prevent irritation or worsening of the condition.",
+      "Avoid Contact with Sensitive Areas: Take care to avoid contact with the eyes, nose, and mouth. If accidental contact occurs, rinse thoroughly with water.",
+      "Monitor for Allergic Reactions: Discontinue use and consult a doctor if any signs of allergic reaction or skin irritation occur, such as rash, itching, or redness that worsens.",
+      "Not for Viral or Fungal Infections: This cream is not suitable for treating viral or fungal skin infections. Use only for the specific conditions indicated.",
+      "Children Under 2 Years: Use in children under the age of 2 should only be under medical supervision."
+    ],
+    "benefits": [
+      "Dual Action Formula: Combines the anti-inflammatory effects of Mometasone Furoate with the antibacterial properties of Fusidic Acid, providing effective treatment for inflammatory skin conditions complicated by bacterial infections.",
+      "Reduces Symptoms Quickly: Provides rapid relief from symptoms such as redness, swelling, itching, and discomfort associated with skin conditions.",
+      "Effective for Multiple Conditions: Suitable for treating various skin ailments, including eczema, dermatitis, and psoriasis with bacterial superinfection.",
+      "Easy Application: The cream is easy to apply, allowing for localized treatment of affected areas without the need for additional dressings or bandages.",
+      "Improves Skin Health: By reducing inflammation and fighting bacterial infection, this cream helps restore healthy skin and improves overall skin appearance."
+    ],
+    "sideEffects": [
+      ""
+    ],
+    "productInfo": "Brand: DavaIndia\nProduct Name: Davamon F Cream\nFormulation Type: Topical Cream\nActive Ingredients:\nMometasone Furoate (0.1%): A potent corticosteroid used to reduce inflammation, redness, and itching.\nFusidic Acid (2%): n antibiotic effective against bacterial infections, particularly skin infections caused by Staphylococcus bacteria.\nShelf Life: 24 months from the date of manufacture\nStorage Conditions: Store in a cool, dry place. Avoid direct sunlight. Keep out of reach of children. Do not refrigerate.\n",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Den Mark Pharmaceuticals Pvt Ltd\n",
+    "packagedByInfo": "Den Mark Pharmaceuticals Pvt Ltd\n",
+    "title": "Davamom-F Cream",
+    "compositions": "Mometasone Furoate IP 0.1% & Fusidic Acid IP 2% Cream",
+    "sku": "3258",
+    "finalPrice": 62,
+    "thumbnail": "https://media.davaindia.com/davaindia/PI5MnWgMabz6TDUg8qQrg-image-1737712236659-2ewxj.png",
+    "brandTags": [
+      "Fusiderm-M",
+      "Fusibet-M",
+      "Mometasone",
+      "Mome",
+      "Momoz F",
+      "Mfsudif",
+      "Fusiwal M",
+      "Momerex F",
+      "Motimesh SF",
+      "Momalin F",
+      "Ezimet F",
+      "Metobind F"
+    ]
+  },
+  {
+    "info": "<p>Baby Lotion is a specially crafted lotion designed for delicate baby skin, ensuring it stays soft, smooth, and hydrated throughout the day. This gentle, nourishing lotion is made with natural oils and herbal extracts, which work together to provide a protective barrier for your baby’s sensitive skin, leaving it moisturized and calm</p><p><strong>USES:</strong></p><p>Gentle &amp; Safe for Baby Skin: Specially formulated for babies, the lotion is free from artificial fragrances, colors, and harmful chemicals, ensuring it’s gentle and non-irritating.</p><p>Hydrating: Keeps baby’s skin soft and moisturized, preventing dryness and ensuring smooth, healthy skin.</p><p>Soothing &amp; Calming: Contains ingredients like aloe vera that soothe and calm baby’s sensitive skin.</p><p>Mild Fragrance: Offers a light, natural fragrance that keeps your baby smelling fresh, without overwhelming their senses.</p>",
+    "suitableFor": [
+      "Newborns and Infants: Safe and gentle enough for use on newborns and babies with sensitive skin.",
+      "Toddlers and Young Children: Ideal for keeping the skin soft, supple, and hydrated as children grow.",
+      "Sensitive Skin: The natural ingredients make it suitable for children with sensitive or easily irritated skin."
+    ],
+    "dosage": [
+      "Recommended Dosage: Apply a small amount of lotion as needed.",
+      "Application Instructions:",
+      "Take a small amount of lotion on your palms.",
+      "Gently massage onto baby’s skin, especially after a bath, or whenever the skin feels dry.",
+      "Focus on areas that tend to get dry, such as elbows, knees, and cheeks.",
+      "Frequency: Use daily or as required to keep baby’s skin soft and moisturized."
+    ],
+    "cautions": [
+      "Avoid Contact with Eyes: If contact with the eyes occurs, rinse immediately with water.",
+      "Patch Test Recommended: For very sensitive skin, perform a patch test by applying a small amount of lotion on a small skin area and checking for any irritation after 24 hours.",
+      "External Use Only: This lotion is for external application only. Do not ingest.",
+      "Keep Out of Reach of Children: Store the bottle safely to avoid accidental ingestion or spills."
+    ],
+    "benefits": [
+      "Deeply Moisturizes and Nourishes: The lotion keeps baby’s skin hydrated, soft, and smooth throughout the day, preventing dryness and irritation.",
+      "Gentle and Safe Formula: Made with natural, skin-friendly ingredients free from parabens, sulfates, and other harsh chemicals, making it safe for daily use on delicate skin.",
+      "Soothes and Calms: Helps soothe minor skin irritations and provides a calming, light fragrance that’s comforting for babies.",
+      "Quick Absorption: Lightweight and non-greasy, it absorbs quickly without leaving a sticky residue.",
+      "Supports Skin Barrier: Helps strengthen and protect the natural skin barrier, essential for healthy and resilient baby skin."
+    ],
+    "sideEffects": [
+      "Potential allergic reactions",
+      "Skin irritation in rare cases"
+    ],
+    "productInfo": "Baby Lotion (100ml) by Khadi-Davaindia is formulated with natural ingredients to provide gentle care for your baby's skin.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Everyday Herbal Beauty care\n",
+    "packagedByInfo": "Everyday Herbal Beauty care",
+    "directionsForUse": "Apply a small amount to your baby's skin and gently massage in until fully absorbed. Use daily or as often as needed.",
+    "title": "Baby Lotion",
+    "compositions": "Baby Lotion (100ml) (Khadi-Davaindia)",
+    "sku": "3280",
+    "finalPrice": 80,
+    "thumbnail": "https://media.davaindia.com/davaindia/iC8ITfrEyuJK5XLrmLhPP-1004.JPG",
+    "brandTags": [
+      "Baby Lotion",
+      "Baby",
+      "Himalaya Baby Lotion",
+      "Johnson’s Baby Lotion",
+      "Sebamed Baby Lotion"
+    ]
+  },
+  {
+    "info": "<p>This combination medication of Rabeprazole Sodium and Domperidone is primarily used for the treatment of gastroesophageal reflux disease (GERD), acid reflux, and gastroparesis. The sustained release formulation ensures a controlled release of the active ingredients, providing long-lasting relief from symptoms of acid-related gastrointestinal disorders</p><h3><strong>Uses of Rabeprazole Sodium 40 mg &amp; Domperidone 30 mg (SR) Capsules:</strong></h3><p>Gastroesophageal Reflux Disease (GERD): Helps manage the symptoms of GERD, such as heartburn, regurgitation, and acid irritation in the esophagus.</p><p>Acid Peptic Disorders: Treats acid-induced stomach problems, such as gastric ulcers and duodenal ulcers, by reducing stomach acid.</p><p>Gastroparesis: Effective for conditions like gastroparesis, where delayed gastric emptying causes nausea, vomiting, and bloating.</p>",
+    "suitableFor": [
+      "Adults",
+      "Patients with gastroesophageal reflux disease",
+      "Individuals with dyspepsia"
+    ],
+    "dosage": [
+      "One capsule daily, before meals",
+      "Do not exceed the recommended dosage unless directed by a physician"
+    ],
+    "cautions": [
+      "Consult a doctor before use if pregnant or breastfeeding",
+      "Not recommended for individuals with liver problems",
+      "Avoid in patients with known hypersensitivity to either component"
+    ],
+    "benefits": [
+      "Reduces stomach acid production",
+      "Promotes quicker gastric emptying",
+      "Helps alleviate symptoms of nausea and vomiting",
+      "Provides relief from heartburn and acid reflux"
+    ],
+    "sideEffects": [
+      "Headache",
+      "Dry mouth",
+      "Diarrhea",
+      "Dizziness",
+      "Abdominal pain"
+    ],
+    "productInfo": "Davazole DSR 40/30 Capsule contains Rabeprazole sodium IP 40 mg and Domperidone IP 30 mg in a sustained-release formulation. It is designed for effective management of acid-related stomach disorders.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Sarv Pharma\n",
+    "packagedByInfo": "Sarv Pharma\n",
+    "directionsForUse": "Take one capsule of Davazole DSR 40/30 before a meal. Swallow the capsule whole with water, do not chew or crush. Follow the doctor’s instructions for duration of treatment.",
+    "title": "Davazole DSR",
+    "compositions": "Rabeprazole sodium IP 40 mg & Domperidone Ip 30 mg (SR) Cap.",
+    "sku": "2992",
+    "finalPrice": 37.5,
+    "thumbnail": "https://media.davaindia.com/davaindia/TCsxbRiKFu2nv1fMRJ0uL-image-1737712326923-t7wk2.png",
+    "brandTags": [
+      "Razo-D",
+      "Rabimac-D",
+      "Rabdom",
+      "Raberid-D",
+      "Acid-RD",
+      "Rabeprazole",
+      "Rabeprazole sodium",
+      "R-Cid-Plus",
+      "Zomitac-DSR",
+      "Pepcia-D",
+      "ROLL-D",
+      "RAP-D",
+      "RABERA-DSR",
+      "Rabitara-DSR",
+      "KURAB-DSR",
+      "RPRAZ-D",
+      "R-DSR",
+      "Rabifast-DSR",
+      "HAPPI-D",
+      "Happi-D SR",
+      "Pepzer-D",
+      "Rabip DSR",
+      "RABEHELP-DSR",
+      "Rabter-SR",
+      "Inorab-D"
+    ]
+  },
+  {
+    "info": "<p>Atorvastatin 80 mg is a statin medication used primarily to lower cholesterol levels and reduce the risk of heart disease. It is commonly prescribed to individuals with high cholesterol or hyperlipidemia to help manage and prevent cardiovascular problems such as heart attack, stroke, and coronary artery disease. Atorvastatin works by inhibiting an enzyme called HMG-CoA reductase, which plays a central role in the production of cholesterol in the liver.</p><h3><strong>Uses of Atorvastatin 80 mg:</strong></h3><p>Hyperlipidemia (High Cholesterol): Used to treat high cholesterol, particularly high levels of LDL cholesterol, to reduce the risk of heart disease.</p><p>Cardiovascular Disease Prevention: Prescribed for individuals at high risk of cardiovascular diseases (heart attack, stroke) to prevent these events, even if cholesterol levels are not excessively high.</p><p>Post-Heart Attack or Stroke Management: Used after a heart attack or stroke to lower the risk of recurrence.</p>",
+    "suitableFor": [
+      "Adults",
+      "Patients with high cholesterol",
+      "Individuals at risk of heart disease"
+    ],
+    "dosage": [
+      "1 tablet daily",
+      "To be taken at the same time each day"
+    ],
+    "cautions": [
+      "Consult a doctor if you are pregnant or breastfeeding",
+      "Not recommended for patients with liver diseases",
+      "Use with caution in patients with a history of muscle disorders",
+      "SCHEDULE H PRESCRIPTION DRUG  To be sold by retail on the prescription of a Registered  Medical Practitioner only."
+    ],
+    "benefits": [
+      "Lowers LDL cholesterol",
+      "Increases HDL cholesterol",
+      "Reduces the risk of heart attack and stroke"
+    ],
+    "sideEffects": [
+      "Muscle pain",
+      "Abdominal pain",
+      "Nausea",
+      "Headache",
+      "Constipation"
+    ],
+    "productInfo": "Each tablet contains 80 mg of Atorvastatin, which is an HMG-CoA reductase inhibitor that plays a critical role in lowering cholesterol levels.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Nest Healthcare\n",
+    "packagedByInfo": "Nest Healthcare\n",
+    "directionsForUse": "Take one tablet daily, preferably in the evening, with or without food. Follow your doctor’s advice regarding dosage and duration.",
+    "title": "Atorvastatin 80mg Tablet",
+    "compositions": "Atorvastatin 80Mg",
+    "sku": "3893",
+    "finalPrice": 67,
+    "thumbnail": "https://media.davaindia.com/davaindia/m_qHVylRnLTjKIwTyaRm0-image-1737712449326-2o24t8.png",
+    "brandTags": [
+      "Lipitor",
+      "Atorva",
+      "Rosuvas",
+      "Atorlip",
+      "Aztor",
+      "Atorvastatin",
+      "Storvas",
+      "Tonact 80",
+      "Atocor 80",
+      "Atorica 80",
+      "Atorlip 80",
+      "Atorsave 80",
+      "Atorva 80",
+      "Aztor 80",
+      "Lipicure 80",
+      "Lipitab 80",
+      "Modlip 80",
+      "Stator 80",
+      "Avas 80",
+      "Danavish 80"
+    ]
+  },
+  {
+    "info": "<p>Soap Milky Saffron is a premium quality soap designed to nourish and rejuvenate the skin with the goodness of saffron.</p><h3><strong>Uses of Milky Saffron Soap (Medicinal/Skincare Benefits</strong>):</h3><p>Skin Whitening and Brightening: As mentioned, saffron is well-known for its ability to help lighten the skin. It reduces the appearance of dark spots, acne scars, and uneven skin tones, promoting a brighter complexion.</p><p>Acne Treatment: Due to the antibacterial and antiseptic properties of saffron and milk, Milky Saffron soap can help reduce acne outbreaks. It helps keep the skin clean and free from bacteria that can cause pimples or breakouts.</p><p>Anti-Aging: The antioxidants in saffron may protect the skin from aging signs by reducing wrinkles, fine lines, and sagging, helping the skin maintain a youthful appearance.</p>",
+    "suitableFor": [
+      "All skin types",
+      "Dry skin",
+      "Sensitive skin"
+    ],
+    "dosage": [
+      "Use twice daily for best results",
+      "Apply to damp skin and lather"
+    ],
+    "cautions": [
+      "For external use only",
+      "Avoid contact with eyes",
+      "Discontinue use if irritation occurs"
+    ],
+    "benefits": [
+      "Moisturizes the skin",
+      "Improves skin texture",
+      "Promotes a radiant complexion"
+    ],
+    "sideEffects": [
+      "Mild irritation in sensitive individuals",
+      "Possible allergic reactions"
+    ],
+    "productInfo": "Soap Milky Saffron (75 gm) is packaged in a convenient pouch pack, maintaining the purity and efficacy of its ingredients.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Everyday Herbal Beauty care\n",
+    "packagedByInfo": "Everyday Herbal Beauty care\n",
+    "directionsForUse": "Wet the skin, apply the soap, and gently massage to create lather. Rinse thoroughly with water.",
+    "title": "Soap Milky Saffron Soap",
+    "compositions": "Soap Milky Saffron (75 gm) - Pouch Pack",
+    "sku": "4438",
+    "finalPrice": 20,
+    "thumbnail": "https://media.davaindia.com/davaindia/LVuGOji6G9UK_eaajqwmu-image-1737711876645-22aa0h.png",
+    "brandTags": [
+      "Himalaya Herbals",
+      "Cinthol",
+      "Lever Ayush",
+      "Patanjali",
+      "Soap",
+      "Soap Milky",
+      "Preona Saffron Goatmilk Soap",
+      "Raw Organics Turmeric Saffron Milky Bathing Bar",
+      "Suffuse Soaps",
+      "Lalas Herbal Saffron Milk Handmade Soap",
+      "Almond Milk Saffron Soap"
+    ]
+  },
+  {
+    "info": "<p><strong>Atorvastatin 80 mg tablet</strong> is a medication used to lower cholesterol levels in the blood. It is part of a class of drugs known as <strong>statins</strong>, which work by inhibiting an enzyme in the liver that is responsible for producing cholesterol.</p>",
+    "suitableFor": [
+      "Adults with high cholesterol",
+      "Patients at risk of heart attack or stroke",
+      "Individuals with a family history of cardiovascular diseases"
+    ],
+    "dosage": [
+      "Take one capsule daily or as prescribed by a physician.",
+      "Do not exceed the recommended dosage."
+    ],
+    "cautions": [
+      "Consult a doctor before use if you have liver disease.",
+      "Use with caution in patients with a history of gastrointestinal bleeding.",
+      "Not recommended for pregnant or breastfeeding women.",
+      "SCHEDULE H PRESCRIPTION DRUG  To be sold by retail on the prescription of a Registered  Medical Practitioner only."
+    ],
+    "benefits": [
+      "Helps lower LDL cholesterol levels.",
+      "Reduces the risk of heart attack and stroke.",
+      "Anti-inflammatory properties of aspirin may improve cardiovascular health."
+    ],
+    "sideEffects": [
+      "Nausea",
+      "Headache",
+      "Dizziness",
+      "Gastrointestinal discomfort",
+      "Allergic reactions"
+    ],
+    "productInfo": "",
+    "sellerInfo": "zota health care",
+    "manufacturerInfo": "Weldew Remedies\n",
+    "packagedByInfo": "Weldew Remedies\n",
+    "directionsForUse": "Swallow the capsule whole with a glass of water. It can be taken with or without food. Follow your doctor's instructions for best results.",
+    "title": "Atorvastatin 10mg & Aspirin 150mg Capsule",
+    "compositions": "Atorvastatin 10mg & Aspirin 150mg",
+    "sku": "3576",
+    "finalPrice": 22.5,
+    "thumbnail": "https://media.davaindia.com/davaindia/3MMolZcFHHwn4TCnbJ1VO-image-1740132806980-20vmeb.png",
+    "brandTags": [
+      "Atorvastatin 10mg",
+      "Atorva",
+      "Atovastrin AV 150",
+      "Ecosprin AV 150",
+      "Atortest ASP",
+      "STATOR ASP 150",
+      "TONACT ASP 150",
+      "ATORVA ASP 150",
+      "ECOSPRIN AV 150",
+      "LIPICURE AS 150",
+      "ATORPIL A 150",
+      "ATORSIA ASP 150",
+      "ATCHOL ASP 10/150",
+      "AZTOR ASP 150"
+    ]
+  },
+  {
+    "info": "<p>Cough Drops (Coolsa) - JAR is designed to provide soothing relief for coughs and sore throats. The formulation includes menthol for a cooling effect.</p>",
+    "suitableFor": [
+      "Adults",
+      "Children over 6 years",
+      "Individuals with a cough or sore throat"
+    ],
+    "dosage": [
+      "Suck one drop every 2 hours as needed",
+      "Do not exceed 10 drops in 24 hours"
+    ],
+    "cautions": [
+      "Consult a doctor if symptoms persist",
+      "Keep out of reach of children",
+      "Do not use if allergic to any of the ingredients"
+    ],
+    "benefits": [
+      "Provides fast relief from cough",
+      "Soothes sore throats",
+      "Cooling menthol effect"
+    ],
+    "sideEffects": [
+      "Mild gastrointestinal discomfort",
+      "Allergic reactions in sensitive individuals"
+    ],
+    "productInfo": "Cough Drops (Coolsa) - JAR contains a unique blend of ingredients for effective relief from cough and throat irritation. Each jar contains 30 drops.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Sweet King India LLP\n",
+    "packagedByInfo": "Sweet King India LLP\n",
+    "directionsForUse": "Take the cough drop and allow it to dissolve slowly in the mouth. Do not chew or swallow whole.",
+    "title": "Cough Drops (Coolsa) - JAR",
+    "compositions": "Cough Drops Nutravedic",
+    "sku": "3688",
+    "finalPrice": 200,
+    "thumbnail": "https://media.davaindia.com/davaindia/iGyBBc1Z478GTAcx2BSPW-1014.JPG",
+    "brandTags": [
+      "Cough",
+      "Cough Drops"
+    ]
+  },
+  {
+    "info": "<p>Baby Wet Towels are specially designed gentle wipes that are perfect for cleaning your baby’s skin. These wipes are typically alcohol-free, hypoallergenic, and made with natural ingredients to ensure that they are safe for your baby’s delicate skin. Ideal for on-the-go cleaning, diaper changes, or simply refreshing your baby’s face and hands, baby wet towels are a must-have in every diaper bag.</p><h3><strong>Uses of Baby Wet Towel:</strong></h3><ol><li>Diaper Changes: Ideal for cleaning your baby during diaper changes to maintain cleanliness and prevent diaper rash.</li><li>Face and Hand Cleaning: Gently wipe away dirt and food from your baby’s hands and face without irritation.</li><li>On-the-Go: Perfect for wiping your baby’s skin while traveling, at the park, or any time when a water source isn’t available.</li><li>Refreshing Your Baby: Helps freshen your baby’s skin, especially in warm weather, when they may get sweaty.</li></ol>",
+    "suitableFor": [
+      "Infants",
+      "Toddlers",
+      "Children"
+    ],
+    "dosage": [
+      "Use as needed for cleaning",
+      "Single use only"
+    ],
+    "cautions": [
+      "Avoid contact with eyes",
+      "Do not flush down the toilet",
+      "Keep out of reach of children"
+    ],
+    "benefits": [
+      "Gentle on baby's skin",
+      "Hypoallergenic and alcohol-free",
+      "Convenient for on-the-go cleaning",
+      "Soothes and moisturizes"
+    ],
+    "sideEffects": [
+      "May cause irritation in rare cases",
+      "Discontinue use if rash occurs"
+    ],
+    "productInfo": "Each pack contains 80 soft and durable wet wipes, formulated to provide a safe and effective cleaning experience for your baby.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Novel Tissues\n",
+    "packagedByInfo": "Novel Tissues\n",
+    "directionsForUse": "Pull out a single wet wipe and gently clean the desired area. Ensure to reseal the pack to retain moisture.",
+    "title": "Baby Wet Wipes",
+    "compositions": "Baby Wet Towel",
+    "sku": "4176",
+    "finalPrice": 95,
+    "thumbnail": "https://media.davaindia.com/davaindia/TAXEGTAxnFNar0nzY-4lC-1034.JPG",
+    "brandTags": [
+      "Baby",
+      "Bab"
+    ]
+  },
+  {
+    "info": "<p>Glimepiride 2 mg, Voglibose 0.2 mg, and Metformin 500 mg (SR) is a combination medication used to manage type 2 diabetes. This combination provides a comprehensive approach to controlling blood sugar levels through the actions of three different components, each targeting a unique aspect of blood sugar regulation</p><h3><strong>Uses of Glimepiride 2 mg, Voglibose 0.2 mg, and Metformin 500 mg (SR):</strong></h3><p>Management of Type 2 Diabetes:</p><p>This combination medication is used for people with type 2 diabetes mellitus who cannot achieve adequate blood sugar control with diet and exercise alone. It works by improving insulin secretion, reducing glucose production in the liver, and preventing post-meal blood sugar spikes.</p><p>Lowering Blood Sugar Levels:</p><p>Helps reduce both fasting blood sugar levels and postprandial (after meal) blood sugar levels through a combination of mechanisms.</p><p>Preventing Diabetes Complications:</p><p>By controlling blood sugar levels effectively, this combination helps prevent complications of diabetes such as neuropathy, retinopathy, kidney disease, and heart disease.</p>",
+    "suitableFor": [
+      "Adults with type 2 diabetes",
+      "Patients requiring blood glucose control",
+      "Individuals with insulin resistance"
+    ],
+    "dosage": [
+      "One tablet taken orally once daily or as directed by a physician",
+      "Do not exceed the recommended dosage"
+    ],
+    "cautions": [
+      "Not suitable for individuals with type 1 diabetes",
+      "Use with caution in patients with liver or kidney disease",
+      "Consult a healthcare professional before use in pregnant or breastfeeding women"
+    ],
+    "benefits": [
+      "Helps in controlling blood sugar levels",
+      "May improve insulin sensitivity",
+      "Convenient tablet form for easy administration"
+    ],
+    "sideEffects": [
+      "Nausea",
+      "Headache",
+      "Diarrhea",
+      "Dizziness",
+      "Hypoglycemia"
+    ],
+    "productInfo": "Davapride 2/0.2 VMF Tablet  is packaged in a blister pack containing 15 tablets, ensuring easy dosage and storage.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Bioaltus Pharmaceuticals\n",
+    "packagedByInfo": "Bioaltus Pharmaceuticals\n",
+    "directionsForUse": "Take one tablet daily with a glass of water, preferably before meals. Follow the physician's instructions for dosage adjustment.",
+    "title": "Davapride 2/0.2 VMF Tablet",
+    "compositions": "Glimepiride 2mg & Voglibose 0.2mg & Metformin 500mg (SR)",
+    "sku": "3782",
+    "finalPrice": 45,
+    "thumbnail": "https://media.davaindia.com/davaindia/irbFXIPUUxnqarmQYtU9r-1036.JPG",
+    "brandTags": [
+      "Glycomet GV 2",
+      "Glucored-GM",
+      "Glyciphage GV 2",
+      "Metglin-GV",
+      "Metglow GV",
+      "Glimevog-M",
+      "Glimepiride",
+      "Glimepiride 2mg",
+      "Glycomet Trio",
+      "Glimisave MV",
+      "Glucoryl-MV",
+      "Gluconorm-VG",
+      "Voglistar GM",
+      "Amaryl MV",
+      "Voglimac GM",
+      "Volix Trio",
+      "Trivoglitor",
+      "Vogli-GM",
+      "Glyciphage-VG",
+      "Voglinorm GM",
+      "Glisen VM",
+      "Trivogo"
+    ]
+  },
+  {
+    "info": "<p>The Body Weight Scale - Digital is a precise and easy-to-use device designed for accurate weight measurement.</p>",
+    "suitableFor": [
+      "Individuals monitoring weight loss or gain",
+      "Fitness enthusiasts",
+      "Healthcare facilities"
+    ],
+    "dosage": [
+      ""
+    ],
+    "cautions": [
+      "Ensure the scale is placed on a flat surface for accurate readings.",
+      "Do not use if the scale is damaged or malfunctioning."
+    ],
+    "benefits": [
+      "Provides accurate weight readings",
+      "Easy to read digital display",
+      "Lightweight and portable design"
+    ],
+    "sideEffects": [
+      ""
+    ],
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "E.G. KANTAWALLA PRIVATE LIMITED",
+    "packagedByInfo": "E.G. KANTAWALLA PRIVATE LIMITED",
+    "directionsForUse": "Step onto the scale with bare feet, ensuring your weight is evenly distributed. Wait for the display to stabilize before reading your weight.",
+    "title": "Body Weight Scale - Digital",
+    "compositions": "Body Weight Scale",
+    "sku": "3398",
+    "finalPrice": 600,
+    "thumbnail": "https://media.davaindia.com/davaindia/igItp0F-Ai9VtB8H0nF6T-3398-3.jpg",
+    "brandTags": [
+      "Body",
+      "Body Wei"
+    ]
+  },
+  {
+    "info": "<p>Ferrous Fumarate 152 mg, Folic Acid 750 mcg, and Zinc Sulphate Monohydrate 61.8 mg is a combination supplement commonly prescribed to address iron deficiency anemia, folate deficiency, and to support overall immune health and cellular function. This combination is particularly beneficial for individuals with deficiencies in iron, folic acid, and zinc, or for those at risk of these deficiencies due to poor diet, pregnancy, or other health conditions.</p><h3><strong>Uses of Ferrous Fumarate, Folic Acid, and Zinc Sulphate:</strong></h3><p>Iron Deficiency Anemia:</p><p>This combination is primarily used to treat and prevent iron deficiency anemia, a condition where the body does not have enough iron to produce healthy red blood cells.</p><p>Support During Pregnancy:</p><p>The combination is commonly prescribed during pregnancy to prevent and treat iron, folate, and zinc deficiencies, which are essential for both maternal health and fetal development.</p><p>General Health and Wellness:</p><p>The combination of iron, folic acid, and zinc helps promote overall health, particularly in people who have deficiencies in these nutrients due to poor diet, malabsorption disorders, or specific health conditions.</p>",
+    "suitableFor": [
+      "Pregnant women",
+      "Individuals with anemia",
+      "People with nutritional deficiencies"
+    ],
+    "dosage": [
+      "One tablet daily or as directed by a healthcare practitioner"
+    ],
+    "cautions": [
+      "Consult a doctor before use if pregnant or nursing",
+      "Do not exceed the recommended dosage",
+      "Store in a cool, dry place away from children"
+    ],
+    "benefits": [
+      "Supports healthy red blood cell formation",
+      "Enhances iron absorption",
+      "Contributes to normal immune function",
+      "Promotes healthy fetal development during pregnancy"
+    ],
+    "sideEffects": [
+      "Nausea",
+      "Constipation",
+      "Diarrhea",
+      "Stomach upset",
+      "Allergic reactions in rare cases"
+    ],
+    "productInfo": "Each Davagen Z Tablet contains 152mg of Ferrous Fumarate, 750mcg of Folic Acid, and 61.8mg of Zinc Sulphate Monohydrate, providing essential nutrients to support health.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "lucent Biotech\n",
+    "packagedByInfo": "lucent Biotech\n",
+    "directionsForUse": "Take one tablet daily with a meal or as directed by your healthcare provider to ensure optimal absorption and minimize stomach discomfort.",
+    "title": "Davagen Z Tablet",
+    "compositions": "Ferrous Fumarate 152mg & Folic Acid 750mcg & Zinc Sulphate Monohydrate 61.8mg",
+    "sku": "2368",
+    "finalPrice": 19,
+    "thumbnail": "https://media.davaindia.com/davaindia/-Ecoc3JRpQVNeP5dqn0ZD-1045.JPG",
+    "brandTags": [
+      "Voveran Plus",
+      "Combiflam",
+      "Diclomol",
+      "Voveran DS",
+      "Ferrous Fumara",
+      "Ferrous Fumarate 152mg",
+      "Diofer-Z",
+      "RxLivogen-Z",
+      "RxIronize XT",
+      "RxFerrogen Z",
+      "RxFolfee Z Tr",
+      "RxTonofolic Z",
+      "RxNori",
+      "RxAvefer",
+      "RxFFZ",
+      "RxRedfol-Z",
+      "Haem UP-Z"
+    ]
+  },
+  {
+    "info": "<p>Cilnidipine is a calcium channel blocker (CCB) used primarily for the treatment of hypertension (high blood pressure). It is an effective medication that helps to lower blood pressure by relaxing and dilating blood vessels, which improves blood flow and reduces the workload on the heart.</p><h3><strong>Uses of Cilnidipine 5 mg:</strong></h3><p>Hypertension (High Blood Pressure):</p><p>Cilnidipine is primarily used to treat high blood pressure (hypertension). By lowering blood pressure, Cilnidipine helps to reduce the risk of complications like stroke, heart attack, and kidney damage.</p><p>Hypertension in Patients with Diabetes or Renal Disease:</p><p>Cilnidipine has shown benefits in patients with diabetes or chronic kidney disease as it can help protect the kidneys and blood vessels. It is often preferred in patients with these comorbidities due to its dual action.</p>",
+    "suitableFor": [
+      "Adults with hypertension",
+      "Patients requiring blood pressure management"
+    ],
+    "dosage": [
+      "One tablet daily or as prescribed by a physician",
+      "Do not exceed the recommended daily dosage"
+    ],
+    "cautions": [
+      "Monitor blood pressure regularly",
+      "Not suitable for patients with severe aortic stenosis",
+      "Consult a doctor if you have liver or kidney issues"
+    ],
+    "benefits": [
+      "Helps in reducing blood pressure",
+      "Improves endothelial function",
+      "May reduce the risk of cardiovascular events"
+    ],
+    "sideEffects": [
+      "Headache",
+      "Dizziness",
+      "Swelling of ankles or feet",
+      "Flushes"
+    ],
+    "productInfo": "Each tablet contains 5 mg of Cilnidipine. Available in a blister pack of 10 tablets.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Logos Pharma\n",
+    "packagedByInfo": "Logos Pharma\n",
+    "directionsForUse": "Take one tablet orally with water, preferably at the same time each day for best results.",
+    "title": "Cilnidipine Tablet 5mg",
+    "compositions": "Cilnidipine Ip 5Mg",
+    "sku": "3874",
+    "finalPrice": 14,
+    "thumbnail": "https://media.davaindia.com/davaindia/sXwzrXCYq8BLcpZP-3JrJ-1054.JPG",
+    "brandTags": [
+      "Cilacar 5mg",
+      "Cilnova 5mg",
+      "Cilnid 5mg",
+      "Cilnicor 5mg",
+      "Cilca 5mg",
+      "Clonidipine 5mg",
+      "Cilnidipi",
+      "Cilacar 5",
+      "Torcilin 5",
+      "Cilday 5",
+      "Ciladuo 5",
+      "Rancil 5",
+      "Twincal 5",
+      "Cilnikem 5",
+      "Cildip 5",
+      "Cilnipres 5",
+      "Cilovas 5",
+      "Cetanil 5",
+      "Cilniblu 5",
+      "CILNY 5",
+      "CINOD 5",
+      "MYOCIL 5",
+      "CILINITAB 5"
+    ]
+  },
+  {
+    "info": "<p>Dapagliflozin 10 mg &amp; Teneligliptin 20 mg is a combination tablet used primarily for the treatment of type 2 diabetes mellitus. This combination helps manage blood glucose levels by using two different mechanisms of action to lower blood sugar.</p><h3><strong>Uses of Dapagliflozin 10 mg &amp; Teneligliptin 20 mg Tablet:</strong></h3><p>Management of Type 2 Diabetes:</p><p>This combination is used to manage type 2 diabetes mellitus in patients whose blood sugar levels are not adequately controlled by diet, exercise, or other medications. The combination helps reduce both fasting blood glucose and post-meal blood sugar.</p><p>Improving Glycemic Control:</p><p>Dapagliflozin and Teneligliptin work together to improve overall blood glucose control by using different mechanisms to lower blood sugar levels, providing a more comprehensive approach to diabetes management.</p>",
+    "suitableFor": [
+      "Adults with type 2 diabetes",
+      "Patients needing blood sugar control"
+    ],
+    "dosage": [
+      "One tablet once daily, preferably before a meal",
+      "Follow healthcare provider's instructions regarding dosage adjustment"
+    ],
+    "cautions": [
+      "Not suitable for individuals with type 1 diabetes",
+      "Use with caution in patients with renal impairment",
+      "Monitor for signs of dehydration"
+    ],
+    "benefits": [
+      "Helps control blood sugar levels",
+      "May reduce the risk of cardiovascular events",
+      "Convenient once-daily dosage"
+    ],
+    "sideEffects": [
+      "Hypoglycemia",
+      "Urinary tract infections",
+      "Increased urination",
+      "Nausea or vomiting"
+    ],
+    "productInfo": "Dapagliflozin 10 mg & Teneligliptin 20 mg Tablet combines the effects of two antidiabetic agents to improve glycemic control.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Mascot Health Series\n",
+    "packagedByInfo": "Mascot Health Series\n",
+    "directionsForUse": "Take one tablet daily, with or without food, as directed by your healthcare provider.",
+    "title": "Dapagliflozin 10mg & Teneligliptin 20mg Tablet",
+    "compositions": "Dapagliflozin 10mg & Teneligliptin 20mg",
+    "sku": "3579",
+    "finalPrice": 56,
+    "thumbnail": "https://media.davaindia.com/davaindia/Q5ySW6EytAWp7PncoxolN-1057.JPG",
+    "brandTags": [
+      "Forxiga-T",
+      "TenliFLO",
+      "Dapten",
+      "Dafen",
+      "Dapgle",
+      "Dapagliflozin",
+      "Dapag",
+      "Zita-D",
+      "DOPFLIZN-TG",
+      "Zita DM"
+    ]
+  },
+  {
+    "info": "<p>Amlodipine 10 mg tablet is a medication commonly used to treat high blood pressure (hypertension) and certain types of chest pain (angina). It belongs to a class of drugs known as calcium channel blockers.</p><p>Primarily prescribed to manage high blood pressure (hypertension) and certain types of chest pain (angina). It helps relax blood vessels, improving blood flow and reducing the heart’s workload. Amlodipine 10 mg Tablet may be prescribed alone or along with other medicines. The dose depends on what you are taking it for and the severity of your condition. You can take it at any time of the day, with or without food, but it is best to take it at about the same time each day. You should take this medicine for as long as it is prescribed for you. Even if you feel well, do not stop this medicine on your own because high blood pressure often has no symptoms. If you stop taking it, your condition may get worse. Keeping yourself active with regular exercise, managing your weight, and eating a healthy diet will also help control your blood pressure.</p><h3><strong>Uses of Amlodipine 10 mg:</strong></h3><p>Hypertension (High Blood Pressure):</p><p>Amlodipine is widely used to treat high blood pressure by helping to relax the blood vessels, thereby lowering systolic and diastolic blood pressure and reducing the overall workload on the heart.</p><p>Angina Pectoris:</p><p>Amlodipine is also used to prevent and manage angina (chest pain) caused by reduced blood flow to the heart. It helps improve oxygen delivery to the heart and relieves the discomfort associated with angina.</p>",
+    "suitableFor": [
+      "Adults with high blood pressure (hypertension) to help lower blood pressure and reduce the risk of heart attack and stroke.",
+      "Adults with certain types of chest pain (angina) to relieve symptoms by relaxing blood vessels and improving blood flow."
+    ],
+    "dosage": [
+      "Amlodipine 10 mg"
+    ],
+    "cautions": [
+      "Caution is advised when consuming alcohol with Amlong 10 Tablet. Please consult your doctor.",
+      "Amlodipine 10 mg Tablet may be unsafe to use during pregnancy. Although there are limited studies in humans, animal studies have shown harmful effects on the developing baby. Your doctor will weigh the benefits and any potential risks before prescribing it to you. Please consult your doctor.",
+      "Amlodipine 10 mg Tablet is probably safe to use during breastfeeding. Limited human data suggests that the drug does not represent any significant risk to the baby.",
+      "Amlodipine 10 mg Tablet may cause side effects which could affect your ability to drive. Amlodipine 10 mg Tablet may cause side effects such as dizziness, headaches, nausea or tiredness, all of which could affect your ability to concentrate and drive.",
+      "Amlodipine 10 mg Tablet is safe to use in patients with kidney disease. No dose adjustment of Amlong 10 Tablet is recommended.",
+      "Amlodipine 10 mg Tablet should be used with caution in patients with liver disease. Dose adjustment of Amlong 10 Tablet may be needed. Please consult your doctor. Amlodipine 10 mg Tablet is started at a lower dose in patients with liver disease and further increased slowly with careful monitoring."
+    ],
+    "benefits": [
+      "In Prevention of Angina (heart-related chest pain)",
+      "Amlodipine 10 mg Tablet relaxes the blood vessels and improves blood flow around your body. This means that more oxygen gets to your heart and reduces the risk of getting chest pain (angina). This medicine should not be used to treat chest pain which is already happening. It is used to prevent or reduce the frequency of angina attacks. This medicine needs to be taken regularly as prescribed for it to work effectively. So, it is important to keep taking it even if you feel well and have no symptoms."
+    ],
+    "sideEffects": [
+      "Swelling of the ankles or feet (edema)",
+      "Dizziness or lightheadedness",
+      "Fatigue",
+      "Abdominal pain",
+      "Nausea"
+    ],
+    "productInfo": "Amlodipine 10 mg Tablet contains Amlodipine IP 10mg as its active ingredient, which is a calcium channel blocker effective in managing hypertension and angina.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Talent Healthcare\n",
+    "packagedByInfo": "Talent Healthcare\n",
+    "directionsForUse": "Take one tablet orally with or without food, as directed by your healthcare provider. Do not exceed the prescribed dose.",
+    "title": "Amlodipine Tablet 10mg",
+    "compositions": "Amlodipine IP 10mg",
+    "sku": "80",
+    "finalPrice": 11,
+    "thumbnail": "https://media.davaindia.com/davaindia/7K1uqyz1IRJV9-9kPW6ns-80-1(1).JPG",
+    "brandTags": [
+      "Amlong 10mg",
+      "Norvasc 10mg",
+      "Amlodac 10mg",
+      "Amlodip 10mg",
+      "Amcard 10mg",
+      "Amvas 10mg",
+      "Amlokind 10mg",
+      "Amlodipine",
+      "Amlodi",
+      "Lupidip 10",
+      "Amcard 10",
+      "Amtas 10",
+      "Amlong 10",
+      "Amlopres 10",
+      "Primodil 10",
+      "Amdepin 10",
+      "Amlokind 10",
+      "Amlovas 10",
+      "Amlip 10",
+      "Amlosafe 10",
+      "Amlogard 10",
+      "Stamlo 10",
+      "AMO 10",
+      "Amlive 10"
+    ]
+  },
+  {
+    "info": "<p>Amoxicillin 400 mg and Potassium Clavulanate 57 mg Forte Oral Solution is a combination antibiotic used to treat a wide range of bacterial infections. This combination contains amoxicillin, a penicillin-type antibiotic, and potassium clavulanate, a beta-lactamase inhibitor. The formulation is usually in liquid form (oral solution) and is commonly prescribed for pediatric or adult use when an infection is resistant to amoxicillin alone.</p><h3><strong>Uses of Amoxycillin 400 mg &amp; Potassium Clavulanate 57 mg Forte:</strong></h3><p>Bacterial Infections:</p><p>This combination is used to treat a variety of bacterial infections caused by susceptible organisms, including:</p><ul><li><p>Respiratory infections (such as sinusitis, bronchitis, and pneumonia).</p></li><li><p>Urinary tract infections (UTIs).</p></li><li><p>Ear infections (otitis media).</p></li><li><p>Skin and soft tissue infections.</p></li><li><p>Dental infections.</p></li><li><p>Gastrointestinal infections like Helicobacter pylori (which causes stomach ulcers).</p></li></ul><p></p>",
+    "suitableFor": [
+      "Adults",
+      "Children above 2 years",
+      "Patients with bacterial infections"
+    ],
+    "dosage": [
+      "Adults: 10 ml twice daily",
+      "Children: 5 ml thrice daily or as directed by a physician",
+      "Duration: Typically 5 to 14 days depending on the infection"
+    ],
+    "cautions": [
+      "Allergy to penicillin or beta-lactams",
+      "Hepatic impairment",
+      "Renal impairment",
+      "Pregnancy and lactation - consult a doctor"
+    ],
+    "benefits": [
+      "Effective against a wide range of bacterial infections",
+      "Reduces the risk of bacterial resistance by inhibiting beta-lactamase",
+      "Well tolerated by most patients"
+    ],
+    "sideEffects": [
+      "Nausea",
+      "Vomiting",
+      "Diarrhea",
+      "Rash",
+      "Allergic reactions"
+    ],
+    "productInfo": "",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Associated Biotech\n",
+    "packagedByInfo": "Associated Biotech\n",
+    "directionsForUse": "Shake well before use. Measure the prescribed amount using a measuring spoon or syringe. Take with or without food, as advised by your healthcare provider.",
+    "title": "Amoxycillin 400mg IP & Potassium Clavulanate 57mg IP Forte Oral Solution",
+    "compositions": "Amoxycillin 400mg & Clavulanate 57mg",
+    "sku": "85",
+    "finalPrice": 72,
+    "thumbnail": "https://media.davaindia.com/davaindia/x7APbB0b6sqAahQZWYMjE-85-1.JPG",
+    "brandTags": [
+      "Augmentin 625mg Forte",
+      "Clavam 625mg Forte",
+      "Amox-Clav 625mg Forte",
+      "Clavux 625mg Forte",
+      "Amo-Clav 625mg Forte",
+      "Amoxycillin",
+      "Amoxycillin 400",
+      "Sensiclav-DS",
+      "Truclave-DS"
+    ]
+  },
+  {
+    "info": "<p>Corn Caps are over-the-counter products designed to treat corns and calluses, which are thickened, hardened areas of skin that develop due to friction or pressure, usually on the feet. Corn Caps typically contain active ingredients that help soften the corn or callus, making it easier to remove. They are usually available as medicated patches or pads that are applied directly to the affected area.</p><h3><strong>Key Features of Corn Caps:</strong></h3><ul><li><p>Effective Treatment for Corns: Corn Caps are designed to help treat corns, which are small, hardened areas of skin that often form on the feet due to friction or pressure from ill-fitting shoes.</p></li><li><p>Contains Salicylic Acid: Many corn caps contain salicylic acid, a keratolytic agent that helps to soften and dissolve the hardened skin of the corn, making it easier to remove.</p></li><li><p>Pain Relief: Some corn caps also contain ingredients like camphor or menthol to provide a cooling effect and reduce the discomfort caused by the corn.</p></li></ul><p></p>",
+    "suitableFor": [
+      "Adults",
+      "Children over 12 years",
+      "Individuals with corns or calluses"
+    ],
+    "dosage": [
+      "Apply to affected area twice daily",
+      "Use until the corn is removed"
+    ],
+    "cautions": [
+      "For external use only",
+      "Avoid contact with eyes and mucous membranes",
+      "Do not use on infected or irritated skin"
+    ],
+    "benefits": [
+      "Effectively removes corns and calluses",
+      "Easy to apply",
+      "Promotes smooth skin"
+    ],
+    "sideEffects": [
+      "Skin irritation",
+      "Redness",
+      "Continuous burning sensation"
+    ],
+    "productInfo": "Corn Caps contain a specially formulated solution that helps to gently dissolve the corn or callus for easier removal.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Precision Coatings\n",
+    "packagedByInfo": "Precision Coatings\n",
+    "directionsForUse": "Clean the affected area, apply the Corn Cap firmly and leave it on for the recommended duration as per the instructions, then remove and clean the area.",
+    "title": "Corn Caps",
+    "compositions": "Corn Plaster",
+    "sku": "423",
+    "finalPrice": 20,
+    "thumbnail": "https://media.davaindia.com/davaindia/APmzocMhm9QTanJY9UE9t-image-1737712550991-se4dgy.png",
+    "brandTags": [
+      "Corn",
+      "Cor",
+      "Leeford Cornex Corn Caps",
+      "Dr. Foot Corn Caps",
+      "Medigrip Corn Caps",
+      "Wipness Corn Removal Plaster",
+      "Amrutanjan Decorn Corn Caps",
+      "Hansaplast Corn Plaster",
+      "Compeed Callus",
+      "Olski Corn Caps"
+    ]
+  },
+  {
+    "info": "<p>Arjuna 350 mg Capsule is a dietary supplement that contains Terminalia arjuna, an herbal extract derived from the bark of the Arjuna tree. The Arjuna tree is native to the Indian subcontinent and has been traditionally used in Ayurvedic medicine for its numerous health benefits, particularly in supporting heart health.</p><h3><strong>Uses of Arjuna Capsule</strong>:</h3><p>Cardiovascular Health:</p><p>Arjuna capsules are primarily used to support heart health and may help with various heart conditions, including:</p><ul><li class=\"ql-indent-1\">Congestive heart failure (CHF): It is believed to help improve the heart's pumping ability.</li><li class=\"ql-indent-1\">Angina: Arjuna may provide relief from chest pain caused by reduced blood flow to the heart.</li><li class=\"ql-indent-1\">Heart Strengthening: Regular use of Arjuna is said to help strengthen the heart muscles and improve overall heart function.</li></ul>",
+    "suitableFor": [
+      "Individuals seeking heart health support",
+      "People with high blood pressure",
+      "Those looking to improve circulation",
+      "Individuals interested in natural wellness products"
+    ],
+    "dosage": [
+      "Take 1 capsule twice daily with water after meals",
+      "Consult with a healthcare provider for personalized dosage"
+    ],
+    "cautions": [
+      "Not recommended for pregnant or nursing women",
+      "Individuals on blood-thinning medications should consult a physician before use",
+      "Do not exceed the recommended dosage"
+    ],
+    "benefits": [
+      "Supports cardiovascular health",
+      "Helps manage cholesterol levels",
+      "Promotes healthy blood circulation",
+      "Acts as an antioxidant"
+    ],
+    "sideEffects": [
+      "Mild digestive upset",
+      "Nausea in sensitive individuals",
+      "Allergic reactions in rare cases"
+    ],
+    "productInfo": "Each capsule contains 350 mg of Arjuna extract (Terminalia arjuna), a highly regarded herb in Ayurvedic practice known for its heart health benefits. ",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Asian Life Care\n",
+    "packagedByInfo": "Asian Life Care\n",
+    "directionsForUse": "Take one capsule twice daily with water after meals. It is advisable to consult with a healthcare professional for personalized advice before starting any new supplement.",
+    "title": "Arjuna 350mg Capsule",
+    "compositions": "Arjuna Capsule",
+    "sku": "106",
+    "finalPrice": 175,
+    "thumbnail": "https://media.davaindia.com/davaindia/8Q-5qRPH0iyOLPZ4vQ-as-106-1.JPG",
+    "brandTags": [
+      "Himalaya Arjuna Capsule",
+      "Arjuna Tablet",
+      "Arjuna Plus",
+      "Arjuna Capsule",
+      "Arjuna 500mg",
+      "Arjun",
+      "Muscle Monk Arjuna Terminalia Capsule"
+    ]
+  },
+  {
+    "info": "<p>A Crepe Bandage is a type of elastic bandage commonly used in medical settings for providing support, compression, and immobilization to injured or sprained areas of the body. It is made from a woven fabric (often cotton) with some elasticity to it, allowing it to stretch and adapt to different parts of the body, such as the joints, arms, legs, or wrists.</p><h3><strong>Uses of Crepe Bandage (15 cm):</strong></h3><p>Sprains and Strains:</p><p>Crepe bandages are commonly used to support sprained or strained muscles and joints, especially in the ankles, wrists, and elbows. They help limit movement while the injury heals.</p><p>Swelling and Inflammation:</p><p>The bandage provides compression, which can reduce swelling and inflammation by promoting proper circulation around the affected area.</p><p>Post-Surgical Support:</p><p>After certain surgical procedures, crepe bandages are used to provide support and stabilization to the affected area while helping control swelling.</p>",
+    "suitableFor": [
+      "Sprains",
+      "Strains",
+      "Muscle injuries",
+      "Soft tissue injuries"
+    ],
+    "dosage": [
+      "Apply as needed for support and compression",
+      "Change bandage daily or as required"
+    ],
+    "cautions": [
+      "Do not apply too tightly to avoid circulation problems",
+      "Consult a healthcare professional if swelling persists"
+    ],
+    "benefits": [
+      "Provides support and stability to injured areas",
+      "Helps reduce swelling and inflammation",
+      "Elastic material allows for comfortable movement"
+    ],
+    "sideEffects": [
+      "Skin irritation if worn for too long",
+      "Allergic reactions to material (rare)"
+    ],
+    "productInfo": "Crepe Bandage (15 cm) is designed for effective compression and support, made from high-quality elastic material for durability and comfort.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Welltrade Surgipharma\n",
+    "packagedByInfo": "Welltrade Surgipharma\n",
+    "directionsForUse": "Wrap the bandage around the injured area, ensuring consistent tension without cutting off circulation. Secure the end of the bandage with clips or tape.",
+    "title": "Crepe Bandage",
+    "compositions": "Crepe Bandage (15 cm)",
+    "sku": "433",
+    "finalPrice": 183,
+    "thumbnail": "https://media.davaindia.com/davaindia/A6tviRcyYKgG8d5Jhyqkh-433-1.JPG",
+    "brandTags": [
+      "Crepe Band",
+      "Crepe Bandage"
+    ]
+  },
+  {
+    "info": "<p>Baby Powder is a fine, powdery substance commonly used to keep the skin dry and prevent rashes in infants and young children. It is also used by adults for similar purposes, such as reducing friction, absorbing moisture, and soothing irritated skin. Baby powder typically contains ingredients that are gentle on sensitive skin.</p><h3><strong>Uses of Baby Powder:</strong></h3><p>Diaper Rash Prevention:</p><p>One of the primary uses of baby powder is to help prevent diaper rash by absorbing moisture from the skin, keeping the diaper area dry and reducing friction.</p><p>Absorbing Excess Moisture:</p><p>Baby powder can be used to help absorb moisture in areas prone to sweat or friction, such as between folds of skin, underarms, and the neck.</p><p>Relieving Skin Irritation:</p><p>It helps reduce the discomfort associated with skin irritation and chafing, often caused by excess moisture or friction.</p>",
+    "suitableFor": [
+      "Newborns",
+      "Infants",
+      "Children",
+      "Adults with sensitive skin"
+    ],
+    "dosage": [
+      "Apply a small amount to clean, dry skin as needed.",
+      "Use after bath or diaper change."
+    ],
+    "cautions": [
+      "For external use only.",
+      "Avoid contact with eyes.",
+      "Keep out of reach of children."
+    ],
+    "benefits": [
+      "Helps absorb moisture and reduce friction.",
+      "Soothes and protects delicate skin.",
+      "Contains natural ingredients like Aloe Vera and Chamomile.",
+      "Free from talc and harmful chemicals."
+    ],
+    "sideEffects": [
+      "May cause irritation in rare cases.",
+      "Discontinue use if allergic reaction occurs."
+    ],
+    "productInfo": "",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Jain Soap\n",
+    "packagedByInfo": "Jain Soap\n",
+    "directionsForUse": "Shake well before use. Apply the powder directly onto the skin in areas prone to moisture and irritation.",
+    "title": "Baby Powder",
+    "compositions": "Baby Powder",
+    "sku": "186",
+    "finalPrice": 71,
+    "thumbnail": "https://media.davaindia.com/davaindia/H-gBb2PySl0btDZv_HzKR-186-1.JPG",
+    "brandTags": [
+      "Baby Powder",
+      "Baby"
+    ]
+  },
+  {
+    "info": "<p>Clindamycin Hydrochloride 300 mg is an antibiotic medication used to treat a variety of bacterial infections. It belongs to the class of drugs known as lincosamide antibiotics and is effective against a range of bacterial infections caused by Gram-positive and some anaerobic bacteria.</p><h3><strong>Uses of Clindamycin Hydrochloride 300mg:</strong></h3><p>Skin and Soft Tissue Infections:</p><p>Clindamycin is commonly used to treat skin infections like cellulitis, impetigo, and abscesses, caused by bacteria such as Staphylococcus aureus or Streptococcus pyogenes.</p><p>Respiratory Tract Infections:</p><p>It is used for respiratory infections such as pneumonia, bronchitis, or sinusitis caused by susceptible bacteria.</p><p>Bone and Joint Infections:</p><p>Clindamycin is prescribed for osteomyelitis (bone infections) and septic arthritis (joint infections) caused by susceptible organisms.</p>",
+    "suitableFor": [
+      "Adults",
+      "Children over 12 years",
+      "Patients with certain bacterial infections"
+    ],
+    "dosage": [
+      "Oral administration only",
+      "Typical adult dosage is 150-450 mg every 6 to 8 hours depending on the severity of the infection",
+      "Dosage may vary for children based on weight and doctor’s recommendation"
+    ],
+    "cautions": [
+      "Not suitable for individuals with a known allergy to clindamycin or lincomycin",
+      "Use with caution in patients with a history of gastrointestinal disorders",
+      "May cause severe colitis; monitor patients for symptoms",
+      "SCHEDULE H PRESCRIPTION DRUG  To be sold by retail on the prescription of a Registered  Medical Practitioner only."
+    ],
+    "benefits": [
+      "Effective against a wide range of anaerobic bacteria",
+      "Useful in treating skin and soft tissue infections",
+      "Alternative for patients allergic to penicillin"
+    ],
+    "sideEffects": [
+      "Diarrhea",
+      "Nausea",
+      "Abdominal pain",
+      "Rash",
+      "Potential for Clostridium difficile infection"
+    ],
+    "productInfo": "Clindamycin Hydrochloride 300 mg Capsule is formulated to provide effective treatment against specific types of bacterial infections. Each capsule contains 300 mg of active ingredient.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Sunvet Healthcare\n",
+    "packagedByInfo": "Sunvet Healthcare\n",
+    "directionsForUse": "Take the capsule with a full glass of water, with or without food. Follow your healthcare provider's instructions regarding the duration of treatment.",
+    "title": "Clindamycin Hydrochloride capsule 300mg",
+    "compositions": "Clindamycin HCL IP 300mg",
+    "sku": "4255",
+    "finalPrice": 37.5,
+    "thumbnail": "https://media.davaindia.com/davaindia/knQdAVq0gkYZYWLGEuToh-4255-1.jpg",
+    "brandTags": [
+      "Clindac",
+      "Dalacin C",
+      "Clindamycin 300mg",
+      "Clindox",
+      "Clindoral 300mg",
+      "Clindacin",
+      "Clindamycin",
+      "Clindid 300",
+      "Clinsol 300",
+      "Acnetoin 300",
+      "Dalacin C 300",
+      "Clindasure 300",
+      "Clincin 300"
+    ]
+  },
+  {
+    "info": "<p>A Crepe Bandage is a type of elasticized fabric bandage commonly used in medical settings for providing support, compression, and immobilization to injured or sprained areas of the body. It is typically made of woven cotton or a cotton-blend material with some elasticity that allows it to stretch and conform to the body part being treated.</p><h3><strong>Uses of Crepe Bandage (10 cm)</strong>:</h3><p>Sprains and Strains:</p><p>Ideal for managing mild to moderate sprains or muscle strains, the bandage provides the necessary compression to reduce swelling and support healing.</p><p>Swollen Limbs:</p><p>The crepe bandage is often used to reduce swelling in areas like the ankles, wrists, or knees, especially after an injury or surgical procedure.</p><p>Support for Weak Joints or Muscles:</p><p>Provides gentle support for weak or unstable joints or muscles, helping to prevent further strain or injury during physical activity.</p>",
+    "suitableFor": [
+      "Sprains",
+      "Strains",
+      "Support after fractures",
+      "Compression therapy"
+    ],
+    "dosage": [
+      "Wrap snugly around the affected area",
+      "Adjust as necessary for comfort and support"
+    ],
+    "cautions": [
+      "Avoid wrapping too tightly to prevent restricted blood flow",
+      "Monitor for signs of irritation or allergic reaction"
+    ],
+    "benefits": [
+      "Provides support and stability",
+      "Helps reduce swelling",
+      "Allows for movement while offering protection"
+    ],
+    "sideEffects": [
+      "May cause skin irritation",
+      "Possible allergic reactions to materials used"
+    ],
+    "productInfo": "The Crepe Bandage (10 cm) is made from a stretchy, breathable fabric that conforms to the body and allows for comfortable wear. It measures 10 cm in width and is suitable for various injury types.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Welltrade Surgipharma\n",
+    "packagedByInfo": "Welltrade Surgipharma\n",
+    "directionsForUse": "Clean and dry the affected area before applying. Start wrapping at the base of the injury and work upwards, ensuring even pressure without cutting off circulation. Secure the bandage in place with clips or adhesive tape.",
+    "title": "Crepe Bandage 10cm",
+    "compositions": "Crepe Bndg (10cm)",
+    "sku": "436",
+    "finalPrice": 131,
+    "thumbnail": "https://media.davaindia.com/davaindia/ZuFxtRgsIqhTkIhgz4xD3-433-1.JPG",
+    "brandTags": [
+      "Crepe"
+    ]
+  },
+  {
+    "info": "<p>The combination of Glimepiride, Voglibose, and Metformin is used to manage type 2 diabetes in patients who are not adequately controlled by diet, exercise, or metformin alone.</p><h3><strong>Uses of Glimepiride 1mg &amp; Voglibose 0.2mg &amp; Metformin 500mg (SR):</strong></h3><p>Management of Type 2 Diabetes Mellitus:</p><p>The combination of Glimepiride, Voglibose, and Metformin is used to manage type 2 diabetes in patients who are not adequately controlled by diet, exercise, or metformin alone.</p><ul><li class=\"ql-indent-1\">Glimepiride helps increase insulin production to reduce blood glucose levels.</li><li class=\"ql-indent-1\">Voglibose reduces the post-meal blood sugar spikes.</li><li class=\"ql-indent-1\">Metformin enhances insulin sensitivity and reduces glucose production by the liver.</li></ul><p>Post-meal Blood Sugar Control:</p><p>Voglibose is particularly effective in preventing postprandial hyperglycemia (spikes in blood glucose after meals), a common issue in type 2 diabetes.</p><p>Improved Glycemic Control:</p><p>The combination provides better control of both fasting and postprandial blood sugar levels, reducing the risk of long-term complications associated with diabetes, such as nerve damage, kidney problems, and cardiovascular disease.</p>",
+    "suitableFor": [
+      "Adults with type 2 diabetes",
+      "Patients who are poorly controlled on diet and exercise alone",
+      "Patients requiring supplementation with oral hypoglycemics"
+    ],
+    "dosage": [
+      "One tablet daily or as directed by a healthcare professional",
+      "Dosage may be adjusted based on glycemic control and tolerance"
+    ],
+    "cautions": [
+      "Not suitable for individuals with type 1 diabetes",
+      "Use with caution in patients with renal impairment",
+      "Monitor for signs of hypoglycemia"
+    ],
+    "benefits": [
+      "Helps lower blood sugar levels",
+      "Improves insulin sensitivity",
+      "Reduces the risk of diabetes-related complications"
+    ],
+    "sideEffects": [
+      "Hypoglycemia",
+      "Gastrointestinal disturbances (nausea, diarrhea)",
+      "Allergic reactions (rash, itching)"
+    ],
+    "productInfo": "Davapride 1/0.2 VMF Tablet contains Glimepiride, Voglibose, and Metformin combined effectively for improved glycemic control.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Bioaltus Pharmaceuticals\n",
+    "packagedByInfo": "Bioaltus Pharmaceuticals\n",
+    "directionsForUse": "Take one tablet by mouth with meals to reduce gastrointestinal side effects. Follow your doctor's instructions regarding the timing and dosage.",
+    "title": "Davapride 1/0.2 VMF Tablet",
+    "compositions": "Glimepiride 1mg & Voglibose 0.2mg & Metformin 500mg (SR)",
+    "sku": "4240",
+    "finalPrice": 42,
+    "thumbnail": "https://media.davaindia.com/davaindia/3lup94SswC5FDwuwToMVr-4240-1.jpg",
+    "brandTags": [
+      "Glyciphage-GV 1mg/0.2mg/500mg",
+      "Glycomet GV 1mg/0.2mg/500mg",
+      "Metglyzide 1mg/0.2mg/500mg SR",
+      "Amaryl M 1mg/0.2mg/500mg SR",
+      "Glimepiride",
+      "Glimepiride 1mg",
+      "Danavish",
+      "Tribetrol SR",
+      "Iglim-MV",
+      "Voglipax-GM",
+      "Voglimac-GM",
+      "Vogs-GM",
+      "Voglow-GM",
+      "Vogliced-GM"
+    ]
+  },
+  {
+    "info": "<p>Davapride 3 MF SR Tablet is a combination medication commonly used to manage type 2 diabetes. It combines two active ingredients, Vildagliptin and Metformin, in a sustained-release (SR) formulation. This tablet is designed to help control blood sugar levels in individuals with type 2 diabetes, especially when diet and exercise alone are insufficient.</p><h3><strong>Uses of Glimepiride 3mg &amp; Metformin HCL 500mg (SR</strong>):</h3><p>Management of Type 2 Diabetes Mellitus:</p><p>This combination is prescribed for the management of type 2 diabetes, particularly in cases where blood sugar levels are not adequately controlled by diet, exercise, or Metformin alone.</p><p>Glycemic Control:</p><p>The medication is used to help control both fasting and postprandial blood glucose levels by enhancing insulin secretion and sensitivity, as well as reducing glucose production by the liver.</p><p>Weight Control:</p><p>Unlike some other diabetes medications, Metformin has the advantage of being weight-neutral or slightly weight-reducing, making it a preferred option for overweight patients with type 2 diabetes.</p>",
+    "suitableFor": [
+      "Adults with type 2 diabetes",
+      "Patients not adequately controlled on diet and exercise alone",
+      "People who require dual therapy for glycemic control"
+    ],
+    "dosage": [
+      "Start with one tablet daily, taken with meals.",
+      "Dose may be adjusted based on blood glucose levels and physician recommendations."
+    ],
+    "cautions": [
+      "Not suitable for patients with type 1 diabetes.",
+      "Use with caution in patients with liver or kidney impairment.",
+      "Monitor blood sugar levels regularly to avoid hypoglycemia."
+    ],
+    "benefits": [
+      "Helps in better glycemic control.",
+      "Reduces the risk of diabetes-related complications.",
+      "Combines two mechanisms of action to improve insulin sensitivity and secretion."
+    ],
+    "sideEffects": [
+      "Nausea",
+      "Headache",
+      "Dizziness",
+      "Diarrhea",
+      "Hypoglycemia"
+    ],
+    "productInfo": "Davapride 3 MF SR Tablet contains Glimepride 3mg and Metformin HCL 500mg, formulated as a sustained-release tablet for improved efficacy and patient compliance.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Bioaltus Pharmaceuticals\n",
+    "packagedByInfo": "Bioaltus Pharmaceuticals\n",
+    "directionsForUse": "Take one tablet daily as prescribed by your physician, ideally during meals to reduce gastrointestinal side effects.",
+    "title": "Davapride 3 MF SR Tablet",
+    "compositions": "Glimepride 3mg & Metformin HCL 500mg (SR)",
+    "sku": "4256",
+    "finalPrice": 42,
+    "thumbnail": "https://media.davaindia.com/davaindia/MywNNyhBoED0ow4Pg3SvY-image-1743055900070-x2dd8.png",
+    "brandTags": [
+      "Glimepride",
+      "Glimep",
+      "APRIGLIM M 3",
+      "GEMER 3",
+      "GLIMESTAR M 3",
+      "GLIMIP MF 3 SR",
+      "GLUCONORM G 3",
+      "GM SR 3",
+      "ZORYL M 3",
+      "AZULIX 3 mg MF",
+      "OBIMET GX 3 mg",
+      "GLIMED M-500 SR",
+      "GLIMISAVE M 3/500"
+    ]
+  },
+  {
+    "info": "<p>Cervical Collar Soft Support (M) is designed to provide gentle support and stabilization to the cervical spine while allowing for comfort and breathability.</p><h3><strong>Uses of Cervical Collar Soft Support (M):</strong></h3><p>Neck Pain Relief:</p><p>The cervical collar helps relieve neck pain, discomfort, and stiffness, especially caused by poor posture, muscle strains, or whiplash from car accidents or sports injuries.</p><p>Post-Injury or Surgery Recovery:</p><p>It is used after neck injuries, such as sprains or strains, to provide support and limit movement, allowing the neck muscles to rest and heal properly.</p><p>Posture Support:</p><p>Helps to maintain correct neck alignment by providing support to the cervical spine, especially for individuals who spend long hours sitting or standing in one position (e.g., desk work).</p>",
+    "suitableFor": [
+      "Individuals recovering from neck injuries",
+      "Patients with chronic neck pain",
+      "Post-operative neck patients"
+    ],
+    "dosage": [
+      "Wear as directed by a healthcare professional",
+      "Adjust fit for comfort and support"
+    ],
+    "cautions": [
+      "Consult with a healthcare provider before use",
+      "Do not use if allergic to foam materials",
+      "Not suitable for patients with severe neck instability"
+    ],
+    "benefits": [
+      "Provides support and stabilization to the neck",
+      "Soft and breathable material enhances comfort",
+      "Adjustable Velcro closure allows for a customized fit"
+    ],
+    "sideEffects": [
+      "Skin irritation if worn for prolonged periods",
+      "Discomfort if not fitted properly",
+      "Reduced mobility of the neck"
+    ],
+    "productInfo": "Cervical Collar Soft Support (M) features soft, breathable foam padding and an adjustable Velcro closure, making it suitable for various neck support needs.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Osteoplast\n",
+    "packagedByInfo": "Osteoplast\n",
+    "directionsForUse": "Place the collar around the neck, adjust the Velcro closure for a snug fit, and wear as needed for support and comfort.",
+    "title": "Cervical Collar Soft Support (M)",
+    "compositions": "Cervical Collar Soft With Support(M)",
+    "sku": "341",
+    "finalPrice": 200,
+    "thumbnail": "https://media.davaindia.com/davaindia/ELM72W1w6-m3bYOXcVbQL-1016.JPG",
+    "brandTags": [
+      "Tynor Cervical Collar",
+      "Vissco Cervical Collar",
+      "Healthgenie Soft Cervical Collar",
+      "Bort Cervical Collar",
+      "Cervical",
+      "Flamingo Cervical Collar Soft",
+      "Vissco Cervical Collar Soft",
+      "Tynor Cervical Collar Soft",
+      "Dynamic Cervical Collar Soft",
+      "Relaxo Cervical Collar Soft",
+      "AccuSure Cervical Collar Soft",
+      "Smart Care Cervical Collar Soft",
+      "Medtrix Cervical Collar Soft",
+      "Salo Orthotics Cervical Collar",
+      "Optima Cervical Collar Soft",
+      "LP Support Cervical Collar"
+    ]
+  },
+  {
+    "info": "<p>Davapride 3 MF SR Tablet is a combination medication commonly used to manage type 2 diabetes. It combines two active ingredients, Vildagliptin and Metformin, in a sustained-release (SR) formulation. This tablet is designed to help control blood sugar levels in individuals with type 2 diabetes, especially when diet and exercise alone are insufficient.</p><h3><strong>Uses of Glimepiride 4mg &amp; Metformin HCL 500mg (PR):</strong></h3><p>Management of Type 2 Diabetes Mellitus:</p><p>This combination medication is used to manage type 2 diabetes in patients whose blood sugar levels are not adequately controlled by diet, exercise, or Metformin alone. It is typically used when oral monotherapy with Metformin does not provide adequate glycemic control.</p><p>Blood Sugar Control:</p><p>It is used to control both fasting blood glucose levels and postprandial blood glucose levels (blood sugar levels after meals), helping to maintain an overall healthy blood sugar range.</p><p>Improved Insulin Sensitivity:</p><p>Metformin improves insulin sensitivity, helping the body utilize the available insulin more effectively, while Glimepiride helps the body produce more insulin in response to meals</p>",
+    "suitableFor": [
+      "Adults with type 2 diabetes",
+      "Patients not controlled by diet and exercise alone",
+      "Patients needing combination therapy for blood sugar management"
+    ],
+    "dosage": [
+      "One tablet daily, or as directed by a healthcare provider",
+      "Take with food to minimize gastrointestinal side effects"
+    ],
+    "cautions": [
+      "Not suitable for patients with type 1 diabetes",
+      "Contraindicated in patients with severe kidney or liver issues",
+      "Use with caution in elderly patients or those with cardiovascular conditions"
+    ],
+    "benefits": [
+      "Helps lower blood sugar levels",
+      "Reduces the risk of diabetes-related complications",
+      "Convenient once-daily dosing"
+    ],
+    "sideEffects": [
+      "Nausea",
+      "Headache",
+      "Dizziness",
+      "Hypoglycemia",
+      "Gastrointestinal discomfort"
+    ],
+    "productInfo": "Davapride 4 MF SR Tablet contains Glimepiride 4mg and Metformin HCL 500mg, formulated for sustained release to provide better glycemic control over time. Each pack contains 15 tablets.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Bioaltus Pharmaceuticals\n",
+    "packagedByInfo": "Bioaltus Pharmaceuticals\n",
+    "directionsForUse": "Take the tablet as prescribed by your healthcare provider, usually with meals to enhance absorption and reduce the risk of gastrointestinal side effects. Do not exceed the recommended dosage.",
+    "title": "Davapride 4 MF SR Tablet",
+    "compositions": "Glimepiride 4mg & Metformin HCL 500mg (PR)",
+    "sku": "4237",
+    "finalPrice": 45,
+    "thumbnail": "https://media.davaindia.com/davaindia/EPxRnVuhiq2NULYc839xT-4237-1.jpg",
+    "brandTags": [
+      "Glycomet G4",
+      "Glucored G4",
+      "Metglim",
+      "Glyciphage G4",
+      "Glycibeta",
+      "Glimepiride",
+      "Glimepir",
+      "Amaryl M 4/500 PR",
+      "Gemer 4/500 PR",
+      "Gluconorm G 4/500 SR",
+      "Glycomet GP 4/500 SR",
+      "Glimestar M 4/500 PR",
+      "Reclimet 4/500 PR",
+      "Zoryl M 4/500 PR",
+      "Glador M 4/500 PR",
+      "Euroglim M 4/500 PR",
+      "Istamet-G 4/500 PR",
+      "Glimisave M 4/500 SR",
+      "Obimet G 4/500 SR",
+      "Tenlimac G 4/500 PR",
+      "Pioz M 4/500 SR",
+      "Gluvas M 4/500 PR",
+      "Glimet M 4/500 PR",
+      "Gliprose M 4/500 PR",
+      "Gluvis M 4/500 PR",
+      "Glimaday M 4/500 PR",
+      "Gluformin G 4/500 SR",
+      "Duvanta M 4/500 PR",
+      "Reclimet Plus 4/500 SR",
+      "Vogli M 4/500 PR",
+      "Glimpex M 4/500 PR",
+      "Metglim M 4/500 PR",
+      "Gluconil M 4/500 SR",
+      "Glimetrix M 4/500 PR",
+      "Glimtense M 4/500 PR",
+      "Glimtrack M 4/500 PR",
+      "Glimetus M 4/500 PR",
+      "Zomet M 4/500 PR",
+      "Glimpride M 4/500 PR",
+      "Glivitor M 4/500 PR",
+      "Glimfix M 4/500 PR",
+      "Glimsave G 4/500 SR"
+    ]
+  },
+  {
+    "info": "<p>Davapride 2 MF Forte Tablet is a combination medication primarily used to manage type 2 diabetes. It combines two active ingredients: Vildagliptin and Metformin. This combination works together to help control blood sugar levels in people with type 2 diabetes, especially when lifestyle changes like diet and exercise are not enough to manage blood glucose levels.</p><h3><strong>Uses of Glimepiride 4mg &amp; Metformin HCL 500mg (PR):</strong></h3><p>Management of Type 2 Diabetes Mellitus:</p><p>This combination medication is used to manage type 2 diabetes in patients whose blood sugar levels are not adequately controlled by diet, exercise, or Metformin alone. It is typically used when oral monotherapy with Metformin does not provide adequate glycemiccontrol.</p><p>Blood Sugar Control:</p><p>It is used to control both fasting blood glucose levels and postprandial blood glucose levels (blood sugar levels after meals), helping to maintain an overall healthy blood sugar range.</p><p>Improved Insulin Sensitivity:</p><p>Metformin improves insulin sensitivity, helping the body utilize the available insulin more effectively, while Glimepiride helps the body produce more insulin in response to meals.</p>",
+    "suitableFor": [
+      "Adults with type 2 diabetes",
+      "Patients who require dual therapy for blood glucose control"
+    ],
+    "dosage": [
+      "One tablet daily or as directed by a healthcare professional",
+      "Should be taken with meals to reduce gastrointestinal side effects"
+    ],
+    "cautions": [
+      "Not suitable for patients with type 1 diabetes",
+      "Use with caution in patients with renal impairment",
+      "Monitor blood glucose levels regularly"
+    ],
+    "benefits": [
+      "Helps in controlling blood sugar levels",
+      "Improves insulin sensitivity",
+      "Reduces the risk of diabetes-related complications"
+    ],
+    "sideEffects": [
+      "Nausea",
+      "Diarrhea",
+      "Headache",
+      "Hypoglycemia (low blood sugar)"
+    ],
+    "productInfo": "Each tablet contains Glimepride 2mg and Metformin HCL 1000mg (SR). It is formulated for sustained release to provide prolonged blood sugar control.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Bioaltus Pharmaceuticals\n",
+    "packagedByInfo": "Bioaltus Pharmaceuticals\n",
+    "directionsForUse": "Take one tablet daily during meals. Swallow the tablet whole with a glass of water, do not crush or chew.",
+    "title": "Davapride 2 MF Forte Tablet",
+    "compositions": "Glimepride 2mg & Metformin HCL 1000mg (SR)",
+    "sku": "4236",
+    "finalPrice": 45,
+    "thumbnail": "https://media.davaindia.com/davaindia/nkzrBG-jLNwdzzYMsw4Nw-4236-1.jpg",
+    "brandTags": [
+      "Glycomet GP 2",
+      "Glucored-G2",
+      "Metglim",
+      "Glyciphage-G",
+      "Glimec-M",
+      "Glimepride",
+      "Glimepride 2",
+      "Amaryl M 2/1000 SR",
+      "Gemer 2/1000 SR",
+      "Glycomet GP 2/1000 SR",
+      "Gluconorm G 2/1000 SR",
+      "Zoryl M 2/1000 SR",
+      "Glimestar M 2/1000 SR",
+      "Glador M 2/1000 SR",
+      "Reclimet 2/1000 SR",
+      "Obimet G 2/1000 SR",
+      "Glimisave M 2/1000 SR",
+      "Gluvas M 2/1000 SR",
+      "Metglim M 2/1000 SR",
+      "Glimetus M 2/1000 SR",
+      "Gluformin G 2/1000 SR",
+      "Gluvas Plus 2/1000 SR",
+      "Glimetrix M 2/1000 SR",
+      "Glimpex M 2/1000 SR",
+      "Gluformin GP 2/1000 SR",
+      "Glimsure M 2/1000 SR",
+      "Glimtrack M 2/1000 SR",
+      "Glimtense M 2/1000 SR",
+      "Glimfast M 2/1000 SR",
+      "Glimcare M 2/1000 SR",
+      "Glivitor M 2/1000 SR",
+      "Gliprose M 2/1000 SR",
+      "Glimsave G 2/1000 SR",
+      "Glimstar G 2/1000 SR",
+      "Glimwin M 2/1000 SR",
+      "Glimact M 2/1000 SR",
+      "Glimray M 2/1000 SR"
+    ]
+  },
+  {
+    "info": "<p><strong>Clobetasol Propionate 0.05% Cream</strong> is a potent topical corticosteroid used for the treatment of various skin conditions. It is a prescription medication commonly used to reduce inflammation, redness, and itching associated with a variety of skin disorders.</p><h3><strong>Uses of Clobetasol Propionate 0.05% Cream</strong>:</h3><p><strong>Psoriasis</strong>:</p><p>Clobetasol is commonly used to treat <strong>psoriasis</strong>, particularly <strong>plaque psoriasis</strong>, where thick, scaly patches of skin develop. It helps reduce the <strong>inflammation</strong>, <strong>scaling</strong>, and <strong>itching</strong> caused by the condition.</p><p><strong>Eczema (Atopic Dermatitis)</strong>:</p><p>This cream is often prescribed for <strong>eczema</strong>, a condition that causes skin inflammation, itching, and redness. Clobetasol helps calm the inflammatory response and reduces skin irritation.</p><p><strong>Dermatitis</strong>:</p><p>It is used for various forms of <strong>dermatitis</strong>, including <strong>contact dermatitis</strong>, where skin reacts to allergens or irritants, causing redness, swelling, and itching.</p><p><strong>Lichen Planus</strong>:</p><p>Clobetasol is effective in treating <strong>lichen planus</strong>, a condition where <strong>purplish, itchy bumps</strong> appear on the skin. It helps reduce the inflammation and irritation caused by the condition.</p>",
+    "suitableFor": [
+      "Psoriasis",
+      "Eczema",
+      "Dermatitis",
+      "Allergic reactions"
+    ],
+    "dosage": [
+      "Apply a thin layer to the affected area twice daily or as directed by a physician."
+    ],
+    "cautions": [
+      "Avoid applying to the face, underarms, or groin areas unless directed by a physician.",
+      "Do not use for extended periods without a doctor's supervision.",
+      "Discontinue use if irritation occurs."
+    ],
+    "benefits": [
+      "Reduces inflammation and itching.",
+      "Helps in managing chronic skin conditions.",
+      "Provides quick relief from rashes."
+    ],
+    "sideEffects": [
+      "Burning or stinging sensation at the application site.",
+      "Dryness or irritation of the skin.",
+      "Possible allergic reactions such as rash or itching."
+    ],
+    "productInfo": "Clobetasole Propionate IP 0.05% Cream is a highly effective formulation for treating inflammatory skin disorders, packaged in a 30 gm tube for easy application.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Bhavani Pharma\n",
+    "packagedByInfo": "Bhavani Pharma\n",
+    "directionsForUse": "Clean the affected area before application. Apply a small amount of cream to the area and gently massage into the skin. Wash hands after use.",
+    "title": "Clobetasole Propionate IP 0.05% Cream",
+    "compositions": "Clobetasol Propionate 0.05%W/V Cream",
+    "sku": "4232",
+    "finalPrice": 33,
+    "thumbnail": "https://media.davaindia.com/davaindia/NUnzefIsEknB9T-3hpkNj-4232-1.jpg",
+    "brandTags": [
+      "Dermocort",
+      "Clovate",
+      "Clobate (",
+      "Cortibase",
+      "Betnovate C",
+      "Clobetaso",
+      "Clobetasole",
+      "Tenovate Cream",
+      "Clonate Cream",
+      "Topinate Cream",
+      "Lobate Cream",
+      "Clop Cream",
+      "Clonate-GM Cream",
+      "Clobeta GM Cream",
+      "Clop-S Cream",
+      "Clopiva Cream",
+      "Clovate Cream",
+      "Clobet GM Cream",
+      "Clop-G Cream",
+      "Lobate-GM Cream",
+      "Lobate-S Cream"
+    ]
+  },
+  {
+    "info": "<p>Davalinctus-L Oral Suspension is a combination medication used to treat symptoms related to respiratory conditions such as cough, cold, and congestion. This medication typically contains Levocetirizine, an antihistamine, and Linctus (a type of expectorant or cough syrup), which may help relieve symptoms like coughing, nasal congestion, and allergic reactions.</p><h3><strong>Uses of Levocloperastine Fendizoate Oral Suspension:</strong></h3><p>Treatment of Dry Cough:</p><p>Levocloperastine Fendizoate is used to provide relief from persistent, dry coughs that may be caused by conditions such as viral infections, allergies, or irritants in the air.</p><p>Relief of Irritation in the Throat:</p><p>It helps soothe throat irritation that results in coughing, especially when the cough is not productive (i.e., it doesn't produce mucus or phlegm).</p><p>Management of Cough Due to Allergies:</p><p>Levocloperastine may be used to alleviate coughing related to allergic conditions like hay fever or other upper respiratory tract conditions.</p>",
+    "suitableFor": [
+      "Adults",
+      "Children above 2 years",
+      "Individuals with dry cough"
+    ],
+    "dosage": [
+      "5 ml for children aged 2-5 years, 3 times a day",
+      "10 ml for children aged 6-12 years, 3 times a day",
+      "15 ml for adults and children over 12 years, 3 times a day"
+    ],
+    "cautions": [
+      "Consult a doctor if pregnant or breastfeeding",
+      "Not suitable for individuals with a known allergy to Levocloperastine",
+      "Use with caution in individuals with respiratory disorders"
+    ],
+    "benefits": [
+      "Reduces the frequency and intensity of cough",
+      "Quick onset of action",
+      "Pleasant taste for easier administration"
+    ],
+    "sideEffects": [
+      "Drowsiness",
+      "Nausea",
+      "Dry mouth",
+      "Dizziness"
+    ],
+    "productInfo": "Davalinctus-L is a safe and effective oral suspension containing Levocloperastine Fendizoate. It is encased in a 100 ml bottle, ensuring an adequate supply for treatment.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Bioaltus Pharmaceuticals\n",
+    "packagedByInfo": "Bioaltus Pharmaceuticals\n",
+    "directionsForUse": "Shake well before use. Measure the appropriate dosage using the provided measuring cup. Administer orally. Do not exceed the recommended dosage.",
+    "title": "Davalinctus-L Oral Suspension",
+    "compositions": "Levocloperastine Fendizoate Oral Suspension",
+    "sku": "4229",
+    "finalPrice": 103,
+    "thumbnail": "https://media.davaindia.com/davaindia/DydA6fK5c4P8-sl3S9GXy-4229-1.jpg",
+    "brandTags": [
+      "Levoclear Plus",
+      "Levocet",
+      "Loflo-DS",
+      "Levodex",
+      "Levocloperastine",
+      "Levoclop",
+      "Dolotuss SF",
+      "Coscogen",
+      "Filistin",
+      "Grylictus-L Regular"
+    ]
+  },
+  {
+    "info": "<p>Davavestin 500 mg Tablet is a medication primarily used to manage high cholesterol and high triglycerides. It is a statin (HMG-CoA reductase inhibitor) used to reduce the levels of low-density lipoprotein (LDL) cholesterol, commonly known as \"bad cholesterol,\" and triglycerides in the blood. It may also help increase the levels of high-density lipoprotein (HDL) cholesterol, known as \"good cholesterol.\"&nbsp;</p><h3><strong>Uses of A Blend of Scutellaria Baicalensis &amp; Acacia Catechu 500 mg Tablet:</strong></h3><p>Immune System Support:</p><p>Scutellaria Baicalensis (commonly known as Baikal Skullcap) has been traditionally used to enhance immune function and protect against infections. It is believed to support the body’s natural defenses.</p><p>Anti-inflammatory Action:</p><p>Both Scutellaria Baicalensis and Acacia Catechu have anti-inflammatory properties. They may help in reducing inflammation and providing relief in conditions such as arthritis, joint pain, and other inflammatory ailments.</p><p>Antioxidant Benefits:</p><p>These herbs are rich in natural compounds that provide antioxidant effects, helping to neutralize harmful free radicals in the body, which may support cellular health and reduce the risk of chronic diseases.</p>",
+    "suitableFor": [
+      "Adults",
+      "Individuals looking for natural health support",
+      "People with digestive concerns"
+    ],
+    "dosage": [
+      "One tablet daily or as directed by a healthcare professional",
+      "Do not exceed recommended dosage"
+    ],
+    "cautions": [
+      "Consult a healthcare professional before use if pregnant or nursing",
+      "Not suitable for individuals with allergies to any ingredient"
+    ],
+    "benefits": [
+      "Supports digestive health",
+      "Promotes overall wellness",
+      "May have antioxidant properties"
+    ],
+    "sideEffects": [
+      "Mild gastrointestinal discomfort",
+      "Allergic reactions in sensitive individuals"
+    ],
+    "productInfo": "Each tablet contains a blend of Scutellaria Baicalensis and Acacia Catechu, providing a natural option for health support. The product comes in a pack of 10 tablets.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Tactus Nutrasciences\n",
+    "packagedByInfo": "Tactus Nutrasciences\n",
+    "directionsForUse": "Take one tablet daily with water, preferably after a meal, unless otherwise directed by a healthcare professional.",
+    "title": "Davavestin Tablet 500mg",
+    "compositions": "A Blend of Scutellaria Baicalensis & Acacia Catechu 500 Mg",
+    "sku": "4220",
+    "finalPrice": 124.5,
+    "thumbnail": "https://media.davaindia.com/davaindia/a_gi4XLEZnkTI9HvWOdNe-4220-1.jpg",
+    "brandTags": [
+      "Baicalin Plus",
+      "Kairon Tablet",
+      "Immu Forte",
+      "Davave",
+      "Davavestin",
+      "Univestin Plus"
+    ]
+  },
+  {
+    "info": "<p>A Contoured L.S. (Lumbosacral) Belt (M) is a supportive medical garment designed to provide relief and support to the lumbar (lower back) and sacral (lower spine) regions. This type of belt is commonly used for individuals experiencing lower back pain, sciatica, or those recovering from back injuries or surgery. The belt's contoured design offers a snug fit that conforms to the natural curves of the body, particularly around the lower back area, providing enhanced support.</p><h3><strong>Uses of Contoured LS Belt (M):</strong></h3><p>Lower Back Pain Relief:</p><p>The belt is often used to relieve chronic lower back pain, muscle strains, or soreness caused by activities such as lifting, bending, or prolonged sitting.</p><p>Posture Correction:</p><p>The contoured design helps in maintaining proper posture, which can reduce strain on the lower back and prevent discomfort from poor posture.</p><p>Post-Surgery Support:</p><p>After lower back surgery or spinal injuries, this lumbar support belt can assist with stabilizing the spine and providing gentle compression to aid in healing and recovery.</p>",
+    "suitableFor": [
+      "Individuals with lower back pain",
+      "Post-surgery recovery patients",
+      "Workers with physically demanding jobs",
+      "Athletes requiring additional support during training"
+    ],
+    "dosage": [
+      "Wear the belt during activities that may strain the back",
+      "Do not exceed 8 hours of continuous wear",
+      "Consult a healthcare professional for personalized usage advice"
+    ],
+    "cautions": [
+      "Not suitable for those with certain skin conditions or allergies",
+      "Avoid wearing the belt over open wounds",
+      "Remove the belt during sleep to prevent discomfort"
+    ],
+    "benefits": [
+      "Provides support to the lumbar area",
+      "Helps in pain relief during movement",
+      "Enhances posture and spinal alignment",
+      "Can aid in the recovery process post-injury"
+    ],
+    "sideEffects": [
+      "Mild skin irritation if worn for prolonged periods",
+      "Discomfort if the belt is improperly fitted",
+      "Potential dependency on the belt for support"
+    ],
+    "productInfo": "The Contoured L S Belt (M) is designed with contoured edges to provide a snug fit while offering optimal support for the lower back. It is made from breathable materials to enhance comfort.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Osteoplast\n",
+    "packagedByInfo": "Osteoplast\n",
+    "directionsForUse": "Place the belt around your waist, ensuring it covers the lower back area. Adjust the straps for a secure fit without hindering circulation. Wear during activities that require back support.",
+    "title": "Contoured L S Belt (M)",
+    "compositions": "Contured LS Belt(M)",
+    "sku": "419",
+    "finalPrice": 480,
+    "thumbnail": "https://media.davaindia.com/davaindia/wyuiK1b4R8pbgLlKrSSbt-1031.JPG",
+    "brandTags": [
+      "Tynor",
+      "Vissco",
+      "Orthotech",
+      "Sona Orthotics",
+      "Khaitan",
+      "Neelkanth",
+      "Contur",
+      "Contured"
+    ]
+  },
+  {
+    "info": "<p><strong>DavaUnion Tablet</strong> is a combination medication used to treat <strong>diabetes</strong> and <strong>hyperglycemia</strong>. It typically contains a combination of <strong>Metformin</strong> and <strong>Vildagliptin</strong>, two drugs that work together to control blood sugar levels in patients with <strong>Type 2 diabetes</strong>.</p>",
+    "suitableFor": [
+      "Individuals with joint pain",
+      "People seeking to enhance bone health",
+      "Athletes looking for recovery support"
+    ],
+    "dosage": [
+      "1 tablet per day or as directed by a healthcare professional"
+    ],
+    "cautions": [
+      "Consult a healthcare provider before use if pregnant or nursing",
+      "Keep out of reach of children",
+      "Do not exceed recommended dosage"
+    ],
+    "benefits": [
+      "Supports joint and bone health",
+      "Contains natural extracts with anti-inflammatory properties",
+      "May enhance recovery after physical exertion",
+      ""
+    ],
+    "sideEffects": [
+      "Mild gastrointestinal discomfort",
+      "Allergic reactions in individuals sensitive to ingredients"
+    ],
+    "productInfo": "Each DavaUnion Tablet contains 500 mg of Cissus quadrangularis extract and 400 mg of Dalbergia sissoo extract, promoting joint health and natural recovery.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Tactus Nutrasciences\n",
+    "packagedByInfo": "Tactus Nutrasciences\n",
+    "directionsForUse": "Take one tablet daily, preferably with a meal, or as directed by your healthcare professional.",
+    "title": "DavaUnion Tablet",
+    "compositions": "Cissus quadrangularis extract 500 mg + Dalbergia sissoo extract 400mg Tab",
+    "sku": "4218",
+    "finalPrice": 106.5,
+    "thumbnail": "https://media.davaindia.com/davaindia/XnQs2IDm_PtNwGegwdKkW-4218-1.jpg",
+    "brandTags": [
+      "Cissusan",
+      "Cissus Plus",
+      "FlexiCure",
+      "Herbal India",
+      "Cissus",
+      "Reunion Tablet",
+      "BoneFusion DS-Cissus",
+      "OsteoRecov Blend",
+      "CissusSIS Flex",
+      "DuoBone Restore",
+      "Hadjod-Sis Essential",
+      "JointRevive Duo",
+      "HadjodSIS Heal"
+    ]
+  },
+  {
+    "info": "<p>A <strong>Contoured L.S. (Lumbosacral) Belt (XL)</strong> is a medical support garment designed to provide relief and support to the <strong>lower back</strong> (lumbar) and <strong>sacral</strong> (base of the spine) regions. This type of belt is commonly used for people suffering from <strong>lower back pain</strong>, <strong>muscle strains</strong>, or recovering from surgery or injury in the lower back. The <strong>contoured design</strong> ensures that the belt fits comfortably along the natural curve of the spine, offering optimal support.</p>",
+    "suitableFor": [
+      "Individuals with lower back pain",
+      "Post-operative recovery patients",
+      "Those with muscle strains or sprains"
+    ],
+    "dosage": [
+      "Wear during daily activities",
+      "Recommended for use during physical exercise"
+    ],
+    "cautions": [
+      "Not suitable for individuals with certain skin conditions",
+      "Consult a healthcare provider if you have severe back issues"
+    ],
+    "benefits": [
+      "Provides firm support to the lumbar region",
+      "Reduces strain on the back during activities",
+      "Enhances posture"
+    ],
+    "sideEffects": [
+      "Mild skin irritation if worn for extended periods",
+      "Discomfort if too tightly fitted"
+    ],
+    "productInfo": "The Contoured L S Belt (XL) is made from durable elastic material designed to conform to the body's natural shape, providing maximum comfort and support.",
+    "sellerInfo": "Zota Health Care Ltd\n",
+    "manufacturerInfo": "Osteoplast\n",
+    "packagedByInfo": "Osteoplast\n",
+    "directionsForUse": "Place the belt around the waist and secure it comfortably. Adjust the tightness to ensure support without compromising circulation.",
+    "title": "Contoured L S Belt (XL)",
+    "compositions": "Contured LS Belt(XL)",
+    "sku": "421",
+    "finalPrice": 480,
+    "thumbnail": "https://media.davaindia.com/davaindia/_08LbkL-JYuMeDqZQMjP8-1022.JPG",
+    "brandTags": [
+      "Tynor",
+      "Vissco",
+      "Orthotech",
+      "Sona Orthotics",
+      "IndiFit",
+      "Khaitan",
+      "Contu",
+      "Contured"
+    ]
   }
 ]

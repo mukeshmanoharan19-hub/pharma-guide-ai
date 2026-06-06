@@ -84,6 +84,12 @@ class RAGService:
 
             context, compressed_docs = self._prepare_context(query)
 
+            if not context.strip():
+                return {
+                    "answer": "Sorry, I couldn't find relevant information to answer your question."
+                }
+
+
             # Step 5 — Create Prompt
             logger.info(
                 "Creating RAG prompt"
@@ -140,6 +146,11 @@ class RAGService:
 
         try:
             context, compressed_docs = self._prepare_context(query)
+
+            if not context.strip():
+                return {
+                    "answer": "Sorry, I couldn't find relevant information to answer your question."
+                }
 
             # Step 5 — Create Prompt
             logger.info("Creating RAG prompt")

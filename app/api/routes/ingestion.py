@@ -7,15 +7,12 @@ from pathlib import Path
 
 router = APIRouter(prefix="/api", tags=["ingestion"])
 
-file_path = Path(__file__).parent.parent.parent.parent / "data" / "seeds" / "products.json"
-
 @router.post("/ingest-data")
 async def upload_document(
     background_tasks: BackgroundTasks,
 ):
     background_tasks.add_task(
-        IngestionService.ingest,
-        file_path
+        IngestionService.ingest
     )
 
     return {

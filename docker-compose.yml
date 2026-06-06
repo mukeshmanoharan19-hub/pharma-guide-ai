@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: root
 
     ports:
-      - "5432:5432"
+      - "5433:5432"
 
   api:
     build:
@@ -33,5 +33,34 @@ services:
 
     command: >
       uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+    restart: unless-stopped
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: pharma-guide-client
+
+    ports:
+      - "8501:8501"
+
+    depends_on:
+      - api
+
+    env_file:
+      - .env
+
+    environment:
+      - BACKEND_URL=http://api:8000
+      - STREAMLIT_SERVER_HEADLESS=true
+
+    volumes:
+      - .:/app
+      - ./data:/app/data
+
+    command: >
+      streamlit run streamlit_app.py --server.port 8501 --server.address 0.0.0.0 --server.headless true
 
     restart: unless-stopped

@@ -21,7 +21,8 @@ COPY . .
 RUN mkdir -p data/seeds  
 RUN mkdir -p data/vector_store
 RUN mkdir -p data/bm25
-# Expose the app port
+# Expose the app port and Streamlit port
 EXPOSE 8000  
+EXPOSE 8501
 # Start the ASGI server
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

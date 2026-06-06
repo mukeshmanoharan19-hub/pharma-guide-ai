@@ -20,6 +20,7 @@ dependencies = [
     "psycopg2-binary>=2.9.12",
     "pydantic-settings>=2.14.1",
     "pydantic[email]>=2.13.4",
+    "pymupdf>=1.27.2.3",
     "python-dotenv>=1.2.2",
     "python-jose>=3.5.0",
     "python-multipart>=0.0.31",

@@ -3,6 +3,8 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     APP_NAME: str
+    BACKEND_URL: str
+    CLIENT_URL: str
     DATABASE_URL: str
     JWT_SECRET: str
     JWT_ALGORITHM: str
