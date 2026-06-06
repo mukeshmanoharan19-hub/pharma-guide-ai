@@ -1,5 +1,8 @@
+import json
+
 from langchain_openai import ChatOpenAI
 from app.core.config import settings
+from app.models.chat import ChatResponse
 from app.retrieval.hybrid_search import HybridRetriever
 from app.retrieval.reranker import rerank
 from app.core.prompts import RAG_PROMPT
@@ -112,7 +115,8 @@ class RAGService:
             )
 
             response = llm.invoke(
-                prompt
+                prompt,
+                response_format=ChatResponse
             )
 
             logger.success(
@@ -122,6 +126,7 @@ class RAGService:
 
             result = {
                 "answer": response.content,
+                "productsSuggestions": response.productsSuggestions
             }
 
             logger.success(
@@ -160,9 +165,19 @@ class RAGService:
             # Step 6 — Stream Response
             logger.info("Invoking LLM with streaming")
             
-            for chunk in llm.stream(prompt):
-                if chunk.content:
-                    yield chunk.content
+            stream = llm.stream(
+                prompt,
+                response_format=ChatResponse
+            )
+
+            for chunk in stream:
+                content = getattr(chunk, "content", None)
+                if isinstance(content, ChatResponse):
+                    yield json.dumps(content.model_dump())
+                elif isinstance(content, dict):
+                    yield json.dumps(content)
+                elif content:
+                    yield content
             
             logger.success("Streaming RAG pipeline completed successfully")
 

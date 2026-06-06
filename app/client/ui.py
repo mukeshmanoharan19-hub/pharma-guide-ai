@@ -41,7 +41,22 @@ def show_messages() -> None:
         if message["type"] == "user":
             st.chat_message("user").write(message["text"])
         else:
-            st.chat_message("assistant").write(message["text"])
+            with st.chat_message("assistant"):
+                st.markdown(message["text"])
+                products = message.get("products", [])
+                if products:
+                    st.markdown("**Suggested products:**")
+                    for product in products:
+                        cols = st.columns([1, 3])
+                        image_url = product.get("image_url")
+                        if image_url:
+                            cols[0].image(image_url, width=120)
+                        cols[1].markdown(
+                            f"**{product.get('name', '')}**\n\n"
+                            f"{product.get('description', '')}\n\n"
+                            f"SKU: {product.get('sku', '')}  \n"
+                            f"Price: ₹{product.get('price', '')}"
+                        )
 
 
 def login_form() -> None:
@@ -108,20 +123,8 @@ def chat_interface() -> None:
 
     show_messages()
 
-    with st.form(key="chat_form", clear_on_submit=True):
-        user_input = st.text_input("Type a message...", key="chat_input")
-        submitted = st.form_submit_button("Send")
-
-    status_area = st.empty()
-
-    if submitted and user_input:
-        st.session_state.messages.append({"type": "user", "text": user_input})
-        st.session_state.pending_response = True
-        st.session_state.pending_query = user_input
-        st.session_state.stream_complete = False
-        st.rerun()
-
     if st.session_state.pending_response and not st.session_state.stream_complete:
+        status_area = st.empty()
         status_area.info("Assistant is typing...",
                          icon="⌛")
         response_area = st.empty()
@@ -134,10 +137,42 @@ def chat_interface() -> None:
                 token=st.session_state.auth_token,
             ):
                 full_response += chunk
-                response_area.markdown(full_response + "▌")
+                # Parse JSON and display only the answer field during streaming
+                try:
+                    parsed = json.loads(full_response)
+                    answer_text = parsed.get("answer", full_response)
+                    response_area.markdown(answer_text + "▌")
+                except json.JSONDecodeError:
+                    # If not complete JSON yet, show what we have
+                    response_area.markdown(full_response + "▌")
 
-            response_area.markdown(full_response)
-            st.session_state.messages.append({"type": "assistant", "text": full_response})
+            response_area.empty()
+            
+            assistant_text = full_response
+            products = []
+            try:
+                parsed = json.loads(full_response)
+                assistant_text = parsed.get("answer", full_response)
+                products = parsed.get("productsSuggestions", [])
+                st.markdown(assistant_text)
+                
+                if products:
+                    st.markdown("**Suggested products:**")
+                    for product in products:
+                        cols = st.columns([1, 3])
+                        image_url = product.get("image_url")
+                        if image_url:
+                            cols[0].image(image_url, width=120)
+                        cols[1].markdown(
+                            f"**{product.get('name', '')}**\n\n"
+                            f"{product.get('description', '')}\n\n"
+                            f"SKU: {product.get('sku', '')}  \n"
+                            f"Price: ₹{product.get('price', '')}"
+                        )
+            except json.JSONDecodeError:
+                st.markdown(full_response)
+
+            st.session_state.messages.append({"type": "assistant", "text": assistant_text, "products": products})
             st.session_state.pending_response = False
             st.session_state.stream_complete = True
             st.session_state.pending_query = ""
@@ -148,8 +183,17 @@ def chat_interface() -> None:
             st.session_state.stream_complete = False
             st.session_state.pending_query = ""
             st.rerun()
-    else:
-        status_area.empty()
+
+    with st.form(key="chat_form", clear_on_submit=True):
+        user_input = st.text_input("Type a message...", key="chat_input")
+        submitted = st.form_submit_button("Send")
+
+    if submitted and user_input:
+        st.session_state.messages.append({"type": "user", "text": user_input, "products": []})
+        st.session_state.pending_response = True
+        st.session_state.pending_query = user_input
+        st.session_state.stream_complete = False
+        st.rerun()
 
 
 def main() -> None:
