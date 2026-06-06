@@ -1,0 +1,44 @@
+'use client';
+
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/hooks';
+import { ChatInterface } from '@/components/chat';
+import { LoadingSpinner } from '@/components/common';
+import { TOKEN_KEY } from '@/utils/tokenStorage';
+
+const token = localStorage.getItem(TOKEN_KEY);
+
+export default function ChatPage() {
+    const router = useRouter();
+    const { isAuthenticated, user, logout } = useAuth();
+
+    useEffect(() => {
+        if (!isAuthenticated && !token) {
+            router.push('/auth/login');
+        }
+    }, [isAuthenticated, router, token]);
+
+    if (!isAuthenticated) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                <LoadingSpinner size="lg" />
+            </div>
+        );
+    }
+
+    const handleLogout = () => {
+        logout();
+        router.push('/auth/login');
+    };
+
+    return (
+        <div className="h-screen flex flex-col">
+            <ChatInterface
+                userEmail={user?.email}
+                backendUrl={localStorage.getItem('pharma_guide_base_url') || 'http://localhost:8000'}
+                onLogout={handleLogout}
+            />
+        </div>
+    );
+}

@@ -19,5 +19,8 @@ passlib[bcrypt]
 python-multipart
 pydantic[email]
 argon2-cffi
+pymupdf
+jq
+argon2-cffi
 streamlit
 pymupdf

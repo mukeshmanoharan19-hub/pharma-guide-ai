@@ -2,7 +2,7 @@
 set -e
 
 API_CMD="python3 -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
-STREAMLIT_CMD="streamlit run streamlit_app.py"
+FRONTEND_CMD="cd frontend && npm run dev"
 
 cleanup() {
   echo "Stopping services..."
@@ -12,9 +12,9 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 printf "Starting API on http://localhost:8000\n"
-printf "Starting Streamlit on http://localhost:8501\n\n"
+printf "Starting Next.js frontend on http://localhost:3000\n\n"
 
 sh -c "$API_CMD" &
-sh -c "$STREAMLIT_CMD" &
+sh -c "$FRONTEND_CMD" &
 
 wait
