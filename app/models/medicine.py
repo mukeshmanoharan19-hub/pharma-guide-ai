@@ -39,3 +39,5 @@ class Medicine(Base):
     dosage_form = Column(String, nullable=True)
     release_type = Column(String, nullable=True)
     route = Column(String, nullable=True)
+    # Inventory (Phase 2). Null is treated as "in stock" for mock/seed data.
+    stock_quantity = Column(Integer, nullable=True)

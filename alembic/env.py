@@ -15,6 +15,8 @@ from app.models.medicine import Medicine  # noqa: F401
 from app.models.chat_session import ChatSession  # noqa: F401
 from app.models.chat_message import ChatMessage  # noqa: F401
 from app.models.conversation_summary import ConversationSummary  # noqa: F401
+from app.models.cart import Cart, CartItem  # noqa: F401
+from app.models.order import Order, OrderItem  # noqa: F401
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
