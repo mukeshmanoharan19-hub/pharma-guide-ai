@@ -11,7 +11,10 @@ export const chatService = {
         return response.data;
     },
 
-    async *askStream(request: ChatRequest): AsyncGenerator<string> {
+    async *askStream(
+        request: ChatRequest,
+        onSessionId?: (sessionId: string) => void
+    ): AsyncGenerator<string> {
         const token = localStorage.getItem('pharma_guide_token');
         const baseURL = localStorage.getItem('pharma_guide_base_url') ||
             (typeof window !== 'undefined' ? window.location.origin : '');
@@ -41,6 +44,11 @@ export const chatService = {
             if (!response.ok) {
                 const errorData = await response.json();
                 throw new Error(errorData.detail || 'Stream failed');
+            }
+
+            const sessionId = response.headers.get('X-Session-Id');
+            if (sessionId && onSessionId) {
+                onSessionId(sessionId);
             }
 
             const reader = response.body?.getReader();

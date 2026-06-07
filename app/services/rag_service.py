@@ -5,7 +5,7 @@ from app.core.config import settings
 from app.models.chat import ChatResponse
 from app.retrieval.hybrid_search import HybridRetriever
 from app.retrieval.reranker import rerank
-from app.core.prompts import RAG_PROMPT
+from app.core.prompts import RAG_PROMPT, CHAT_RAG_PROMPT
 from app.retrieval.compression import compress_documents
 from loguru import logger
 
@@ -77,7 +77,18 @@ class RAGService:
 
         return context, compressed_docs
 
-    def ask(self, query):
+    def _build_prompt(self, query, context, history_text=None, summary_text=None):
+        """Use the conversation-aware prompt when history/summary is present."""
+        if history_text or summary_text:
+            return CHAT_RAG_PROMPT.format(
+                summary=summary_text or "None.",
+                history=history_text or "None.",
+                context=context,
+                question=query,
+            )
+        return RAG_PROMPT.format(context=context, question=query)
+
+    def ask(self, query, history_text=None, summary_text=None):
 
         logger.info(
             f"Received user query: {query}"
@@ -89,7 +100,8 @@ class RAGService:
 
             if not context.strip():
                 return {
-                    "answer": "Sorry, I couldn't find relevant information to answer your question."
+                    "answer": "Sorry, I couldn't find relevant information to answer your question.",
+                    # "productsSuggestions": [],
                 }
 
 
@@ -98,9 +110,8 @@ class RAGService:
                 "Creating RAG prompt"
             )
 
-            prompt = RAG_PROMPT.format(
-                context=context,
-                question=query
+            prompt = self._build_prompt(
+                query, context, history_text, summary_text
             )
 
             logger.info(
@@ -126,7 +137,7 @@ class RAGService:
 
             result = {
                 "answer": response.content,
-                "productsSuggestions": response.productsSuggestions
+                # "productsSuggestions": response.productsSuggestions
             }
 
             logger.success(
@@ -145,7 +156,7 @@ class RAGService:
 
             raise
 
-    def ask_stream(self, query):
+    def ask_stream(self, query, history_text=None, summary_text=None):
         """Stream the RAG response token by token."""
         logger.info(f"Received streaming user query: {query}")
 
@@ -153,13 +164,17 @@ class RAGService:
             context, compressed_docs = self._prepare_context(query)
 
             if not context.strip():
-                return {
-                    "answer": "Sorry, I couldn't find relevant information to answer your question."
-                }
+                yield json.dumps({
+                    "answer": "Sorry, I couldn't find relevant information to answer your question.",
+                    # "productsSuggestions": [],
+                })
+                return
 
             # Step 5 — Create Prompt
             logger.info("Creating RAG prompt")
-            prompt = RAG_PROMPT.format(context=context, question=query)
+            prompt = self._build_prompt(
+                query, context, history_text, summary_text
+            )
             logger.info(f"Prompt created. Length: {len(prompt)} characters")
 
             # Step 6 — Stream Response

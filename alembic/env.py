@@ -12,6 +12,9 @@ from app.db.database import Base
 # Add new model imports here as they are introduced in later phases.
 from app.models.user import User  # noqa: F401
 from app.models.medicine import Medicine  # noqa: F401
+from app.models.chat_session import ChatSession  # noqa: F401
+from app.models.chat_message import ChatMessage  # noqa: F401
+from app.models.conversation_summary import ConversationSummary  # noqa: F401
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

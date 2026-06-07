@@ -13,6 +13,9 @@ from app.db.database import engine, Base
 # Import models so they are registered on Base.metadata before create_all.
 from app.models.user import User  # noqa: F401
 from app.models.medicine import Medicine  # noqa: F401
+from app.models.chat_session import ChatSession  # noqa: F401
+from app.models.chat_message import ChatMessage  # noqa: F401
+from app.models.conversation_summary import ConversationSummary  # noqa: F401
 
 
 def init_db():

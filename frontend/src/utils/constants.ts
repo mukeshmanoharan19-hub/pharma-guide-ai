@@ -9,8 +9,15 @@ export const API_ENDPOINTS = {
         ASK: '/api/chat/ask',
         ASK_STREAM: '/api/chat/ask/stream',
     },
+    SESSIONS: {
+        BASE: '/api/sessions',
+        MESSAGES: (id: string) => `/api/sessions/${id}/messages`,
+        DELETE: (id: string) => `/api/sessions/${id}`,
+    },
     HEALTH: '/health',
 };
+
+export const SESSION_STORAGE_KEY = 'pharma_guide_session_id';
 
 export const APP_CONFIG = {
     DEFAULT_BACKEND_URL: API_BASE_URL,

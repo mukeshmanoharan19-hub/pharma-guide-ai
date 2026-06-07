@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useChat } from '@/hooks';
 import { Button } from '@/components/ui';
 import { MessageList } from './MessageList';
@@ -17,9 +17,25 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
     backendUrl,
     onLogout,
 }) => {
-    const { messages, isLoading, error, clearError, stream } = useChat();
+    const {
+        messages,
+        isLoading,
+        error,
+        clearError,
+        stream,
+        sessions,
+        sessionId,
+        newChat,
+        loadSession,
+        deleteSession,
+        restoreActiveSession,
+    } = useChat();
     const [showSettings, setShowSettings] = useState(false);
     const [customBackendUrl, setCustomBackendUrl] = useState(backendUrl || 'http://localhost:8000');
+
+    useEffect(() => {
+        restoreActiveSession();
+    }, [restoreActiveSession]);
 
     const handleSendMessage = async (query: string) => {
         try {
@@ -38,8 +54,54 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
         setShowSettings(false);
     };
 
+    const formatSessionTitle = (title?: string | null) =>
+        title && title.trim().length > 0 ? title : 'New conversation';
+
     return (
-        <div className="flex flex-col h-full bg-white">
+        <div className="flex h-full bg-white">
+            {/* Sessions Sidebar */}
+            <aside className="hidden md:flex md:flex-col w-64 border-r border-gray-200 bg-gray-50">
+                <div className="p-4 border-b border-gray-200">
+                    <Button className="w-full" size="sm" onClick={newChat}>
+                        + New chat
+                    </Button>
+                </div>
+                <div className="flex-1 overflow-y-auto p-2 space-y-1">
+                    {sessions.length === 0 && (
+                        <p className="text-xs text-gray-400 px-2 py-3">
+                            No conversations yet.
+                        </p>
+                    )}
+                    {sessions.map((session) => (
+                        <div
+                            key={session.id}
+                            className={`group flex items-center justify-between rounded-lg px-3 py-2 cursor-pointer transition-colors ${session.id === sessionId
+                                ? 'bg-blue-100 text-blue-700'
+                                : 'hover:bg-gray-200 text-gray-700'
+                                }`}
+                            onClick={() => loadSession(session.id)}
+                        >
+                            <span className="truncate text-sm">
+                                {formatSessionTitle(session.title)}
+                            </span>
+                            <button
+                                type="button"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    deleteSession(session.id);
+                                }}
+                                className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-red-500 ml-2"
+                                aria-label="Delete conversation"
+                            >
+                                ✕
+                            </button>
+                        </div>
+                    ))}
+                </div>
+            </aside>
+
+            {/* Main Chat Column */}
+            <div className="flex flex-col flex-1 bg-white">
             {/* Header */}
             <div className="border-b border-gray-200 p-4 bg-gradient-to-r from-blue-600 to-cyan-500">
                 <div className="flex justify-between items-center">
@@ -104,8 +166,9 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
                 <MessageList messages={messages} isLoading={isLoading} />
             </div>
 
-            {/* Input Area */}
-            <ChatInput onSend={handleSendMessage} isLoading={isLoading} />
+                {/* Input Area */}
+                <ChatInput onSend={handleSendMessage} isLoading={isLoading} />
+            </div>
         </div>
     );
 };
