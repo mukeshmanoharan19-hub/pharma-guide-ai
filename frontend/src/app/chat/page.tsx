@@ -7,17 +7,20 @@ import { ChatInterface } from '@/components/chat';
 import { LoadingSpinner } from '@/components/common';
 import { TOKEN_KEY } from '@/utils/tokenStorage';
 
-const token = localStorage.getItem(TOKEN_KEY);
-
 export default function ChatPage() {
     const router = useRouter();
     const { isAuthenticated, user, logout } = useAuth();
 
     useEffect(() => {
+        const token =
+            typeof window !== 'undefined'
+                ? localStorage.getItem(TOKEN_KEY)
+                : null;
+
         if (!isAuthenticated && !token) {
             router.push('/auth/login');
         }
-    }, [isAuthenticated, router, token]);
+    }, [isAuthenticated, router]);
 
     if (!isAuthenticated) {
         return (
@@ -32,11 +35,16 @@ export default function ChatPage() {
         router.push('/auth/login');
     };
 
+    const backendUrl =
+        (typeof window !== 'undefined' &&
+            localStorage.getItem('pharma_guide_base_url')) ||
+        'http://localhost:8000';
+
     return (
         <div className="h-screen flex flex-col">
             <ChatInterface
                 userEmail={user?.email}
-                backendUrl={localStorage.getItem('pharma_guide_base_url') || 'http://localhost:8000'}
+                backendUrl={backendUrl}
                 onLogout={handleLogout}
             />
         </div>

@@ -14,6 +14,7 @@ loguru
 pydantic-settings
 psycopg2-binary
 alembic
+redis
 python-jose
 passlib[bcrypt]
 python-multipart

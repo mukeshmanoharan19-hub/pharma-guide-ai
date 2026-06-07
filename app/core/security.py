@@ -6,6 +6,18 @@ from passlib.context import CryptContext
 
 from app.core.config import settings
 
+from fastapi import Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer
+from jose import JWTError
+from sqlalchemy.orm import Session
+
+from app.db.database import get_db
+from app.models.user import User
+
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
+
+
 pwd_context = CryptContext(
     schemes=["argon2"],
     deprecated="auto"
@@ -36,21 +48,6 @@ def create_access_token(data: dict):
         settings.JWT_SECRET,
         algorithm=settings.JWT_ALGORITHM
     )
-
-
-from typing import Optional
-
-from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
-from jose import JWTError
-from sqlalchemy.orm import Session
-
-from app.db.database import get_db
-from app.models.user import User
-
-
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
-
 
 def decode_access_token(token: str) -> dict:
     try:

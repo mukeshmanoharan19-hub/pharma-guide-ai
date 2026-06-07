@@ -165,20 +165,19 @@ class RAGService:
             # Step 6 — Stream Response
             logger.info("Invoking LLM with streaming")
             
-            stream = llm.stream(
-                prompt,
-                response_format=ChatResponse
-            )
+            # 1. Bind the response format to the LLM first
+            structured_llm = llm.with_structured_output(ChatResponse)
+
+            # 2. Stream from the structured LLM
+            stream = structured_llm.stream(prompt)
 
             for chunk in stream:
-                content = getattr(chunk, "content", None)
-                if isinstance(content, ChatResponse):
-                    yield json.dumps(content.model_dump())
-                elif isinstance(content, dict):
-                    yield json.dumps(content)
-                elif content:
-                    yield content
-            
+                # With structured streaming, chunks are often partial Pydantic objects 
+                # or the final validated object depending on your provider.
+                if chunk:
+                    # Use model_dump(mode="json") to safely convert Pydantic to a JSON-serializable dict
+                    yield json.dumps(chunk.model_dump(mode="json"))
+                        
             logger.success("Streaming RAG pipeline completed successfully")
 
         except Exception as e:

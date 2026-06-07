@@ -18,11 +18,17 @@ class UserOut(BaseModel):
 	email: EmailStr
 	full_name: Optional[str] = None
 
-	class Config:
-		model_config = ConfigDict(from_attributes=True)
+	model_config = ConfigDict(from_attributes=True)
 
 
 class Token(BaseModel):
 	access_token: str
 	token_type: str
 
+
+class AuthResponse(BaseModel):
+	"""Login/register response: token plus the authenticated user."""
+
+	access_token: str
+	token_type: str = "bearer"
+	user: UserOut

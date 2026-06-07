@@ -1,12 +1,15 @@
 import os
+import warnings
 
 from fastapi import FastAPI
-from app.db.init_db import init_db
 from app.api.routes.auth import router as auth_router
 from app.api.routes.health import router as health_router
 from app.api.routes.ingestion import router as ingestion_router
 from app.api.routes.chat import router as chat_router
 from fastapi.middleware.cors import CORSMiddleware
+
+# This silences any warning where the message module path contains "pydantic"
+warnings.filterwarnings("ignore", module="pydantic")
 
 app = FastAPI(
     title=os.getenv("APP_NAME", "Pharma Guide API"),
@@ -25,7 +28,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-init_db()
+# Database schema is managed by Alembic migrations ("alembic upgrade head"),
+# not create_all(). See the Makefile "migrate" / "migration" targets.
 
 app.include_router(auth_router)
 app.include_router(health_router)

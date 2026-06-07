@@ -18,6 +18,7 @@ def register_user(
 
     db.add(user)
     db.commit()
+    db.refresh(user)
 
     return user
 

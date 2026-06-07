@@ -4,13 +4,24 @@ from sqlalchemy.orm import Session
 from app.db.database import get_db
 from app.services.auth_service import register_user, authenticate_user, get_user_by_email
 from app.core.security import create_access_token
-from app.schemas.user import UserCreate, UserOut, Token, UserLogin
+from app.schemas.user import UserCreate, UserLogin, AuthResponse
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 
-@router.post("/register", response_model=UserOut)
+def _build_auth_response(user) -> AuthResponse:
+    token_data = {"sub": str(user.id), "email": user.email}
+    access_token = create_access_token(token_data)
+
+    return AuthResponse(
+        access_token=access_token,
+        token_type="bearer",
+        user=user,
+    )
+
+
+@router.post("/register", response_model=AuthResponse)
 def register(payload: UserCreate, db: Session = Depends(get_db)):
     existing = get_user_by_email(db, payload.email)
 
@@ -22,10 +33,10 @@ def register(payload: UserCreate, db: Session = Depends(get_db)):
 
     user = register_user(db, payload.email, payload.password, payload.full_name)
 
-    return user
+    return _build_auth_response(user)
 
 
-@router.post("/login", response_model=Token)
+@router.post("/login", response_model=AuthResponse)
 def login(payload: UserLogin, db: Session = Depends(get_db)):
     user = authenticate_user(db, payload.email, payload.password)
 
@@ -36,8 +47,4 @@ def login(payload: UserLogin, db: Session = Depends(get_db)):
             headers={"WWW-Authenticate": "Bearer"}
         )
 
-    token_data = {"sub": str(user.id), "email": user.email}
-
-    access_token = create_access_token(token_data)
-
-    return {"access_token": access_token, "token_type": "bearer"}
+    return _build_auth_response(user)

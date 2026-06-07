@@ -1,4 +1,6 @@
-from pydantic_settings import BaseSettings
+from typing import Optional
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -14,8 +16,25 @@ class Settings(BaseSettings):
     MODEL_NAME: str
     EMBEDDING_MODEL: str
 
-    class Config:
-        env_file = ".env"
+    # --- Phase 0: Foundation additions ---
+
+    # Redis (session memory, used from Phase 1 onwards)
+    REDIS_URL: str = "redis://localhost:6379/0"
+
+    # LangSmith tracing (wired in Phase 10; safe defaults so it stays off)
+    LANGCHAIN_TRACING_V2: bool = False
+    LANGSMITH_API_KEY: Optional[str] = None
+    LANGSMITH_PROJECT: str = "pharma-guide-ai"
+
+    # Token budgets for context window management (Phase 1)
+    MAX_CONTEXT_TOKENS: int = 8000
+    SUMMARY_THRESHOLD_TOKENS: int = 6000
+    RECENT_MESSAGE_WINDOW: int = 10
+
+    # Rate limiting (enforced in Phase 12; value available early for wiring)
+    RATE_LIMIT_PER_MINUTE: int = 30
+
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 
 settings = Settings()
