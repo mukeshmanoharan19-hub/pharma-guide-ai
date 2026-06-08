@@ -198,3 +198,19 @@ class RAGService:
         except Exception as e:
             logger.exception(f"Error during streaming RAG pipeline: {str(e)}")
             raise
+
+
+_default_rag_service: "RAGService | None" = None
+
+
+def get_rag_service() -> "RAGService":
+    """Return a lazily-created, process-wide RAGService.
+
+    Sharing a single instance avoids loading the hybrid retriever / vector
+    store more than once (it is reused by both the chat route and the agent
+    graph).
+    """
+    global _default_rag_service
+    if _default_rag_service is None:
+        _default_rag_service = RAGService()
+    return _default_rag_service

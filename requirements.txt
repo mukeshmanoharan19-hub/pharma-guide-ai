@@ -16,6 +16,9 @@ psycopg2-binary
 alembic
 redis
 tenacity
+langgraph
+langgraph-checkpoint-postgres
+psycopg[binary]
 python-jose
 passlib[bcrypt]
 python-multipart

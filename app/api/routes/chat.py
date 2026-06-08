@@ -10,11 +10,11 @@ from app.memory import context_builder, history_service, summarization_service
 from app.models.request_model import QueryRequest
 from app.models.user import User
 from app.services import session_service
-from app.services.rag_service import RAGService
+from app.services.rag_service import get_rag_service
 
 router = APIRouter(tags=["chat"], prefix="/api/chat")
 
-rag_service = RAGService()
+rag_service = get_rag_service()
 
 
 def _resolve_session(db: Session, user: User, session_id):

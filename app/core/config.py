@@ -34,6 +34,10 @@ class Settings(BaseSettings):
     # Rate limiting (enforced in Phase 12; value available early for wiring)
     RATE_LIMIT_PER_MINUTE: int = 30
 
+    # --- Phase 3: LangGraph agent foundation ---
+    # Connection pool size for the Postgres checkpoint saver.
+    CHECKPOINT_POOL_SIZE: int = 5
+
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 
