@@ -1,14 +1,22 @@
-"""LangGraph agent workflow skeleton (Phase 3 foundation).
+"""LangGraph agent workflow (Phase 4: supervisor + intent routing).
 
-The graph wires up the node architecture that later phases flesh out:
+Flow:
 
-    load_memory -> safety_screen -> supervisor -> general_rag
-                -> synthesize_response -> persist_memory
+    load_memory -> safety_screen -> supervisor
+        --(intent-based conditional routing)-->
+            medicine_agent | symptom_agent | commerce_agent
+            | support_agent | general_chat
+        -> synthesize_response -> persist_memory
 
-Failures in the answering path are routed to ``error_handler`` which returns a
-safe user-facing message. For now the supervisor always routes to a single
-``general_rag`` node that reuses the existing RAG pipeline; Phase 4 adds real
-intent detection and Phase 5 adds specialist agents.
+The supervisor classifies the user's intent (six intents from the roadmap),
+records routing analytics, and routes to the matching specialist node. Low
+confidence or an unrecognised intent falls back to ``general_chat``.
+
+Phase 4 specialist nodes are intentionally thin:
+- medicine_agent / symptom_agent / general_chat answer via the existing RAG
+  pipeline.
+- commerce_agent / support_agent return honest holding responses; their live
+  tool-backed behaviour is wired up in Phase 5 (agents) and Phase 7 (commerce).
 
 The graph is rebuilt per request so node closures can capture the request-scoped
 ``db`` session and ``user_id`` without pushing non-serialisable objects through
@@ -25,13 +33,26 @@ from langgraph.graph import END, START, StateGraph
 from loguru import logger
 from sqlalchemy.orm import Session
 
+from app.agents import intents
 from app.agents.state import GraphState
+from app.agents.supervisor import classify_intent, resolve_route
 from app.memory import context_builder, history_service, summarization_service
+from app.services import routing_log_service
 from app.services.rag_service import get_rag_service
 
 SAFE_FALLBACK_MESSAGE = (
     "Sorry, I ran into a problem while processing your request. "
     "Please try again in a moment."
+)
+
+COMMERCE_PLACEHOLDER = (
+    "I can help you manage your cart and place orders. Live cart and checkout "
+    "actions are being connected and will be available shortly."
+)
+
+SUPPORT_PLACEHOLDER = (
+    "I can help you track orders and with delivery support. Live order lookups "
+    "are being connected and will be available shortly."
 )
 
 
@@ -54,6 +75,34 @@ def _products_to_list(products) -> list:
 
 def build_agent_graph(db: Session, user_id: int, checkpointer=None):
     """Compile the agent graph with request-scoped dependencies bound in."""
+
+    def _answer_with_rag(state: GraphState) -> dict:
+        """Shared RAG answer used by the information-seeking specialist nodes."""
+        try:
+            rag = get_rag_service()
+            result = rag.ask(
+                state["query"],
+                history_text=state.get("history_text"),
+                summary_text=state.get("memory_summary"),
+            )
+            answer = result.get("answer", "")
+            products = _products_to_list(result.get("productsSuggestions", []))
+            return {
+                "final_response": {
+                    "answer": answer,
+                    "productsSuggestions": products,
+                },
+                "messages": [AIMessage(content=answer)],
+            }
+        except Exception as exc:  # node-level error transition
+            logger.exception(f"RAG answer failed: {exc}")
+            return {"error": str(exc)}
+
+    def _static_answer(message: str) -> dict:
+        return {
+            "final_response": {"answer": message, "productsSuggestions": []},
+            "messages": [AIMessage(content=message)],
+        }
 
     def load_memory(state: GraphState) -> dict:
         """Hydrate conversational context and persist the incoming user turn."""
@@ -78,30 +127,54 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
         return {"safety_flags": []}
 
     def supervisor(state: GraphState) -> dict:
-        """Placeholder intent router (real intent detection arrives in Phase 4)."""
-        return {"intent": "general", "intent_confidence": 1.0}
+        """Detect intent, resolve the route, and record routing analytics."""
+        classification = classify_intent(
+            state["query"],
+            history_text=state.get("history_text"),
+            summary_text=state.get("memory_summary"),
+        )
+        route, effective_intent = resolve_route(classification)
 
-    def general_rag(state: GraphState) -> dict:
-        """Answer using the existing RAG pipeline."""
-        try:
-            rag = get_rag_service()
-            result = rag.ask(
-                state["query"],
-                history_text=state.get("history_text"),
-                summary_text=state.get("memory_summary"),
-            )
-            answer = result.get("answer", "")
-            products = _products_to_list(result.get("productsSuggestions", []))
-            return {
-                "final_response": {
-                    "answer": answer,
-                    "productsSuggestions": products,
-                },
-                "messages": [AIMessage(content=answer)],
-            }
-        except Exception as exc:  # node-level error transition
-            logger.exception(f"general_rag node failed: {exc}")
-            return {"error": str(exc)}
+        logger.info(
+            "[supervisor] intent={} confidence={:.2f} route={} secondary={}",
+            effective_intent,
+            classification.confidence,
+            route,
+            classification.secondary_intents,
+        )
+
+        routing_log_service.record_decision(
+            db,
+            user_id=user_id,
+            session_id=state.get("session_id"),
+            query=state["query"],
+            intent=effective_intent,
+            confidence=classification.confidence,
+            secondary_intents=classification.secondary_intents,
+            route=route,
+        )
+
+        return {
+            "intent": effective_intent,
+            "intent_confidence": classification.confidence,
+            "secondary_intents": classification.secondary_intents,
+            "route": route,
+        }
+
+    def medicine_agent(state: GraphState) -> dict:
+        return _answer_with_rag(state)
+
+    def symptom_agent(state: GraphState) -> dict:
+        return _answer_with_rag(state)
+
+    def general_chat(state: GraphState) -> dict:
+        return _answer_with_rag(state)
+
+    def commerce_agent(state: GraphState) -> dict:
+        return _static_answer(COMMERCE_PLACEHOLDER)
+
+    def support_agent(state: GraphState) -> dict:
+        return _static_answer(SUPPORT_PLACEHOLDER)
 
     def synthesize_response(state: GraphState) -> dict:
         """Finalise the response payload (compression/merging lands in Phase 6)."""
@@ -127,7 +200,10 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
                 session_id,
                 "assistant",
                 answer,
-                metadata={"products": products},
+                metadata={
+                    "products": products,
+                    "intent": state.get("intent"),
+                },
             )
             summarization_service.maybe_summarize(db, session_id)
         except Exception as exc:  # persistence must not break the response
@@ -144,14 +220,25 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
             }
         }
 
-    def route_after_generate(state: GraphState) -> str:
+    def route_from_supervisor(state: GraphState) -> str:
+        """Return the specialist node chosen by the supervisor (with fallback)."""
+        route = state.get("route")
+        if route in intents.ALL_ROUTES:
+            return route
+        return intents.FALLBACK_ROUTE
+
+    def route_after_agent(state: GraphState) -> str:
         return "error_handler" if state.get("error") else "synthesize_response"
 
     builder = StateGraph(GraphState)
     builder.add_node("load_memory", load_memory)
     builder.add_node("safety_screen", safety_screen)
     builder.add_node("supervisor", supervisor)
-    builder.add_node("general_rag", general_rag)
+    builder.add_node(intents.MEDICINE_AGENT, medicine_agent)
+    builder.add_node(intents.SYMPTOM_AGENT, symptom_agent)
+    builder.add_node(intents.COMMERCE_AGENT, commerce_agent)
+    builder.add_node(intents.SUPPORT_AGENT, support_agent)
+    builder.add_node(intents.GENERAL_CHAT, general_chat)
     builder.add_node("synthesize_response", synthesize_response)
     builder.add_node("persist_memory", persist_memory)
     builder.add_node("error_handler", error_handler)
@@ -159,16 +246,24 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
     builder.add_edge(START, "load_memory")
     builder.add_edge("load_memory", "safety_screen")
     builder.add_edge("safety_screen", "supervisor")
-    # Phase 4 replaces this static edge with intent-based conditional routing.
-    builder.add_edge("supervisor", "general_rag")
+
+    # Intent-based routing from the supervisor to a specialist agent.
     builder.add_conditional_edges(
-        "general_rag",
-        route_after_generate,
-        {
-            "synthesize_response": "synthesize_response",
-            "error_handler": "error_handler",
-        },
+        "supervisor",
+        route_from_supervisor,
+        {route: route for route in intents.ALL_ROUTES},
     )
+
+    # Every specialist node either succeeds (-> synthesize) or errors (-> handler).
+    after_agent_map = {
+        "synthesize_response": "synthesize_response",
+        "error_handler": "error_handler",
+    }
+    for agent_node in intents.ALL_ROUTES:
+        builder.add_conditional_edges(
+            agent_node, route_after_agent, after_agent_map
+        )
+
     builder.add_edge("synthesize_response", "persist_memory")
     builder.add_edge("persist_memory", END)
     builder.add_edge("error_handler", END)

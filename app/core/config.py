@@ -38,6 +38,11 @@ class Settings(BaseSettings):
     # Connection pool size for the Postgres checkpoint saver.
     CHECKPOINT_POOL_SIZE: int = 5
 
+    # --- Phase 4: Supervisor agent ---
+    # Below this primary-intent confidence the supervisor falls back to the
+    # general conversation route instead of a specialist agent.
+    INTENT_CONFIDENCE_THRESHOLD: float = 0.45
+
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 

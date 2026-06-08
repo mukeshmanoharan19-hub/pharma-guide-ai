@@ -64,7 +64,11 @@ async def agent_chat(
                 input_state, config=config, stream_mode="updates"
             ):
                 for node_name, delta in update.items():
-                    yield f"data: {json.dumps({'event': 'progress', 'node': node_name})}\n\n"
+                    progress = {"event": "progress", "node": node_name}
+                    if delta and delta.get("intent") is not None:
+                        progress["intent"] = delta["intent"]
+                        progress["confidence"] = delta.get("intent_confidence")
+                    yield f"data: {json.dumps(progress)}\n\n"
                     if delta and delta.get("final_response"):
                         final_response = delta["final_response"]
         except Exception as exc:

@@ -23,6 +23,8 @@ class GraphState(TypedDict, total=False):
     # Supervisor / routing (populated in Phase 4)
     intent: Optional[str]
     intent_confidence: float
+    secondary_intents: List[str]
+    route: Optional[str]
 
     # Memory (populated in Phase 1 memory layer via load_memory)
     memory_summary: Optional[str]

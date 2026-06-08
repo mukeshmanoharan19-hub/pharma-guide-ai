@@ -9,22 +9,11 @@ from app.core.prompts import RAG_PROMPT, CHAT_RAG_PROMPT
 from app.retrieval.compression import compress_documents
 from loguru import logger
 
-# Initialize LLM
-logger.info(
-    f"Initializing LLM model: "
-    f"{settings.MODEL_NAME}"
-)
-
 llm = ChatOpenAI(
     api_key=settings.OPENAI_API_KEY,
     model=settings.MODEL_NAME,
     temperature=0
 )
-
-logger.success(
-    "LLM initialized successfully"
-)
-
 
 class RAGService:
 
