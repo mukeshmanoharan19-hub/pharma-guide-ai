@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { useChat } from '@/hooks';
 import { Button } from '@/components/ui';
+import { useCartStore } from '@/store';
+import { CartDrawer } from '@/components/commerce/CartDrawer';
 import { MessageList } from './MessageList';
 import { ChatInput } from './ChatInput';
 
@@ -32,10 +34,17 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
     } = useChat();
     const [showSettings, setShowSettings] = useState(false);
     const [customBackendUrl, setCustomBackendUrl] = useState(backendUrl || 'http://localhost:8000');
+    const cartCount = useCartStore((s) => s.cart?.item_count ?? 0);
+    const openCart = useCartStore((s) => s.openDrawer);
+    const fetchCart = useCartStore((s) => s.fetchCart);
 
     useEffect(() => {
         restoreActiveSession();
     }, [restoreActiveSession]);
+
+    useEffect(() => {
+        fetchCart();
+    }, [fetchCart]);
 
     const handleSendMessage = async (query: string) => {
         try {
@@ -109,7 +118,20 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
                         <h1 className="text-2xl font-bold text-white">Pharma Guide AI</h1>
                         <p className="text-blue-100">Hi, {userEmail || 'pharma explorer'} 👋</p>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 items-center">
+                        <button
+                            type="button"
+                            onClick={() => openCart('cart')}
+                            className="relative bg-white/20 hover:bg-white/30 text-white rounded-lg px-3 py-1.5 text-sm font-medium transition-colors"
+                            aria-label="Open cart"
+                        >
+                            🛒 Cart
+                            {cartCount > 0 && (
+                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                                    {cartCount}
+                                </span>
+                            )}
+                        </button>
                         <Button
                             variant="secondary"
                             size="sm"
@@ -169,6 +191,9 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
                 {/* Input Area */}
                 <ChatInput onSend={handleSendMessage} isLoading={isLoading} />
             </div>
+
+            {/* Cart & Orders Drawer */}
+            <CartDrawer />
         </div>
     );
 };

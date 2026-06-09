@@ -8,6 +8,8 @@ from app.api.routes.ingestion import router as ingestion_router
 from app.api.routes.chat import router as chat_router
 from app.api.routes.sessions import router as sessions_router
 from app.api.routes.agent import router as agent_router
+from app.api.routes.cart import router as cart_router
+from app.api.routes.orders import router as orders_router
 from fastapi.middleware.cors import CORSMiddleware
 
 # This silences any warning where the message module path contains "pydantic"
@@ -40,3 +42,5 @@ app.include_router(ingestion_router)
 app.include_router(chat_router)
 app.include_router(sessions_router)
 app.include_router(agent_router)
+app.include_router(cart_router)
+app.include_router(orders_router)

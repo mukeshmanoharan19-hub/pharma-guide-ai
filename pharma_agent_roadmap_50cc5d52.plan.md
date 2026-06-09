@@ -25,7 +25,7 @@ todos:
     status: pending
   - id: phase-7-commerce
     content: "PHASE 7 — Commerce UI + APIs: cart/order REST, mock payment flow, cart drawer, product card actions. GATE: confirm before Phase 8."
-    status: pending
+    status: complete
   - id: phase-8-safety
     content: "PHASE 8 — Medical Safety: risk detector, guardrails, escalation nodes in graph. GATE: confirm before Phase 9."
     status: pending

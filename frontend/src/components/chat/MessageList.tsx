@@ -3,33 +3,51 @@
 import React, { useEffect, useRef } from 'react';
 import { Message, Product } from '@/types';
 import { formatTime } from '@/utils/formatting';
-
-interface MessageListProps {
-    messages: Message[];
-    isLoading?: boolean;
-}
+import { useCartStore } from '@/store';
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
+    const addItem = useCartStore((s) => s.addItem);
+    const isLoading = useCartStore((s) => s.isLoading);
+    // Agent tool results may use `title` instead of `name`.
+    const displayName = product.name || (product as any).title || product.sku;
+
     return (
         <div className="flex gap-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
             {product.image_url && (
                 <img
                     src={product.image_url}
-                    alt={product.name}
+                    alt={displayName}
                     className="w-24 h-24 object-cover rounded"
                 />
             )}
             <div className="flex-1">
-                <h4 className="font-semibold text-gray-900">{product.name}</h4>
-                <p className="text-sm text-gray-600 mt-1">{product.description}</p>
+                <h4 className="font-semibold text-gray-900">{displayName}</h4>
+                {product.description && (
+                    <p className="text-sm text-gray-600 mt-1">{product.description}</p>
+                )}
                 <div className="flex justify-between items-center mt-2">
                     <span className="text-sm text-gray-500">SKU: {product.sku}</span>
                     <span className="font-semibold text-blue-600">₹{product.price}</span>
                 </div>
+                {product.sku && (
+                    <button
+                        type="button"
+                        onClick={() => addItem(product.sku)}
+                        disabled={isLoading}
+                        className="mt-2 w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white text-sm font-medium py-1.5 rounded-lg transition-colors"
+                    >
+                        Add to cart
+                    </button>
+                )}
             </div>
         </div>
     );
 };
+
+interface MessageListProps {
+    messages: Message[];
+    isLoading?: boolean;
+}
 
 export const MessageList: React.FC<MessageListProps> = ({ messages, isLoading = false }) => {
     const endRef = useRef<HTMLDivElement>(null);

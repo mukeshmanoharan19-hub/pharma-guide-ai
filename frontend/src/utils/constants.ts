@@ -14,6 +14,15 @@ export const API_ENDPOINTS = {
         MESSAGES: (id: string) => `/api/sessions/${id}/messages`,
         DELETE: (id: string) => `/api/sessions/${id}`,
     },
+    CART: {
+        BASE: '/api/cart',
+        ITEMS: '/api/cart/items',
+        ITEM: (sku: string) => `/api/cart/items/${encodeURIComponent(sku)}`,
+    },
+    ORDERS: {
+        BASE: '/api/orders',
+        TRACK: (id: string) => `/api/orders/${id}`,
+    },
     HEALTH: '/health',
 };
 
