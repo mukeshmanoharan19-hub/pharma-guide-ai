@@ -46,3 +46,18 @@ help:
 	@echo "  make dev           - Start API only"
 	@echo "  make dev-nextjs    - Display instructions for running both servers"
 	@echo "  make install-frontend - Install frontend dependencies"
+
+
+# Docker commands:
+# 	docker compose up -d
+# 	docker compose down
+# 	docker compose exec api make migrate
+# 	docker compose exec api make migration m="add chat tables"
+# 	docker compose exec api make dev
+# 	docker compose exec api make dev-nextjs
+# 	docker compose exec api make install-frontend
+# 	docker compose exec api make help
+# 	docker compose exec api make backend
+# 	docker compose exec api make frontend
+# 	docker compose exec api make migrate
+# 	docker exec -it pharma-guide-postgres psql -U postgres

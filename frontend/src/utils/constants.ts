@@ -6,8 +6,8 @@ export const API_ENDPOINTS = {
         REGISTER: '/auth/register',
     },
     CHAT: {
-        ASK: '/api/chat/ask',
-        ASK_STREAM: '/api/chat/ask/stream',
+        ASK: '/api/agent/chat',
+        ASK_STREAM: '/api/agent/chat',
     },
     SESSIONS: {
         BASE: '/api/sessions',

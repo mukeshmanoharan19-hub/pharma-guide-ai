@@ -12,11 +12,12 @@ The supervisor classifies the user's intent (six intents from the roadmap),
 records routing analytics, and routes to the matching specialist node. Low
 confidence or an unrecognised intent falls back to ``general_chat``.
 
-Phase 4 specialist nodes are intentionally thin:
-- medicine_agent / symptom_agent / general_chat answer via the existing RAG
-  pipeline.
-- commerce_agent / support_agent return honest holding responses; their live
-  tool-backed behaviour is wired up in Phase 5 (agents) and Phase 7 (commerce).
+Specialist nodes (Phase 5):
+- medicine_agent / symptom_agent / commerce_agent / support_agent are
+  tool-calling agents bound to the relevant Phase 2 tools (catalog search,
+  cart/order operations, order tracking).
+- general_chat stays on the plain RAG pipeline (no tools) for small talk and
+  open-ended product questions.
 
 The graph is rebuilt per request so node closures can capture the request-scoped
 ``db`` session and ``user_id`` without pushing non-serialisable objects through
@@ -34,25 +35,23 @@ from loguru import logger
 from sqlalchemy.orm import Session
 
 from app.agents import intents
+from app.agents.specialists import (
+    COMMERCE_AGENT_SPEC,
+    MEDICINE_AGENT_SPEC,
+    SUPPORT_AGENT_SPEC,
+    SYMPTOM_AGENT_SPEC,
+)
 from app.agents.state import GraphState
 from app.agents.supervisor import classify_intent, resolve_route
+from app.agents.tool_agent import run_tool_agent
 from app.memory import context_builder, history_service, summarization_service
 from app.services import routing_log_service
-from app.services.rag_service import get_rag_service
+from app.services.rag_service import get_rag_service, llm
+from app.tools.registry import build_tools_by_names
 
 SAFE_FALLBACK_MESSAGE = (
     "Sorry, I ran into a problem while processing your request. "
     "Please try again in a moment."
-)
-
-COMMERCE_PLACEHOLDER = (
-    "I can help you manage your cart and place orders. Live cart and checkout "
-    "actions are being connected and will be available shortly."
-)
-
-SUPPORT_PLACEHOLDER = (
-    "I can help you track orders and with delivery support. Live order lookups "
-    "are being connected and will be available shortly."
 )
 
 
@@ -76,6 +75,40 @@ def _products_to_list(products) -> list:
 def build_agent_graph(db: Session, user_id: int, checkpointer=None):
     """Compile the agent graph with request-scoped dependencies bound in."""
 
+    # Build each specialist's tool set once, bound to this request's db/user.
+    specialist_tools = {
+        spec.node: build_tools_by_names(db, user_id, spec.tool_names)
+        for spec in (
+            MEDICINE_AGENT_SPEC,
+            SYMPTOM_AGENT_SPEC,
+            COMMERCE_AGENT_SPEC,
+            SUPPORT_AGENT_SPEC,
+        )
+    }
+
+    def _run_specialist(state: GraphState, spec) -> dict:
+        """Run a tool-calling specialist agent and shape the response."""
+        try:
+            result = run_tool_agent(
+                llm=llm,
+                tools=specialist_tools[spec.node],
+                system_prompt=spec.system_prompt,
+                query=state["query"],
+                history_text=state.get("history_text"),
+                summary_text=state.get("memory_summary"),
+            )
+            return {
+                "final_response": {
+                    "answer": result["answer"],
+                    "productsSuggestions": result["products"],
+                },
+                "tool_outputs": result["tool_outputs"],
+                "messages": [AIMessage(content=result["answer"])],
+            }
+        except Exception as exc:  # node-level error transition
+            logger.exception(f"specialist '{spec.node}' failed: {exc}")
+            return {"error": str(exc)}
+
     def _answer_with_rag(state: GraphState) -> dict:
         """Shared RAG answer used by the information-seeking specialist nodes."""
         try:
@@ -97,12 +130,6 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
         except Exception as exc:  # node-level error transition
             logger.exception(f"RAG answer failed: {exc}")
             return {"error": str(exc)}
-
-    def _static_answer(message: str) -> dict:
-        return {
-            "final_response": {"answer": message, "productsSuggestions": []},
-            "messages": [AIMessage(content=message)],
-        }
 
     def load_memory(state: GraphState) -> dict:
         """Hydrate conversational context and persist the incoming user turn."""
@@ -162,19 +189,20 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
         }
 
     def medicine_agent(state: GraphState) -> dict:
-        return _answer_with_rag(state)
+        return _run_specialist(state, MEDICINE_AGENT_SPEC)
 
     def symptom_agent(state: GraphState) -> dict:
-        return _answer_with_rag(state)
-
-    def general_chat(state: GraphState) -> dict:
-        return _answer_with_rag(state)
+        return _run_specialist(state, SYMPTOM_AGENT_SPEC)
 
     def commerce_agent(state: GraphState) -> dict:
-        return _static_answer(COMMERCE_PLACEHOLDER)
+        return _run_specialist(state, COMMERCE_AGENT_SPEC)
 
     def support_agent(state: GraphState) -> dict:
-        return _static_answer(SUPPORT_PLACEHOLDER)
+        return _run_specialist(state, SUPPORT_AGENT_SPEC)
+
+    def general_chat(state: GraphState) -> dict:
+        # General conversation stays on the plain RAG pipeline (no tools).
+        return _answer_with_rag(state)
 
     def synthesize_response(state: GraphState) -> dict:
         """Finalise the response payload (compression/merging lands in Phase 6)."""

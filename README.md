@@ -137,6 +137,14 @@ make help           # Show all available commands
 - [Integration Guide](./frontend/INTEGRATION_GUIDE.md) - Backend-frontend integration
 - [Backend API Docs](./app) - FastAPI documentation at http://localhost:8000/docs
 
+### Phase Documentation (Completed Phases 0–5)
+- [PHASE 0 — Foundation](./phases/PHASE0_FOUNDATION.md)
+- [PHASE 1 — Chat Memory](./phases/PHASE1_MEMORY.md)
+- [PHASE 2 — Tool Layer](./phases/PHASE2_TOOLS.md)
+- [PHASE 3 — LangGraph](./phases/PHASE3_LANGGRAPH.md)
+- [PHASE 4 — Supervisor Agent](./phases/PHASE4_SUPERVISOR.md)
+- [PHASE 5 — Specialist Agents](./phases/PHASE5_SPECIALISTS.md)
+
 ## 🔐 Security
 
 ### Authentication Flow
