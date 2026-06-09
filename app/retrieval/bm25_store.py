@@ -16,6 +16,14 @@ class BM25Store:
         self.bm25 = None
 
     @staticmethod
+    def clear():
+        """Delete the persisted BM25 index so the next build starts clean."""
+        pkl_path = f"{BM25_PATH}/bm25.pkl"
+        if os.path.exists(pkl_path):
+            os.remove(pkl_path)
+            logger.info(f"Cleared BM25 store at {pkl_path}")
+
+    @staticmethod
     def load():
 
         store = BM25Store()

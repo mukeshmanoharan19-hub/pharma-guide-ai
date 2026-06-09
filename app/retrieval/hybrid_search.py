@@ -1,5 +1,7 @@
 from loguru import logger
 
+from app.core.config import settings
+
 from app.retrieval.vector_store import (
     load_vector_store
 )
@@ -81,7 +83,8 @@ class HybridRetriever:
             )
 
             expanded_queries = generate_queries(
-                query
+                query,
+                limit=settings.MULTI_QUERY_COUNT,
             )
 
             logger.info(

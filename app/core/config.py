@@ -43,6 +43,24 @@ class Settings(BaseSettings):
     # general conversation route instead of a specialist agent.
     INTENT_CONFIDENCE_THRESHOLD: float = 0.45
 
+    # --- Phase 6: Agentic RAG ---
+    # Conversation-aware query rewriting before retrieval.
+    ENABLE_QUERY_REWRITE: bool = True
+    # Number of search queries to generate per turn (1 disables expansion).
+    MULTI_QUERY_COUNT: int = 3
+    # Product metadata/category/medicine-type filtering. Off for the RAG path:
+    # RAG indexes only policies/FAQs, so product filtering lives in the
+    # DB-backed medicine tools (medicine_service.search_medicines), not here.
+    ENABLE_METADATA_FILTERS: bool = False
+    # Post-generation faithfulness / hallucination check.
+    ENABLE_HALLUCINATION_CHECK: bool = True
+    # Minimum retrieved documents for the answer to be considered grounded.
+    RETRIEVAL_MIN_RESULTS: int = 1
+    # Token budget for the assembled RAG context (dynamic context building).
+    RAG_CONTEXT_TOKEN_BUDGET: int = 3000
+    # Documents kept after reranking.
+    RERANK_TOP_N: int = 5
+
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 

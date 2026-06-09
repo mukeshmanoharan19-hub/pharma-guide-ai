@@ -1,73 +1,56 @@
 from loguru import logger
+
 from app.ingestion.document_processor import process_document
-from app.retrieval.vector_store import create_or_update_vector_store
 from app.retrieval.bm25_store import BM25Store
+from app.retrieval.vector_store import (
+    create_or_update_vector_store,
+    reset_vector_store,
+)
+
 
 class IngestionService:
 
     @staticmethod
     def ingest():
+        """Rebuild the policy/FAQ knowledge base from scratch.
 
+        Existing vector + BM25 indexes are cleared first so stale content (e.g.
+        previously-indexed product data) is removed, then the fresh policy/FAQ
+        chunks are indexed.
+        """
         try:
+            # 1. Clear existing indexes so we start from a clean slate.
+            logger.info("Clearing existing vector and BM25 stores")
+            reset_vector_store()
+            BM25Store.clear()
 
+            # 2. Load + chunk the policy/FAQ knowledge base (no product data).
             chunks = process_document()
 
+            if not chunks:
+                logger.warning("No documents to ingest; stores left empty.")
+                return {"status": "success", "chunks": 0}
+
             logger.info(
-                f"Document processed successfully. "
-                f"Total chunks: {len(chunks)}"
+                f"Document processed successfully. Total chunks: {len(chunks)}"
             )
 
-            # Vector store update
-            logger.info("Updating vector store")
-
+            # 3. Build a fresh vector store.
+            logger.info("Building vector store")
             create_or_update_vector_store(chunks)
+            logger.info("Vector store built successfully")
 
-            logger.info("Vector store updated successfully")
-
-            # BM25 Store
-            try:
-                logger.info("Loading BM25 store")
-
-                bm25_store = BM25Store.load()
-
-                logger.info("BM25 store loaded successfully")
-
-            except Exception as e:
-                logger.warning(
-                    f"Failed to load BM25 store. "
-                    f"Creating new store. Error: {str(e)}"
-                )
-
+            # 4. Build a fresh BM25 store.
+            logger.info("Building BM25 store")
             bm25_store = BM25Store()
-
-            # Add documents to BM25
-            logger.info("Adding documents to BM25 store")
-
             bm25_store.add_documents(chunks)
-
             bm25_store.save()
+            logger.info("BM25 store built and saved")
 
-            logger.info("BM25 store updated and saved")
+            logger.success("Ingestion completed successfully")
 
-
-            logger.success(
-                f"Ingestion completed successfully "
-            )
-
-            return {
-                "status": "success",
-                "chunks": len(chunks)
-            }
+            return {"status": "success", "chunks": len(chunks)}
 
         except Exception as e:
-            logger.exception(
-                f"Error occurred during ingestion: {str(e)}"
-            )
-
-            return {
-                "status": "failed",
-                "error": str(e)
-            }
-
-        finally:
-            logger.info("Database session closed")
+            logger.exception(f"Error occurred during ingestion: {str(e)}")
+            return {"status": "failed", "error": str(e)}

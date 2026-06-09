@@ -2,12 +2,24 @@ import json
 
 from langchain_openai import ChatOpenAI
 from app.core.config import settings
-from app.models.chat import ChatResponse
 from app.retrieval.hybrid_search import HybridRetriever
 from app.retrieval.reranker import rerank
 from app.core.prompts import RAG_PROMPT, CHAT_RAG_PROMPT
 from app.retrieval.compression import compress_documents
+from app.retrieval.query_rewriter import rewrite_query
+from app.retrieval.filters import apply_filters, extract_filters
+from app.retrieval.context import build_grounded_context, dedupe_documents
+from app.retrieval.verification import check_grounding, validate_retrieval
 from loguru import logger
+
+GROUNDING_CAVEAT = (
+    "\n\n_(Some details above could not be fully verified against our product "
+    "information — please confirm with a pharmacist before relying on them.)_"
+)
+
+NO_CONTEXT_MESSAGE = (
+    "Sorry, I couldn't find relevant information to answer your question."
+)
 
 llm = ChatOpenAI(
     api_key=settings.OPENAI_API_KEY,
@@ -43,26 +55,49 @@ class RAGService:
 
             raise
 
-    def _prepare_context(self, query: str) -> tuple[str, list]:
-        """Prepare context and retrieve documents."""
-        # Step 1 — Hybrid Retrieval
+    def _prepare_context(
+        self, query: str, history_text=None, summary_text=None
+    ) -> tuple[str, list]:
+        """Agentic retrieval pipeline (Phase 6).
+
+        rewrite -> hybrid retrieval (multi-query) -> dedup -> metadata filter
+        -> rerank -> compress -> dynamic, source-grounded context build.
+        """
+        # Step 1 — Conversation-aware query rewriting
+        search_query = rewrite_query(query, history_text, summary_text)
+
+        # Step 2 — Hybrid retrieval (internal multi-query expansion + RRF)
         logger.info("Starting hybrid retrieval")
-        retrieved_docs = self.retriever.search(query)
+        retrieved_docs = self.retriever.search(search_query)
         logger.info(f"Retrieved {len(retrieved_docs)} documents")
 
-        # Step 2 — Reranking
+        # Step 3 — Duplicate removal
+        deduped_docs = dedupe_documents(retrieved_docs)
+        logger.info(f"After dedup: {len(deduped_docs)} documents")
+
+        # Step 4 — Metadata filtering (off by default: RAG holds only
+        # policies/FAQs; product/category/medicine-type filtering is handled in
+        # the DB-backed medicine tools, not here).
+        if settings.ENABLE_METADATA_FILTERS:
+            filters = extract_filters(query)
+            if filters.is_active():
+                deduped_docs = apply_filters(deduped_docs, filters)
+
+        # Step 5 — Reranking
         logger.info("Starting reranking")
-        reranked_docs = rerank(query, retrieved_docs)
+        reranked_docs = rerank(search_query, deduped_docs)
         logger.info(f"Reranked {len(reranked_docs)} documents")
 
-        # Step 3 — Compression
+        # Step 6 — Compression
         logger.info("Starting context compression")
-        compressed_docs = compress_documents(reranked_docs, query)
+        compressed_docs = compress_documents(reranked_docs, search_query)
         logger.info(f"Compressed {len(compressed_docs)} documents")
 
-        # Step 4 — Build Context
-        context = "\n\n".join([doc.page_content for doc in compressed_docs])
-        logger.info(f"Final context length: {len(context)} characters")
+        # Step 7 — Dynamic, source-grounded context build (token budget)
+        context, sources = build_grounded_context(compressed_docs)
+        logger.info(
+            f"Built context ({len(context)} chars) from sources: {sources}"
+        )
 
         return context, compressed_docs
 
@@ -85,11 +120,15 @@ class RAGService:
 
         try:
 
-            context, compressed_docs = self._prepare_context(query)
+            context, compressed_docs = self._prepare_context(
+                query, history_text, summary_text
+            )
 
-            if not context.strip():
+            # Retrieval validation — bail out cleanly when there is no grounding.
+            if not validate_retrieval(compressed_docs) or not context.strip():
                 return {
-                    "answer": "Sorry, I couldn't find relevant information to answer your question.",
+                    "answer": NO_CONTEXT_MESSAGE,
+                    "grounded": False,
                     # "productsSuggestions": [],
                 }
 
@@ -109,23 +148,28 @@ class RAGService:
                 f"{len(prompt)} characters"
             )
 
-            # Step 6 — Generate Response
+            # Step 6 — Generate Response (plain text)
             logger.info(
                 "Invoking LLM"
             )
 
-            response = llm.invoke(
-                prompt,
-                response_format=ChatResponse
-            )
+            response = llm.invoke(prompt)
 
             logger.success(
                 "LLM response generated "
                 "successfully"
             )
 
+            answer = response.content if isinstance(response.content, str) else str(response.content)
+
+            # Step 7 — Hallucination / grounding check
+            grounding = check_grounding(answer, context)
+            if not grounding.is_grounded:
+                answer = f"{answer}{GROUNDING_CAVEAT}"
+
             result = {
-                "answer": response.content,
+                "answer": answer,
+                "grounded": grounding.is_grounded,
                 # "productsSuggestions": response.productsSuggestions
             }
 
@@ -150,11 +194,13 @@ class RAGService:
         logger.info(f"Received streaming user query: {query}")
 
         try:
-            context, compressed_docs = self._prepare_context(query)
+            context, compressed_docs = self._prepare_context(
+                query, history_text, summary_text
+            )
 
-            if not context.strip():
+            if not validate_retrieval(compressed_docs) or not context.strip():
                 yield json.dumps({
-                    "answer": "Sorry, I couldn't find relevant information to answer your question.",
+                    "answer": NO_CONTEXT_MESSAGE,
                     # "productsSuggestions": [],
                 })
                 return
@@ -166,22 +212,21 @@ class RAGService:
             )
             logger.info(f"Prompt created. Length: {len(prompt)} characters")
 
-            # Step 6 — Stream Response
+            # Step 6 — Stream Response (plain text tokens).
+            # Each SSE payload carries the cumulative plain-text answer in an
+            # {"answer": ...} envelope so newlines stay JSON-escaped (SSE-safe)
+            # and the client can read a clean string.
             logger.info("Invoking LLM with streaming")
-            
-            # 1. Bind the response format to the LLM first
-            structured_llm = llm.with_structured_output(ChatResponse)
 
-            # 2. Stream from the structured LLM
-            stream = structured_llm.stream(prompt)
+            accumulated = ""
+            for chunk in llm.stream(prompt):
+                token = getattr(chunk, "content", "") or ""
+                if not isinstance(token, str):
+                    token = str(token)
+                if token:
+                    accumulated += token
+                    yield json.dumps({"answer": accumulated})
 
-            for chunk in stream:
-                # With structured streaming, chunks are often partial Pydantic objects 
-                # or the final validated object depending on your provider.
-                if chunk:
-                    # Use model_dump(mode="json") to safely convert Pydantic to a JSON-serializable dict
-                    yield json.dumps(chunk.model_dump(mode="json"))
-                        
             logger.success("Streaming RAG pipeline completed successfully")
 
         except Exception as e:

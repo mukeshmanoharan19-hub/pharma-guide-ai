@@ -6,7 +6,13 @@ co = cohere.Client(
     settings.COHERE_API_KEY
 )
 
-def rerank(query, documents):
+def rerank(query, documents, top_n=None):
+
+    if not documents:
+        return []
+
+    if top_n is None:
+        top_n = settings.RERANK_TOP_N
 
     texts = [
         doc.page_content
@@ -17,7 +23,7 @@ def rerank(query, documents):
         model="rerank-v3.5",
         query=query,
         documents=texts,
-        top_n=5
+        top_n=min(top_n, len(texts))
     )
 
     return [

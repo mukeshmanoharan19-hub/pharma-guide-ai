@@ -17,7 +17,7 @@ Specialist nodes (Phase 5):
   tool-calling agents bound to the relevant Phase 2 tools (catalog search,
   cart/order operations, order tracking).
 - general_chat stays on the plain RAG pipeline (no tools) for small talk and
-  open-ended product questions.
+  policy/FAQ questions (the RAG knowledge base holds only policies & FAQs).
 
 The graph is rebuilt per request so node closures can capture the request-scoped
 ``db`` session and ``user_id`` without pushing non-serialisable objects through
@@ -201,7 +201,8 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
         return _run_specialist(state, SUPPORT_AGENT_SPEC)
 
     def general_chat(state: GraphState) -> dict:
-        # General conversation stays on the plain RAG pipeline (no tools).
+        # General conversation + policy/FAQ questions use the RAG pipeline,
+        # whose knowledge base contains only company policies and FAQs.
         return _answer_with_rag(state)
 
     def synthesize_response(state: GraphState) -> dict:
