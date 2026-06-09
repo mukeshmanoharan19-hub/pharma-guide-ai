@@ -6,6 +6,7 @@ from typing import Optional
 
 from sqlalchemy.orm import Session
 
+from app.core.config import settings
 from app.models.cart import Cart, CartItem
 from app.models.medicine import Medicine
 from app.services import medicine_service
@@ -62,6 +63,17 @@ def add_item(db: Session, user_id: int, sku: str, quantity: int = 1) -> Cart:
     medicine = medicine_service.get_by_sku(db, sku)
     if medicine is None:
         raise CartError(f"No medicine found for sku '{sku}'.")
+
+    # Safety guardrail: prescription-only items require a verified prescription.
+    if settings.BLOCK_RX_WITHOUT_PRESCRIPTION and getattr(
+        medicine, "prescription_req", False
+    ):
+        raise CartError(
+            f"{medicine.title} is a prescription-only medicine. A valid "
+            "prescription is required and our pharmacist must verify it before "
+            "this item can be purchased. Please consult a doctor or upload your "
+            "prescription to proceed."
+        )
 
     in_stock, _ = medicine_service.stock_for(medicine)
     if not in_stock:

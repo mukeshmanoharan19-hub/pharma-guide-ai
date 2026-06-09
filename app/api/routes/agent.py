@@ -68,6 +68,9 @@ async def agent_chat(
                     if delta and delta.get("intent") is not None:
                         progress["intent"] = delta["intent"]
                         progress["confidence"] = delta.get("intent_confidence")
+                    if delta and delta.get("safety_level") is not None:
+                        progress["safety_level"] = delta["safety_level"]
+                        progress["safety_flags"] = delta.get("safety_flags") or []
                     yield f"data: {json.dumps(progress)}\n\n"
                     if delta and delta.get("final_response"):
                         final_response = delta["final_response"]

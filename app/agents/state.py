@@ -34,8 +34,12 @@ class GraphState(TypedDict, total=False):
     retrieved_docs: List[Any]
     tool_outputs: List[Any]
 
-    # Safety (populated in Phase 8)
+    # Safety (populated in Phase 8 by safety_screen)
     safety_flags: List[str]
+    safety_level: Optional[str]
+    safety_message: Optional[str]
+    safety_disclaimer: Optional[str]
+    safety_blocked: bool
 
     # Output
     final_response: Optional[dict]

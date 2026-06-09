@@ -61,6 +61,13 @@ class Settings(BaseSettings):
     # Documents kept after reranking.
     RERANK_TOP_N: int = 5
 
+    # --- Phase 8: Medical safety layer ---
+    # Master switch for the safety screen (risk detection + guardrails).
+    ENABLE_SAFETY_LAYER: bool = True
+    # Soft-block adding prescription-only medicines to the cart, with an
+    # escalation message asking the user to provide a valid prescription.
+    BLOCK_RX_WITHOUT_PRESCRIPTION: bool = True
+
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 

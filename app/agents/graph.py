@@ -1,12 +1,19 @@
-"""LangGraph agent workflow (Phase 4: supervisor + intent routing).
+"""LangGraph agent workflow (Phase 8: + medical safety layer).
 
 Flow:
 
-    load_memory -> safety_screen -> supervisor
-        --(intent-based conditional routing)-->
-            medicine_agent | symptom_agent | commerce_agent
-            | support_agent | general_chat
+    load_memory -> safety_screen
+        --(emergency / prompt injection)--> synthesize_response (short-circuit)
+        --(otherwise)--> supervisor
+            --(intent-based conditional routing)-->
+                medicine_agent | symptom_agent | commerce_agent
+                | support_agent | general_chat
         -> synthesize_response -> persist_memory
+
+``safety_screen`` runs rule-based risk detection + input guardrails. Emergencies
+and prompt-injection attempts short-circuit with a canned response; caution flags
+(pregnancy/pediatric/restricted advice) attach a doctor-consult disclaimer that
+``synthesize_response`` appends to the answer.
 
 The supervisor classifies the user's intent (six intents from the roadmap),
 records routing analytics, and routes to the matching specialist node. Low
@@ -44,7 +51,9 @@ from app.agents.specialists import (
 from app.agents.state import GraphState
 from app.agents.supervisor import classify_intent, resolve_route
 from app.agents.tool_agent import run_tool_agent
+from app.core.config import settings
 from app.memory import context_builder, history_service, summarization_service
+from app.safety import assess_safety
 from app.services import routing_log_service
 from app.services.rag_service import get_rag_service, llm
 from app.tools.registry import build_tools_by_names
@@ -150,8 +159,37 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
         }
 
     def safety_screen(state: GraphState) -> dict:
-        """Placeholder safety gate (real risk detection arrives in Phase 8)."""
-        return {"safety_flags": []}
+        """Medical safety gate (Phase 8): risk detection + input guardrails.
+
+        Emergencies and prompt-injection attempts short-circuit the graph with a
+        canned response. Caution flags (pregnancy/pediatric/restricted advice)
+        let the turn proceed but attach a doctor-consult disclaimer that
+        ``synthesize_response`` appends to the final answer.
+        """
+        if not settings.ENABLE_SAFETY_LAYER:
+            return {"safety_flags": [], "safety_blocked": False}
+
+        assessment = assess_safety(state["query"])
+        update: dict = {
+            "safety_flags": assessment.flags,
+            "safety_level": assessment.level,
+            "safety_disclaimer": assessment.disclaimer,
+            "safety_blocked": assessment.blocked,
+        }
+        if assessment.flags:
+            logger.info(
+                "[safety] level={} blocked={} flags={}",
+                assessment.level,
+                assessment.blocked,
+                assessment.flags,
+            )
+        if assessment.blocked:
+            update["safety_message"] = assessment.message
+            update["final_response"] = {
+                "answer": assessment.message,
+                "productsSuggestions": [],
+            }
+        return update
 
     def supervisor(state: GraphState) -> dict:
         """Detect intent, resolve the route, and record routing analytics."""
@@ -206,16 +244,22 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
         return _answer_with_rag(state)
 
     def synthesize_response(state: GraphState) -> dict:
-        """Finalise the response payload (compression/merging lands in Phase 6)."""
+        """Finalise the response payload and append any safety disclaimer."""
         final = state.get("final_response")
         if not final:
-            return {
-                "final_response": {
-                    "answer": SAFE_FALLBACK_MESSAGE,
-                    "productsSuggestions": [],
-                }
+            final = {
+                "answer": SAFE_FALLBACK_MESSAGE,
+                "productsSuggestions": [],
             }
-        return {}
+
+        # Append the doctor-consult disclaimer for non-blocking caution flags.
+        disclaimer = state.get("safety_disclaimer")
+        if disclaimer and not state.get("safety_blocked"):
+            answer = final.get("answer", "") or ""
+            if disclaimer not in answer:
+                final = {**final, "answer": f"{answer}\n\n{disclaimer}".strip()}
+
+        return {"final_response": final}
 
     def persist_memory(state: GraphState) -> dict:
         """Persist the assistant turn and trigger rolling summarisation."""
@@ -232,6 +276,8 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
                 metadata={
                     "products": products,
                     "intent": state.get("intent"),
+                    "safety_level": state.get("safety_level"),
+                    "safety_flags": state.get("safety_flags") or [],
                 },
             )
             summarization_service.maybe_summarize(db, session_id)
@@ -248,6 +294,10 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
                 "productsSuggestions": [],
             }
         }
+
+    def route_after_safety(state: GraphState) -> str:
+        """Short-circuit to the response tail when safety blocked the turn."""
+        return "synthesize_response" if state.get("safety_blocked") else "supervisor"
 
     def route_from_supervisor(state: GraphState) -> str:
         """Return the specialist node chosen by the supervisor (with fallback)."""
@@ -274,7 +324,17 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
 
     builder.add_edge(START, "load_memory")
     builder.add_edge("load_memory", "safety_screen")
-    builder.add_edge("safety_screen", "supervisor")
+
+    # Safety can short-circuit straight to the response tail (emergency /
+    # prompt injection) or hand off to the supervisor for normal routing.
+    builder.add_conditional_edges(
+        "safety_screen",
+        route_after_safety,
+        {
+            "supervisor": "supervisor",
+            "synthesize_response": "synthesize_response",
+        },
+    )
 
     # Intent-based routing from the supervisor to a specialist agent.
     builder.add_conditional_edges(
