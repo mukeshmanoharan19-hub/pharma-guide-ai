@@ -3,16 +3,22 @@
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: 'primary' | 'secondary' | 'danger';
+    variant?: 'primary' | 'secondary' | 'danger' | 'outline' | 'ghost';
     size?: 'sm' | 'md' | 'lg';
     isLoading?: boolean;
     children: React.ReactNode;
 }
 
 const variantClasses = {
-    primary: 'bg-blue-600 hover:bg-blue-700 text-white',
-    secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-900',
-    danger: 'bg-red-600 hover:bg-red-700 text-white',
+    primary:
+        'bg-slate-900 text-white shadow-sm hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200',
+    secondary:
+        'bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700',
+    danger: 'bg-red-600 text-white hover:bg-red-700',
+    outline:
+        'border border-slate-200 bg-white text-slate-900 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800',
+    ghost:
+        'bg-transparent text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800',
 };
 
 const sizeClasses = {
@@ -28,8 +34,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 ref={ref}
                 disabled={disabled || isLoading}
                 className={`
-          font-medium rounded-lg transition-colors duration-200 
+          inline-flex items-center justify-center gap-2 whitespace-nowrap
+          font-medium rounded-xl transition-colors duration-200
           disabled:opacity-50 disabled:cursor-not-allowed
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400
           ${variantClasses[variant]}
           ${sizeClasses[size]}
           ${className}

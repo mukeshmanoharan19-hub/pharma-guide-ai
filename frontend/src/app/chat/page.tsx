@@ -41,7 +41,7 @@ export default function ChatPage() {
         'http://localhost:8000';
 
     return (
-        <div className="h-screen flex flex-col">
+        <div className="h-screen flex flex-col bg-slate-100">
             <ChatInterface
                 userEmail={user?.email}
                 backendUrl={backendUrl}
