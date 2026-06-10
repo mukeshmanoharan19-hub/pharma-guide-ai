@@ -7,6 +7,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Field
 
 from app.models.cart import Cart
+from app.models.checkout_confirmation import CheckoutConfirmation
 from app.models.order import Order
 from app.services import cart_service
 
@@ -24,9 +25,11 @@ class UpdateItemRequest(BaseModel):
 
 
 class CreateOrderRequest(BaseModel):
-    # Explicit confirmation guard for the checkout/transaction flow.
-    confirm: bool = Field(
-        True, description="Must be true to place the order (confirmation step)."
+    # Token returned by POST /api/orders/prepare, used for human-in-the-loop
+    # confirmation before placing the order.
+    confirmation_id: str | None = Field(
+        default=None,
+        description="Checkout confirmation id from /api/orders/prepare.",
     )
 
 
@@ -63,6 +66,15 @@ class OrderResponse(BaseModel):
     total_amount: float
     items: List[OrderItemResponse]
     created_at: Optional[str] = None
+
+
+class OrderConfirmationResponse(BaseModel):
+    confirmation_id: str
+    items: List[CartItemResponse]
+    item_count: int
+    total: float
+    status: str
+    expires_at: str
 
 
 class OrderSummaryResponse(BaseModel):
@@ -125,4 +137,19 @@ def serialize_order_summary(order: Order) -> OrderSummaryResponse:
         total_amount=order.total_amount,
         item_count=sum(i.quantity for i in order.items),
         created_at=order.created_at.isoformat() if order.created_at else None,
+    )
+
+
+def serialize_checkout_confirmation(
+    confirmation: CheckoutConfirmation,
+) -> OrderConfirmationResponse:
+    snapshot = confirmation.items_snapshot or []
+    items = [CartItemResponse(**row) for row in snapshot]
+    return OrderConfirmationResponse(
+        confirmation_id=str(confirmation.id),
+        items=items,
+        item_count=sum(i.quantity for i in items),
+        total=confirmation.total_amount,
+        status=confirmation.status,
+        expires_at=confirmation.expires_at.isoformat(),
     )

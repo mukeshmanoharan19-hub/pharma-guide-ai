@@ -67,6 +67,10 @@ class Settings(BaseSettings):
     # Soft-block adding prescription-only medicines to the cart, with an
     # escalation message asking the user to provide a valid prescription.
     BLOCK_RX_WITHOUT_PRESCRIPTION: bool = True
+    # Minutes a checkout review token stays valid before re-review is required.
+    CHECKOUT_CONFIRMATION_TTL_MINUTES: int = 15
+    # Enforce prepare -> explicit confirm flow before placing any order.
+    REQUIRE_ORDER_CONFIRMATION: bool = True
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

@@ -110,6 +110,7 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
                 "final_response": {
                     "answer": result["answer"],
                     "productsSuggestions": result["products"],
+                    "orderConfirmation": result.get("order_confirmation"),
                 },
                 "tool_outputs": result["tool_outputs"],
                 "messages": [AIMessage(content=result["answer"])],
@@ -267,6 +268,7 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
         final = state.get("final_response") or {}
         answer = final.get("answer", "")
         products = final.get("productsSuggestions", [])
+        order_confirmation = final.get("orderConfirmation")
         try:
             history_service.add_message(
                 db,
@@ -278,6 +280,7 @@ def build_agent_graph(db: Session, user_id: int, checkpointer=None):
                     "intent": state.get("intent"),
                     "safety_level": state.get("safety_level"),
                     "safety_flags": state.get("safety_flags") or [],
+                    "orderConfirmation": order_confirmation,
                 },
             )
             summarization_service.maybe_summarize(db, session_id)

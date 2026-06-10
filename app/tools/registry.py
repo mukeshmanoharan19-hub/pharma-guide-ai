@@ -29,7 +29,8 @@ TOOL_CATALOG: Dict[str, List[str]] = {
         "remove_from_cart",
         "update_cart",
         "view_cart",
-        "create_order",
+        "prepare_order",
+        "confirm_order",
         "order_status",
     ],
     "user": [

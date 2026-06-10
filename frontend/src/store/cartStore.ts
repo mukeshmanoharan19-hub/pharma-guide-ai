@@ -1,11 +1,13 @@
 import { create } from 'zustand';
-import { Cart, Order, OrderSummary } from '@/types';
+import { Cart, Order, OrderConfirmation, OrderSummary } from '@/types';
 import { cartService, orderService } from '@/services';
 
 interface CartStore {
     cart: Cart | null;
     orders: OrderSummary[];
     lastOrder: Order | null;
+    pendingConfirmation: OrderConfirmation | null;
+    checkoutStep: 'cart' | 'review';
     isOpen: boolean;
     activeTab: 'cart' | 'orders';
     isLoading: boolean;
@@ -20,7 +22,10 @@ interface CartStore {
     addItem: (sku: string, quantity?: number) => Promise<void>;
     updateItem: (sku: string, quantity: number) => Promise<void>;
     removeItem: (sku: string) => Promise<void>;
-    checkout: () => Promise<Order | null>;
+    prepareCheckout: () => Promise<OrderConfirmation | null>;
+    confirmCheckout: () => Promise<Order | null>;
+    cancelCheckout: () => Promise<void>;
+    backToCart: () => void;
     fetchOrders: () => Promise<void>;
 }
 
@@ -31,6 +36,8 @@ export const useCartStore = create<CartStore>((set, get) => ({
     cart: null,
     orders: [],
     lastOrder: null,
+    pendingConfirmation: null,
+    checkoutStep: 'cart',
     isOpen: false,
     activeTab: 'cart',
     isLoading: false,
@@ -46,7 +53,12 @@ export const useCartStore = create<CartStore>((set, get) => ({
     },
     closeDrawer: () => set({ isOpen: false }),
     setTab: (activeTab) => {
-        set({ activeTab });
+        set({
+            activeTab,
+            ...(activeTab === 'cart'
+                ? { checkoutStep: 'cart', pendingConfirmation: null }
+                : {}),
+        });
         if (activeTab === 'orders') get().fetchOrders();
         else get().fetchCart();
     },
@@ -56,7 +68,13 @@ export const useCartStore = create<CartStore>((set, get) => ({
         set({ isLoading: true, error: null });
         try {
             const cart = await cartService.get();
-            set({ cart, isLoading: false });
+            set({
+                cart,
+                isLoading: false,
+                ...(cart.item_count === 0
+                    ? { checkoutStep: 'cart', pendingConfirmation: null }
+                    : {}),
+            });
         } catch (error: any) {
             set({ error: extractError(error, 'Failed to load cart'), isLoading: false });
         }
@@ -92,20 +110,69 @@ export const useCartStore = create<CartStore>((set, get) => ({
         }
     },
 
-    checkout: async () => {
+    prepareCheckout: async () => {
         set({ isLoading: true, error: null });
         try {
-            const order = await orderService.create();
-            // Refresh cart (now empty) and order history.
-            const cart = await cartService.get();
-            set({ lastOrder: order, cart, isLoading: false, activeTab: 'orders' });
-            await get().fetchOrders();
-            return order;
+            const pendingConfirmation = await orderService.prepare();
+            set({
+                pendingConfirmation,
+                checkoutStep: 'review',
+                isLoading: false,
+                activeTab: 'cart',
+                isOpen: true,
+            });
+            return pendingConfirmation;
         } catch (error: any) {
-            set({ error: extractError(error, 'Checkout failed'), isLoading: false });
+            set({
+                error: extractError(error, 'Failed to prepare checkout'),
+                isLoading: false,
+            });
             return null;
         }
     },
+
+    confirmCheckout: async () => {
+        const pending = get().pendingConfirmation;
+        if (!pending?.confirmation_id) {
+            set({ error: 'No pending confirmation. Please review checkout again.' });
+            return null;
+        }
+        set({ isLoading: true, error: null });
+        try {
+            const order = await orderService.confirm(pending.confirmation_id);
+            const cart = await cartService.get();
+            set({
+                lastOrder: order,
+                cart,
+                pendingConfirmation: null,
+                checkoutStep: 'cart',
+                isLoading: false,
+                activeTab: 'orders',
+            });
+            await get().fetchOrders();
+            return order;
+        } catch (error: any) {
+            set({
+                error: extractError(error, 'Checkout confirmation failed'),
+                isLoading: false,
+            });
+            return null;
+        }
+    },
+
+    cancelCheckout: async () => {
+        const pending = get().pendingConfirmation;
+        if (pending?.confirmation_id) {
+            try {
+                await orderService.cancelPrepare(pending.confirmation_id);
+            } catch {
+                // If already cancelled/expired server-side we still clear local state.
+            }
+        }
+        set({ pendingConfirmation: null, checkoutStep: 'cart' });
+    },
+
+    backToCart: () => set({ checkoutStep: 'cart' }),
 
     fetchOrders: async () => {
         set({ isLoading: true, error: null });

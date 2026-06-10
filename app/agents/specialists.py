@@ -48,7 +48,8 @@ COMMERCE_AGENT_SPEC = AgentSpec(
         "remove_from_cart",
         "update_cart",
         "view_cart",
-        "create_order",
+        "prepare_order",
+        "confirm_order",
     ],
     system_prompt=prompts.COMMERCE_AGENT_PROMPT,
 )

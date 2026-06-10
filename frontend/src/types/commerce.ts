@@ -38,3 +38,12 @@ export interface OrderSummary {
     item_count: number;
     created_at?: string;
 }
+
+export interface OrderConfirmation {
+    confirmation_id: string;
+    items: CartItem[];
+    item_count: number;
+    total: number;
+    status: string;
+    expires_at: string;
+}

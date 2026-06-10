@@ -19,6 +19,7 @@ import app.models.chat_message  # noqa: F401
 import app.models.conversation_summary  # noqa: F401
 import app.models.cart  # noqa: F401
 import app.models.order  # noqa: F401
+import app.models.checkout_confirmation  # noqa: F401
 
 from app.tools.base import ToolException
 from app.tools import commerce_tools, medicine_tools, user_tools
@@ -131,17 +132,29 @@ def test_commerce_tools():
     view = commerce_tools.view_cart(db, uid)
     assert view.total == 75.0
 
-    order = commerce_tools.create_order(db, uid)
+    confirmation = commerce_tools.prepare_order(db, uid)
+    assert confirmation.item_count == 3
+    assert confirmation.total == 75.0
+    assert confirmation.confirmation_id
+
+    order = commerce_tools.confirm_order(db, uid, confirmation.confirmation_id)
     assert order.payment_status == "mock_paid"
     assert order.total_amount == 75.0
 
     # cart should now be empty (converted)
     assert commerce_tools.view_cart(db, uid).item_count == 0
 
-    # empty cart cannot create an order
+    # empty cart cannot prepare checkout
+    try:
+        commerce_tools.prepare_order(db, uid)
+        raise AssertionError("empty cart prepare should raise")
+    except ToolException:
+        pass
+
+    # deprecated direct order placement must be blocked behind HITL flow.
     try:
         commerce_tools.create_order(db, uid)
-        raise AssertionError("empty cart order should raise")
+        raise AssertionError("direct create_order should be blocked")
     except ToolException:
         pass
 
@@ -166,12 +179,14 @@ def test_registry_envelopes():
     db = _make_session()
     user = _seed(db)
     tools = build_all_tools(db, user.id)
-    assert len(tools) == 12
+    assert len(tools) == 13
 
     tool_map = get_tool_map(db, user.id)
     # StructuredTool returns the safe envelope dict
     result = tool_map["search_medicine"].invoke({"query": "paracetamol"})
     assert result["success"] is True
+    prep = tool_map["prepare_order"].invoke({})
+    assert prep["success"] is False  # empty cart until user adds an item
     bad = tool_map["product_details"].invoke({"sku": "NOPE"})
     assert bad["success"] is False
     print("registry/envelope OK")

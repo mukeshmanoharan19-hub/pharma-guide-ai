@@ -49,7 +49,19 @@ class ViewCartInput(BaseModel):
     pass
 
 
+class PrepareOrderInput(BaseModel):
+    pass
+
+
+class ConfirmOrderInput(BaseModel):
+    confirmation_id: str = Field(
+        ..., description="Checkout confirmation id from `prepare_order`."
+    )
+
+
 class CreateOrderInput(BaseModel):
+    """Deprecated compatibility schema (kept for transition)."""
+
     pass
 
 
@@ -138,6 +150,15 @@ class OrderOut(BaseModel):
     total_amount: float
     items: List[OrderItemOut]
     created_at: Optional[str] = None
+
+
+class CheckoutConfirmationOut(BaseModel):
+    confirmation_id: str
+    items: List[CartItemOut]
+    item_count: int
+    total: float
+    status: str
+    expires_at: Optional[str] = None
 
 
 class OrderSummary(BaseModel):

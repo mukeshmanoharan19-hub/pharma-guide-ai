@@ -12,6 +12,8 @@ export const CartDrawer: React.FC = () => {
         cart,
         orders,
         lastOrder,
+        pendingConfirmation,
+        checkoutStep,
         isOpen,
         activeTab,
         isLoading,
@@ -22,7 +24,10 @@ export const CartDrawer: React.FC = () => {
         fetchCart,
         updateItem,
         removeItem,
-        checkout,
+        prepareCheckout,
+        confirmCheckout,
+        cancelCheckout,
+        backToCart,
     } = useCartStore();
 
     useEffect(() => {
@@ -34,6 +39,7 @@ export const CartDrawer: React.FC = () => {
     if (!isOpen) return null;
 
     const items = cart?.items ?? [];
+    const reviewItems = pendingConfirmation?.items ?? [];
 
     return (
         <div className="fixed inset-0 z-50 flex justify-end">
@@ -84,7 +90,7 @@ export const CartDrawer: React.FC = () => {
                 )}
 
                 <div className="flex-1 overflow-y-auto p-4 space-y-3">
-                    {activeTab === 'cart' && (
+                    {activeTab === 'cart' && checkoutStep === 'cart' && (
                         <>
                             {items.length === 0 && !isLoading && (
                                 <p className="text-center text-gray-400 mt-8">
@@ -141,6 +147,40 @@ export const CartDrawer: React.FC = () => {
                         </>
                     )}
 
+                    {activeTab === 'cart' && checkoutStep === 'review' && (
+                        <>
+                            <div className="p-3 rounded-lg bg-blue-50 border border-blue-200">
+                                <p className="text-sm font-semibold text-blue-700">
+                                    Review your order before placing
+                                </p>
+                                <p className="text-xs text-blue-600 mt-1">
+                                    Confirmation expires at {formatDate(pendingConfirmation?.expires_at)}
+                                </p>
+                            </div>
+                            {reviewItems.map((item) => (
+                                <div
+                                    key={item.sku}
+                                    className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg bg-gray-50"
+                                >
+                                    <div className="flex-1">
+                                        <p className="font-medium text-gray-900 text-sm">
+                                            {item.title || item.sku}
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            ₹{item.unit_price ?? 0} each
+                                        </p>
+                                    </div>
+                                    <span className="text-sm text-gray-700">
+                                        x {item.quantity}
+                                    </span>
+                                    <span className="w-16 text-right text-sm font-semibold text-blue-600">
+                                        ₹{item.line_total}
+                                    </span>
+                                </div>
+                            ))}
+                        </>
+                    )}
+
                     {activeTab === 'orders' && (
                         <>
                             {lastOrder && (
@@ -187,7 +227,7 @@ export const CartDrawer: React.FC = () => {
                 </div>
 
                 {/* Footer / checkout */}
-                {activeTab === 'cart' && items.length > 0 && (
+                {activeTab === 'cart' && checkoutStep === 'cart' && items.length > 0 && (
                     <div className="border-t border-gray-200 p-4 space-y-3">
                         <div className="flex justify-between font-semibold text-gray-900">
                             <span>Total</span>
@@ -195,11 +235,45 @@ export const CartDrawer: React.FC = () => {
                         </div>
                         <Button
                             className="w-full"
-                            onClick={() => checkout()}
+                            onClick={() => prepareCheckout()}
                             disabled={isLoading}
                         >
-                            {isLoading ? 'Placing order…' : 'Checkout (mock payment)'}
+                            {isLoading ? 'Preparing review…' : 'Proceed to review'}
                         </Button>
+                    </div>
+                )}
+
+                {activeTab === 'cart' && checkoutStep === 'review' && (
+                    <div className="border-t border-gray-200 p-4 space-y-3">
+                        <div className="flex justify-between font-semibold text-gray-900">
+                            <span>Total</span>
+                            <span>₹{pendingConfirmation?.total ?? 0}</span>
+                        </div>
+                        <Button
+                            className="w-full"
+                            onClick={() => confirmCheckout()}
+                            disabled={isLoading}
+                        >
+                            {isLoading ? 'Placing order…' : 'Confirm & place order'}
+                        </Button>
+                        <div className="grid grid-cols-2 gap-2">
+                            <Button
+                                variant="secondary"
+                                className="w-full"
+                                onClick={() => backToCart()}
+                                disabled={isLoading}
+                            >
+                                Back to cart
+                            </Button>
+                            <Button
+                                variant="danger"
+                                className="w-full"
+                                onClick={() => cancelCheckout()}
+                                disabled={isLoading}
+                            >
+                                Cancel review
+                            </Button>
+                        </div>
                     </div>
                 )}
             </div>

@@ -74,6 +74,22 @@ def _extract_products(tool_outputs: List[Dict[str, Any]]) -> List[Dict[str, Any]
     return products
 
 
+def _extract_order_confirmation(
+    tool_outputs: List[Dict[str, Any]]
+) -> Optional[Dict[str, Any]]:
+    """Return latest `prepare_order` confirmation payload, if available."""
+    for entry in reversed(tool_outputs):
+        if entry.get("name") != "prepare_order":
+            continue
+        result = entry.get("result") or {}
+        if not isinstance(result, dict) or not result.get("success"):
+            continue
+        data = result.get("data")
+        if isinstance(data, dict) and data.get("confirmation_id"):
+            return data
+    return None
+
+
 def _invoke_tool(tool, args: Dict[str, Any]) -> Dict[str, Any]:
     try:
         return tool.invoke(args or {})
@@ -161,4 +177,5 @@ def run_tool_agent(
         "answer": final_text,
         "tool_outputs": tool_outputs,
         "products": _extract_products(tool_outputs),
+        "order_confirmation": _extract_order_confirmation(tool_outputs),
     }

@@ -1,5 +1,12 @@
 import { create } from 'zustand';
-import { BackendMessage, ChatSession, ChatState, Message, Product } from '@/types';
+import {
+    BackendMessage,
+    ChatSession,
+    ChatState,
+    Message,
+    OrderConfirmation,
+    Product,
+} from '@/types';
 import { chatService, sessionService } from '@/services';
 import { SESSION_STORAGE_KEY } from '@/utils/constants';
 
@@ -30,7 +37,11 @@ const persistSessionId = (sessionId: string | null) => {
 };
 
 const mapBackendMessage = (message: BackendMessage): Message => {
-    const products: Product[] | undefined = message.message_metadata?.products?.map(
+    const metadata = (message.message_metadata || (message as any).metadata || {}) as {
+        products?: Product[];
+        orderConfirmation?: OrderConfirmation;
+    };
+    const products: Product[] | undefined = metadata.products?.map(
         (p) => ({ ...p, price: String((p as Product).price) })
     );
     return {
@@ -38,6 +49,7 @@ const mapBackendMessage = (message: BackendMessage): Message => {
         type: message.role === 'user' ? 'user' : 'assistant',
         text: message.content,
         products: products && products.length > 0 ? products : undefined,
+        orderConfirmation: metadata.orderConfirmation,
         timestamp: message.created_at ? new Date(message.created_at).getTime() : Date.now(),
     };
 };
@@ -150,6 +162,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
                         type: 'assistant',
                         text: response.answer,
                         products: response.productsSuggestions,
+                        orderConfirmation: response.orderConfirmation,
                         timestamp: Date.now(),
                     },
                 ],
@@ -193,10 +206,12 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 
             let answer = lastChunk;
             let products: Product[] | undefined;
+            let orderConfirmation: OrderConfirmation | undefined;
             try {
                 const parsed = JSON.parse(lastChunk);
                 answer = parsed.answer ?? lastChunk;
                 products = parsed.productsSuggestions || [];
+                orderConfirmation = parsed.orderConfirmation;
             } catch {
                 // Fall back to raw text.
             }
@@ -208,6 +223,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
                         type: 'assistant',
                         text: answer,
                         products,
+                        orderConfirmation,
                         timestamp: Date.now(),
                     },
                 ],

@@ -7,23 +7,64 @@ confirmation and validates the cart server-side (transaction validation).
 
 from typing import List
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlalchemy.orm import Session
 
+from app.core.config import settings
 from app.core.security import get_current_user
 from app.db.database import get_db
 from app.models.user import User
 from app.schemas.commerce import (
     CreateOrderRequest,
+    OrderConfirmationResponse,
     OrderResponse,
     OrderSummaryResponse,
+    serialize_checkout_confirmation,
     serialize_order,
     serialize_order_summary,
 )
-from app.services import order_service
+from app.services import checkout_confirmation_service, order_service
+from app.services.checkout_confirmation_service import CheckoutError
 from app.services.order_service import OrderError
 
 router = APIRouter(tags=["orders"], prefix="/api/orders")
+
+
+@router.post(
+    "/prepare",
+    response_model=OrderConfirmationResponse,
+    status_code=status.HTTP_201_CREATED,
+)
+def prepare_order(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """Create a server-side checkout review token for HITL confirmation."""
+    try:
+        confirmation = checkout_confirmation_service.prepare_checkout(
+            db, current_user.id
+        )
+    except CheckoutError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
+    return serialize_checkout_confirmation(confirmation)
+
+
+@router.delete(
+    "/prepare/{confirmation_id}", status_code=status.HTTP_204_NO_CONTENT
+)
+def cancel_prepare(
+    confirmation_id: str,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """Cancel a pending checkout review token."""
+    try:
+        checkout_confirmation_service.cancel_checkout(
+            db, current_user.id, confirmation_id
+        )
+    except CheckoutError as exc:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(exc))
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
 @router.post("", response_model=OrderResponse, status_code=status.HTTP_201_CREATED)
@@ -32,14 +73,21 @@ def create_order(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    """Place an order from the active cart (mock payment, auto-confirmed)."""
-    if not body.confirm:
+    """Place an order from the active cart after explicit checkout confirmation."""
+    if settings.REQUIRE_ORDER_CONFIRMATION and not body.confirmation_id:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Order not confirmed. Set confirm=true to place the order.",
+            detail="confirmation_id is required. Call /api/orders/prepare first.",
         )
     try:
-        order = order_service.create_order_from_cart(db, current_user.id)
+        if settings.REQUIRE_ORDER_CONFIRMATION:
+            order = checkout_confirmation_service.confirm_checkout(
+                db, current_user.id, body.confirmation_id
+            )
+        else:
+            order = order_service.create_order_from_cart(db, current_user.id)
+    except CheckoutError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
     except OrderError as exc:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
     return serialize_order(order)

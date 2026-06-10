@@ -13,16 +13,22 @@ from langchain_core.tools import StructuredTool
 from sqlalchemy.orm import Session
 
 from app.models.cart import Cart
+from app.models.checkout_confirmation import CheckoutConfirmation
 from app.models.order import Order
-from app.services import cart_service, order_service
+from app.core.config import settings
+from app.services import cart_service, checkout_confirmation_service, order_service
 from app.services.cart_service import CartError
+from app.services.checkout_confirmation_service import CheckoutError
 from app.services.order_service import OrderError
 from app.tools.base import ToolException, safe_call, with_tool_handling
 from app.tools.schemas import (
     AddToCartInput,
     CartItemOut,
     CartOut,
+    CheckoutConfirmationOut,
+    ConfirmOrderInput,
     CreateOrderInput,
+    PrepareOrderInput,
     OrderItemOut,
     OrderOut,
     OrderStatusInput,
@@ -72,6 +78,31 @@ def _order_to_out(order: Order) -> OrderOut:
     )
 
 
+def _confirmation_to_out(
+    confirmation: CheckoutConfirmation,
+) -> CheckoutConfirmationOut:
+    items = [
+        CartItemOut(
+            sku=item.get("sku"),
+            title=item.get("title"),
+            quantity=item.get("quantity"),
+            unit_price=item.get("unit_price"),
+            line_total=item.get("line_total"),
+        )
+        for item in (confirmation.items_snapshot or [])
+    ]
+    return CheckoutConfirmationOut(
+        confirmation_id=str(confirmation.id),
+        items=items,
+        item_count=sum(i.quantity for i in items),
+        total=confirmation.total_amount,
+        status=confirmation.status,
+        expires_at=confirmation.expires_at.isoformat()
+        if confirmation.expires_at
+        else None,
+    )
+
+
 @with_tool_handling("add_to_cart")
 def add_to_cart(db: Session, user_id: int, sku: str, quantity: int = 1) -> CartOut:
     try:
@@ -105,8 +136,35 @@ def view_cart(db: Session, user_id: int) -> CartOut:
     return _cart_to_out(cart)
 
 
+@with_tool_handling("prepare_order")
+def prepare_order(db: Session, user_id: int) -> CheckoutConfirmationOut:
+    try:
+        confirmation = checkout_confirmation_service.prepare_checkout(db, user_id)
+    except CheckoutError as e:
+        raise ToolException(str(e))
+    return _confirmation_to_out(confirmation)
+
+
+@with_tool_handling("confirm_order")
+def confirm_order(db: Session, user_id: int, confirmation_id: str) -> OrderOut:
+    try:
+        order = checkout_confirmation_service.confirm_checkout(
+            db, user_id, confirmation_id
+        )
+    except CheckoutError as e:
+        raise ToolException(str(e))
+    return _order_to_out(order)
+
+
 @with_tool_handling("create_order")
 def create_order(db: Session, user_id: int) -> OrderOut:
+    """Deprecated compatibility tool. Kept to avoid abrupt contract break."""
+    if settings.REQUIRE_ORDER_CONFIRMATION:
+        raise ToolException(
+            "Direct order placement is disabled. Call `prepare_order` first, "
+            "show the summary to the user, then call `confirm_order` with the "
+            "confirmation_id after explicit user confirmation."
+        )
     try:
         order = order_service.create_order_from_cart(db, user_id)
     except OrderError as e:
@@ -159,13 +217,27 @@ def build_commerce_tools(db: Session, user_id: int) -> List[StructuredTool]:
             func=lambda: safe_call(view_cart, db=db, user_id=user_id),
         ),
         StructuredTool.from_function(
-            name="create_order",
+            name="prepare_order",
             description=(
-                "Place an order from the user's active cart. Uses mock payment "
-                "(auto-confirmed). Requires a non-empty cart."
+                "Prepare a checkout review and return `confirmation_id`, items, "
+                "and total for user approval."
             ),
-            args_schema=CreateOrderInput,
-            func=lambda: safe_call(create_order, db=db, user_id=user_id),
+            args_schema=PrepareOrderInput,
+            func=lambda: safe_call(prepare_order, db=db, user_id=user_id),
+        ),
+        StructuredTool.from_function(
+            name="confirm_order",
+            description=(
+                "Place an order using a previously prepared `confirmation_id` "
+                "after explicit user confirmation."
+            ),
+            args_schema=ConfirmOrderInput,
+            func=lambda confirmation_id: safe_call(
+                confirm_order,
+                db=db,
+                user_id=user_id,
+                confirmation_id=confirmation_id,
+            ),
         ),
         StructuredTool.from_function(
             name="order_status",

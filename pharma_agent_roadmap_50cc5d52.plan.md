@@ -27,8 +27,11 @@ todos:
     content: "PHASE 7 — Commerce UI + APIs: cart/order REST, mock payment flow, cart drawer, product card actions. GATE: confirm before Phase 8."
     status: complete
   - id: phase-8-safety
-    content: "PHASE 8 — Medical Safety: risk detector, guardrails, escalation nodes in graph. GATE: confirm before Phase 9."
-    status: pending
+    content: "PHASE 8 — Medical Safety: risk detector, guardrails, escalation nodes in graph. GATE: confirm before Phase 8.5."
+    status: complete
+  - id: phase-8-5-hitl-checkout
+    content: "PHASE 8.5 — HITL Checkout Confirmation: prepare checkout review, explicit user confirmation token, stale-cart validation for REST + agent flows. GATE: confirm before Phase 9."
+    status: complete
   - id: phase-9-eval
     content: "PHASE 9 — Evaluation: gold datasets, RAGAS/DeepEval runners, CI smoke eval pipeline. GATE: confirm before Phase 10."
     status: pending
@@ -69,7 +72,9 @@ flowchart LR
     P7 --> G7{Confirm?}
     G7 -->|yes| P8["Phase 8\nSafety"]
     P8 --> G8{Confirm?}
-    G8 -->|yes| P9["Phase 9\nEval"]
+    G8 -->|yes| P85["Phase 8.5\nHITL Checkout"]
+    P85 --> G85{Confirm?}
+    G85 -->|yes| P9["Phase 9\nEval"]
     P9 --> G9{Confirm?}
     G9 -->|yes| P10["Phase 10\nObservability"]
     P10 --> G10{Confirm?}
@@ -789,6 +794,38 @@ Return structured `SafetyResponse` with `level: info | warning | emergency` and 
 - Doctor consult → append to all Symptom Agent responses
 
 Update [`app/core/prompts.py`](app/core/prompts.py) with safety preamble injected into all agent prompts.
+
+---
+
+## Phase 8.5: Human-in-the-Loop Order Confirmation
+
+Insert a mandatory review-and-confirm checkpoint before creating orders in both
+REST checkout and agent-driven checkout.
+
+### Backend checkout confirmation flow
+
+- New `checkout_confirmations` table stores snapshot, status, expiry, and
+  cart hash used for stale-cart detection.
+- `POST /api/orders/prepare` creates a `confirmation_id` and returns reviewed
+  items + total + expiry.
+- `POST /api/orders` requires `confirmation_id` and only places order when:
+  pending token exists, not expired, and cart hash has not changed.
+- Optional `DELETE /api/orders/prepare/{confirmation_id}` cancels review token.
+
+### Commerce agent flow
+
+- Replace direct `create_order` tool call with:
+  - `prepare_order` (generate review token + summary)
+  - `confirm_order` (place order with `confirmation_id`)
+- Prompt guardrail: never call `confirm_order` until explicit user confirmation.
+
+### Frontend UX
+
+- Cart drawer checkout is now two-step:
+  - Step 1: Proceed to review
+  - Step 2: Confirm & place order / Back / Cancel review
+- Chat assistant can return `orderConfirmation` payload; UI renders an inline
+  confirmation card with Confirm/Cancel actions.
 
 ---
 

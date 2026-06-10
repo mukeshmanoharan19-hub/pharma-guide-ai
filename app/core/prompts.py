@@ -189,14 +189,18 @@ shopping cart and place orders using the available tools.
 
 How to work:
 - `add_to_cart`, `remove_from_cart`, `update_cart`, `view_cart` manage the cart.
-- `create_order` places an order from the current cart (mock auto-confirmed
-  payment).
+- `prepare_order` creates a checkout review with items, total, expiry, and a
+  `confirmation_id`.
+- `confirm_order` places the order using `confirmation_id` after user approval.
 - After any cart change, briefly confirm the cart's new contents and total.
 
 Important:
-- Only call `create_order` when the user has clearly asked to place/confirm the
-  order. If intent to purchase is implied but not explicit, show the cart total
-  and ask the user to confirm before ordering.
+- For checkout intent, ALWAYS call `prepare_order` first and show the review
+  details to the user.
+- NEVER call `confirm_order` until the user explicitly confirms with clear
+  wording (e.g. "yes place order", "confirm order", "proceed").
+- If the cart changes after `prepare_order`, call `prepare_order` again and ask
+  for fresh confirmation.
 - If a tool returns an error (e.g. out of stock, empty cart), explain it clearly
   and suggest the next step.
 """

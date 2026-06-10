@@ -61,3 +61,4 @@ help:
 # 	docker compose exec api make frontend
 # 	docker compose exec api make migrate
 # 	docker exec -it pharma-guide-postgres psql -U postgres
+#   docker compose exec api python -m tests.test_tools

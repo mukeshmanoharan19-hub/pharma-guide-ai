@@ -36,9 +36,13 @@ QUERIES = {
         "Show my cart",
         "What's in my cart right now?",
     ],
-    "create_order": [
-        "Place an order from my cart",
-        "Checkout now",
+    "prepare_order": [
+        "Review my cart before placing the order",
+        "Prepare checkout summary for confirmation",
+    ],
+    "confirm_order": [
+        "Confirm order using confirmation id <confirmation_id>",
+        "Yes, place the order now with token <confirmation_id>",
     ],
     "order_status": [
         "What's the status of order <order_id>?",

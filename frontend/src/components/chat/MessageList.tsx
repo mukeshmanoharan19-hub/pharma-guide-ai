@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { Message, Product } from '@/types';
 import { formatTime } from '@/utils/formatting';
 import { useCartStore } from '@/store';
+import { OrderConfirmationCard } from '@/components/commerce/OrderConfirmationCard';
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     const addItem = useCartStore((s) => s.addItem);
@@ -51,6 +52,7 @@ interface MessageListProps {
 
 export const MessageList: React.FC<MessageListProps> = ({ messages, isLoading = false }) => {
     const endRef = useRef<HTMLDivElement>(null);
+    const lastAssistant = [...messages].reverse().find((m) => m.type === 'assistant');
 
     useEffect(() => {
         endRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -90,18 +92,24 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, isLoading = 
                 </div>
             ))}
 
-            {messages.length > 0 && messages[messages.length - 1].type === 'assistant' &&
-                messages[messages.length - 1].products &&
-                messages[messages.length - 1].products!.length > 0 && (
+            {lastAssistant &&
+                lastAssistant.products &&
+                lastAssistant.products.length > 0 && (
                     <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 max-w-xs lg:max-w-md xl:max-w-xl">
                         <h3 className="font-semibold text-gray-900 mb-3">Suggested Products</h3>
                         <div className="space-y-3">
-                            {messages[messages.length - 1].products!.map((product) => (
+                            {lastAssistant.products.map((product) => (
                                 <ProductCard key={product.sku} product={product} />
                             ))}
                         </div>
                     </div>
                 )}
+
+            {lastAssistant?.orderConfirmation && (
+                <div className="max-w-xs lg:max-w-md xl:max-w-xl">
+                    <OrderConfirmationCard confirmation={lastAssistant.orderConfirmation} />
+                </div>
+            )}
 
             {isLoading && (
                 <div className="flex justify-start">

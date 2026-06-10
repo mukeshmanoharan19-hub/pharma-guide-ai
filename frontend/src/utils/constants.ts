@@ -21,6 +21,8 @@ export const API_ENDPOINTS = {
     },
     ORDERS: {
         BASE: '/api/orders',
+        PREPARE: '/api/orders/prepare',
+        CANCEL_PREPARE: (id: string) => `/api/orders/prepare/${id}`,
         TRACK: (id: string) => `/api/orders/${id}`,
     },
     HEALTH: '/health',
