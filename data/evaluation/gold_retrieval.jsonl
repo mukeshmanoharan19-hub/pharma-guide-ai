@@ -1,0 +1,10 @@
+{"id":"ret-001","query":"What is your return policy for delivered medicines?","relevant_ids":["returnpolicy","faqs"],"category":"policy"}
+{"id":"ret-002","query":"How long does delivery usually take?","relevant_ids":["faqs"],"category":"shipping"}
+{"id":"ret-003","query":"Can I cancel my order after placing it?","relevant_ids":["faqs"],"category":"orders"}
+{"id":"ret-004","query":"What payment methods do you accept?","relevant_ids":["faqs"],"category":"payments"}
+{"id":"ret-005","query":"How do I track my order status?","relevant_ids":["faqs"],"category":"orders"}
+{"id":"ret-006","query":"Do you deliver on weekends?","relevant_ids":["faqs","returnpolicy"],"category":"shipping"}
+{"id":"ret-007","query":"When will I receive my refund after cancellation?","relevant_ids":["faqs"],"category":"refunds"}
+{"id":"ret-008","query":"Can I update my shipping address after checkout?","relevant_ids":["faqs"],"category":"orders"}
+{"id":"ret-009","query":"How can I contact support?","relevant_ids":["faqs"],"category":"support"}
+{"id":"ret-010","query":"Are there delivery charges for small orders?","relevant_ids":["faqs"],"category":"shipping"}

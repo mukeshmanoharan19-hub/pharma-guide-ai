@@ -37,17 +37,10 @@ class BM25Store:
 
                 store.documents = pickle.load(f)
 
-            print("Loaded documents:", len(store.documents))
-            
-            logger.info(f"Loaded Documents: {len(store.documents)}")
-
             store.tokenized_docs = [
                 doc.page_content.split()
                 for doc in store.documents
             ]
-
-            logger.info(f"Tokenized docs: {len(store.tokenized_docs)}")
-            
 
             if store.tokenized_docs:
 

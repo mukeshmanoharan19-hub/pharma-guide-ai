@@ -1,0 +1,8 @@
+{"id":"rag-001","query":"Explain your refund timeline.","expected_themes":["refund","timeline","business days"],"required_citations":["refund_policy"]}
+{"id":"rag-002","query":"What happens if my order is delayed?","expected_themes":["delay","support","tracking"],"required_citations":["delivery_faq"]}
+{"id":"rag-003","query":"Can I return opened medicine packages?","expected_themes":["return","opened","conditions"],"required_citations":["returns_policy"]}
+{"id":"rag-004","query":"How do I cancel an order before dispatch?","expected_themes":["cancel","before dispatch","steps"],"required_citations":["cancellation_policy"]}
+{"id":"rag-005","query":"Do you allow cash on delivery?","expected_themes":["payment","cash on delivery","availability"],"required_citations":["payments_policy"]}
+{"id":"rag-006","query":"What should I do if I got a damaged package?","expected_themes":["damaged","support","replacement"],"required_citations":["returns_policy"]}
+{"id":"rag-007","query":"How can I raise a support ticket?","expected_themes":["support","contact","ticket"],"required_citations":["support_faq"]}
+{"id":"rag-008","query":"Can I change delivery address after placing order?","expected_themes":["address change","order","policy"],"required_citations":["order_changes_faq"]}

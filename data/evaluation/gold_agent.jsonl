@@ -1,0 +1,12 @@
+{"id":"agent-001","query":"Search paracetamol tablets","expected_intent":"medicine_search","expected_tools":["search_medicine"]}
+{"id":"agent-002","query":"Suggest alternatives for SKU PARA-500","expected_intent":"medicine_search","expected_tools":["alternative_medicine"]}
+{"id":"agent-003","query":"I have mild cold symptoms, what OTC medicine can help?","expected_intent":"symptom_analysis","expected_tools":["search_medicine","product_details"]}
+{"id":"agent-004","query":"Add SKU PARA-500 quantity 2 to my cart","expected_intent":"cart","expected_tools":["add_to_cart"]}
+{"id":"agent-005","query":"Remove SKU PARA-500 from cart","expected_intent":"cart","expected_tools":["remove_from_cart"]}
+{"id":"agent-006","query":"Change SKU PARA-500 quantity to 1","expected_intent":"cart","expected_tools":["update_cart"]}
+{"id":"agent-007","query":"Show my cart","expected_intent":"cart","expected_tools":["view_cart"]}
+{"id":"agent-008","query":"Checkout my cart","expected_intent":"checkout","expected_tools":["prepare_order"]}
+{"id":"agent-009","query":"Yes, confirm and place order with confirmation id abc","expected_intent":"checkout","expected_tools":["confirm_order"]}
+{"id":"agent-010","query":"Track order 11111111-2222-3333-4444-555555555555","expected_intent":"order_tracking","expected_tools":["order_status"]}
+{"id":"agent-011","query":"Show my previous orders","expected_intent":"order_tracking","expected_tools":["purchase_history"]}
+{"id":"agent-012","query":"Hi there, thanks","expected_intent":"general","expected_tools":[]}

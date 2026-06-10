@@ -1,4 +1,6 @@
-.PHONY: backend frontend dev dev-nextjs install-frontend migrate migration help
+.PHONY: backend frontend dev dev-nextjs install-frontend migrate migration eval help
+
+PYTHON_BIN := $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
 
 # Start FastAPI backend
 backend:
@@ -15,6 +17,10 @@ migration:
 	alembic revision --autogenerate -m "$(m)"
 # Inside the container
 # docker compose exec api make migration m="add chat tables"
+
+# Phase 9 evaluation runner (offline smoke + threshold gates by default)
+eval:
+	python -m app.evaluation.runner --smoke --offline --strict
 
 # Start Next.js frontend
 frontend:
@@ -43,6 +49,7 @@ help:
 	@echo "  make frontend      - Start Next.js frontend (port 3000)"
 	@echo "  make migrate       - Apply DB migrations (alembic upgrade head)"
 	@echo "  make migration m=\"msg\" - Autogenerate a new migration"
+	@echo "  make eval          - Run evaluation smoke suite with gates"
 	@echo "  make dev           - Start API only"
 	@echo "  make dev-nextjs    - Display instructions for running both servers"
 	@echo "  make install-frontend - Install frontend dependencies"

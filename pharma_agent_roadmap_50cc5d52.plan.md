@@ -34,7 +34,7 @@ todos:
     status: complete
   - id: phase-9-eval
     content: "PHASE 9 — Evaluation: gold datasets, RAGAS/DeepEval runners, CI smoke eval pipeline. GATE: confirm before Phase 10."
-    status: pending
+    status: complete
   - id: phase-10-observability
     content: "PHASE 10 — Observability: LangSmith tracing, Prometheus metrics, Grafana dashboards, alerts. GATE: confirm before Phase 11."
     status: pending
