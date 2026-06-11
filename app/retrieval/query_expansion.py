@@ -1,6 +1,7 @@
 from langchain_openai import ChatOpenAI
 
 from app.core.config import settings
+from app.observability.langsmith import runnable_config
 
 llm = ChatOpenAI(
     api_key=settings.OPENAI_API_KEY,
@@ -29,7 +30,14 @@ def generate_queries(query: str, limit: int = 1):
     {query}
     """
 
-    response = llm.invoke(prompt)
+    response = llm.invoke(
+        prompt,
+        config=runnable_config(
+            run_name="rag.query_expansion",
+            tags=["phase10", "rag", "retrieval", "expansion"],
+            metadata={"component": "query_expansion", "limit": limit},
+        ),
+    )
 
     queries = response.content.split("\n")
 

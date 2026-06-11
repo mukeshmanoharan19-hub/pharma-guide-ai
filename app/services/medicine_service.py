@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import List, Optional, Tuple
 
-from sqlalchemy import or_
+from sqlalchemy import func, or_
 from sqlalchemy.orm import Session
 
 from app.models.medicine import Medicine
@@ -33,6 +33,36 @@ def search_medicines(db: Session, query: str, limit: int = 5) -> List[Medicine]:
 
 def get_by_sku(db: Session, sku: str) -> Optional[Medicine]:
     return db.query(Medicine).filter(Medicine.sku == sku).first()
+
+
+def resolve_for_cart(db: Session, identifier: str) -> Optional[Medicine]:
+    """Resolve a medicine from SKU or product title for cart operations.
+
+    The cart agent usually passes SKU, but in natural conversation it may pass
+    an exact product title instead. This resolver supports both without
+    changing the external tool contract.
+    """
+    if not identifier or not identifier.strip():
+        return None
+
+    value = identifier.strip()
+    lowered = value.lower()
+
+    # 1) SKU exact (case-insensitive).
+    by_sku = (
+        db.query(Medicine)
+        .filter(Medicine.sku.isnot(None), func.lower(Medicine.sku) == lowered)
+        .first()
+    )
+    if by_sku:
+        return by_sku
+
+    # 2) Title exact (case-insensitive), active products only.
+    return (
+        db.query(Medicine)
+        .filter(Medicine.is_active.is_(True), func.lower(Medicine.title) == lowered)
+        .first()
+    )
 
 
 def get_by_id(db: Session, medicine_id: int) -> Optional[Medicine]:

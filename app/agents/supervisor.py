@@ -22,6 +22,7 @@ from app.agents.intents import (
 )
 from app.core.config import settings
 from app.core.prompts import INTENT_CLASSIFICATION_PROMPT
+from app.observability.langsmith import runnable_config
 
 
 def classify_intent(
@@ -41,7 +42,14 @@ def classify_intent(
 
     try:
         classifier = llm.with_structured_output(IntentClassification)
-        result: IntentClassification = classifier.invoke(prompt)
+        result: IntentClassification = classifier.invoke(
+            prompt,
+            config=runnable_config(
+                run_name="agent.supervisor_intent_classifier",
+                tags=["phase10", "agent", "supervisor", "intent"],
+                metadata={"component": "supervisor"},
+            ),
+        )
     except Exception as exc:
         logger.warning(f"Intent classification failed, defaulting to general: {exc}")
         return IntentClassification(

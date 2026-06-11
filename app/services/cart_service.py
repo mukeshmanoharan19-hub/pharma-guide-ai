@@ -60,9 +60,9 @@ def _validate_quantity(medicine: Medicine, quantity: int) -> None:
 
 
 def add_item(db: Session, user_id: int, sku: str, quantity: int = 1) -> Cart:
-    medicine = medicine_service.get_by_sku(db, sku)
+    medicine = medicine_service.resolve_for_cart(db, sku)
     if medicine is None:
-        raise CartError(f"No medicine found for sku '{sku}'.")
+        raise CartError(f"No medicine found for '{sku}'.")
 
     # Safety guardrail: prescription-only items require a verified prescription.
     if settings.BLOCK_RX_WITHOUT_PRESCRIPTION and getattr(
@@ -101,9 +101,9 @@ def add_item(db: Session, user_id: int, sku: str, quantity: int = 1) -> Cart:
 
 
 def update_item(db: Session, user_id: int, sku: str, quantity: int) -> Cart:
-    medicine = medicine_service.get_by_sku(db, sku)
+    medicine = medicine_service.resolve_for_cart(db, sku)
     if medicine is None:
-        raise CartError(f"No medicine found for sku '{sku}'.")
+        raise CartError(f"No medicine found for '{sku}'.")
 
     cart = get_or_create_active_cart(db, user_id)
     item = _get_item(cart, medicine.id)
@@ -122,9 +122,9 @@ def update_item(db: Session, user_id: int, sku: str, quantity: int) -> Cart:
 
 
 def remove_item(db: Session, user_id: int, sku: str) -> Cart:
-    medicine = medicine_service.get_by_sku(db, sku)
+    medicine = medicine_service.resolve_for_cart(db, sku)
     if medicine is None:
-        raise CartError(f"No medicine found for sku '{sku}'.")
+        raise CartError(f"No medicine found for '{sku}'.")
 
     cart = get_or_create_active_cart(db, user_id)
     item = _get_item(cart, medicine.id)

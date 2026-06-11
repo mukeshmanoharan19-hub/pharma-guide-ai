@@ -15,6 +15,7 @@ from loguru import logger
 from pydantic import BaseModel, Field
 
 from app.core.config import settings
+from app.observability.langsmith import runnable_config
 from app.core.prompts import GROUNDING_CHECK_PROMPT
 
 
@@ -59,7 +60,14 @@ def check_grounding(answer: str, context: str) -> GroundingResult:
 
     try:
         judge = llm.with_structured_output(GroundingResult)
-        result: GroundingResult = judge.invoke(prompt)
+        result: GroundingResult = judge.invoke(
+            prompt,
+            config=runnable_config(
+                run_name="rag.grounding_check",
+                tags=["phase10", "rag", "verification"],
+                metadata={"component": "grounding_judge"},
+            ),
+        )
         if not result.is_grounded:
             logger.warning(
                 "Grounding check flagged answer: {} | claims={}",

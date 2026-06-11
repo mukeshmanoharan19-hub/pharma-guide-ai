@@ -12,6 +12,7 @@ from typing import Optional
 from loguru import logger
 
 from app.core.config import settings
+from app.observability.langsmith import runnable_config
 from app.core.prompts import QUERY_REWRITE_PROMPT
 
 
@@ -38,7 +39,14 @@ def rewrite_query(
     )
 
     try:
-        response = llm.invoke(prompt)
+        response = llm.invoke(
+            prompt,
+            config=runnable_config(
+                run_name="rag.query_rewrite",
+                tags=["phase10", "rag", "rewrite"],
+                metadata={"component": "query_rewriter"},
+            ),
+        )
         rewritten = (response.content or "").strip()
     except Exception as exc:
         logger.warning(f"Query rewrite failed, using original query: {exc}")

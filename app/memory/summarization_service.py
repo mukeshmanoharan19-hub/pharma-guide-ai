@@ -13,6 +13,7 @@ from loguru import logger
 from sqlalchemy.orm import Session
 
 from app.core.config import settings
+from app.observability.langsmith import runnable_config
 from app.memory.tokens import estimate_tokens
 from app.models.chat_message import ChatMessage
 from app.models.conversation_summary import ConversationSummary
@@ -61,7 +62,14 @@ def _summarize(previous_summary: Optional[str], messages: List[ChatMessage]) -> 
         f"New messages to fold in:\n{_format_messages(messages)}\n\n"
         "Updated summary:"
     )
-    response = _get_llm().invoke(prompt)
+    response = _get_llm().invoke(
+        prompt,
+        config=runnable_config(
+            run_name="memory.summarize_conversation",
+            tags=["phase10", "memory", "summarization"],
+            metadata={"component": "summarization_service"},
+        ),
+    )
     return response.content if hasattr(response, "content") else str(response)
 
 

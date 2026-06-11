@@ -25,6 +25,8 @@ from langchain_core.messages import (
 )
 from loguru import logger
 
+from app.observability.langsmith import runnable_config
+
 MAX_AGENT_ITERATIONS = 5
 
 # Tool results we can mine for product suggestions.
@@ -122,7 +124,14 @@ def run_tool_agent(
     final_text = ""
 
     for _ in range(max_iterations):
-        ai: AIMessage = llm_with_tools.invoke(messages)
+        ai: AIMessage = llm_with_tools.invoke(
+            messages,
+            config=runnable_config(
+                run_name="agent.specialist_reason_act_turn",
+                tags=["phase10", "agent", "tool-loop"],
+                metadata={"component": "tool_agent"},
+            ),
+        )
         messages.append(ai)
 
         tool_calls = getattr(ai, "tool_calls", None) or []
@@ -163,7 +172,12 @@ def run_tool_agent(
                             "language. Do not call any more tools."
                         )
                     )
-                ]
+                ],
+                config=runnable_config(
+                    run_name="agent.specialist_wrap_up",
+                    tags=["phase10", "agent", "tool-loop", "wrap-up"],
+                    metadata={"component": "tool_agent"},
+                ),
             )
             final_text = wrap.content if isinstance(wrap.content, str) else str(wrap.content)
         except Exception as exc:

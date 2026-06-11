@@ -6,6 +6,8 @@ import { Button } from '@/components/ui';
 import { useCartStore } from '@/store';
 import { CartDrawer } from '@/components/commerce/CartDrawer';
 import {
+    ChevronLeft,
+    ChevronRight,
     LogOut,
     Menu,
     Moon,
@@ -32,6 +34,7 @@ const QUICK_PROMPTS = [
     'What is your cancellation policy?',
 ];
 const THEME_STORAGE_KEY = 'pharma_guide_theme';
+const SIDEBAR_STORAGE_KEY = 'pharma_guide_sidebar_collapsed';
 
 export const ChatInterface: React.FC<ChatInterfaceProps> = ({
     userEmail,
@@ -53,8 +56,17 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
     } = useChat();
     const [showSettings, setShowSettings] = useState(false);
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+    const [desktopSidebarCollapsed, setDesktopSidebarCollapsed] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        return localStorage.getItem(SIDEBAR_STORAGE_KEY) === 'true';
+    });
     const [customBackendUrl, setCustomBackendUrl] = useState(backendUrl || 'http://localhost:8000');
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+    const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+        if (typeof window === 'undefined') return 'light';
+        const stored = localStorage.getItem(THEME_STORAGE_KEY);
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        return stored === 'dark' || stored === 'light' ? stored : (systemDark ? 'dark' : 'light');
+    });
     const cartCount = useCartStore((s) => s.cart?.item_count ?? 0);
     const openCart = useCartStore((s) => s.openDrawer);
     const fetchCart = useCartStore((s) => s.fetchCart);
@@ -69,25 +81,21 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
-        const stored = localStorage.getItem(THEME_STORAGE_KEY);
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const resolved = stored === 'dark' || stored === 'light' ? stored : (systemDark ? 'dark' : 'light');
-        setTheme(resolved);
-        document.documentElement.classList.toggle('dark', resolved === 'dark');
-    }, []);
-
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
         document.documentElement.classList.toggle('dark', theme === 'dark');
         localStorage.setItem(THEME_STORAGE_KEY, theme);
     }, [theme]);
 
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        localStorage.setItem(SIDEBAR_STORAGE_KEY, String(desktopSidebarCollapsed));
+    }, [desktopSidebarCollapsed]);
+
     const handleSendMessage = async (query: string) => {
         try {
             // Stream the response
-            let fullResponse = '';
             for await (const chunk of stream(query, customBackendUrl)) {
-                fullResponse += chunk;
+                // Response is streamed into store state by the hook.
+                if (!chunk) continue;
             }
         } catch (err) {
             console.error('Error sending message:', err);
@@ -102,20 +110,28 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
     const formatSessionTitle = (title?: string | null) =>
         title && title.trim().length > 0 ? title : 'New conversation';
 
-    const SessionsSidebar = ({ mobile = false }: { mobile?: boolean }) => (
+    const renderSessionsSidebar = (mobile = false) => (
         <aside
-            className={`${mobile ? 'flex w-[88vw] max-w-xs shadow-2xl' : 'hidden md:flex w-72'
+            className={`${mobile
+                ? 'flex w-[88vw] max-w-xs shadow-2xl'
+                : `hidden md:flex ${desktopSidebarCollapsed ? 'w-20' : 'w-72'}`
                 } md:flex md:flex-col border-r border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950`}
         >
             <div className="p-5 border-b border-slate-200 dark:border-slate-800">
                 <div className="mb-4 flex items-start justify-between">
                     <div>
-                        <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
-                            Pharma Guide
-                        </p>
-                        <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                            AI Assistant
-                        </h2>
+                        {!desktopSidebarCollapsed || mobile ? (
+                            <>
+                                <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                                    Pharma Guide
+                                </p>
+                                <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                                    AI Assistant
+                                </h2>
+                            </>
+                        ) : (
+                            <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">💊</h2>
+                        )}
                     </div>
                     {mobile && (
                         <button
@@ -128,15 +144,16 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
                     )}
                 </div>
                 <Button
-                    className="w-full"
+                    className={`${desktopSidebarCollapsed && !mobile ? 'w-10 px-0 justify-center' : 'w-full'}`}
                     size="sm"
                     onClick={() => {
                         newChat();
                         setMobileSidebarOpen(false);
                     }}
+                    title={desktopSidebarCollapsed && !mobile ? 'New chat' : undefined}
                 >
                     <Plus className="h-4 w-4" />
-                    New chat
+                    {(!desktopSidebarCollapsed || mobile) && 'New chat'}
                 </Button>
             </div>
             <div className="flex-1 overflow-y-auto p-3 space-y-1.5">
@@ -156,17 +173,27 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
                             loadSession(session.id);
                             setMobileSidebarOpen(false);
                         }}
+                        title={desktopSidebarCollapsed && !mobile ? formatSessionTitle(session.title) : undefined}
                     >
-                        <span className="truncate text-sm">
-                            {formatSessionTitle(session.title)}
-                        </span>
+                        {!desktopSidebarCollapsed || mobile ? (
+                            <span className="truncate text-sm">
+                                {formatSessionTitle(session.title)}
+                            </span>
+                        ) : (
+                            <span className="mx-auto truncate text-xs font-semibold">
+                                {formatSessionTitle(session.title).slice(0, 2).toUpperCase()}
+                            </span>
+                        )}
                         <button
                             type="button"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 deleteSession(session.id);
                             }}
-                            className="opacity-0 group-hover:opacity-100 text-slate-400 hover:text-red-500 ml-2"
+                            className={`text-slate-400 hover:text-red-500 ${desktopSidebarCollapsed && !mobile
+                                ? 'ml-0 opacity-100'
+                                : 'ml-2 opacity-0 group-hover:opacity-100'
+                                }`}
                             aria-label="Delete conversation"
                         >
                             <Trash2 className="h-4 w-4" />
@@ -174,23 +201,25 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
                     </div>
                 ))}
             </div>
-            <div className="border-t border-slate-200 dark:border-slate-800 p-4 text-xs text-slate-500 dark:text-slate-400">
-                <p className="flex items-center gap-1.5 font-medium">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    Suggested actions
-                </p>
-                <ul className="mt-2 space-y-1">
-                    <li>• Search and compare medicines</li>
-                    <li>• Manage cart and checkout review</li>
-                    <li>• Track and support orders</li>
-                </ul>
-            </div>
+            {(!desktopSidebarCollapsed || mobile) && (
+                <div className="border-t border-slate-200 dark:border-slate-800 p-4 text-xs text-slate-500 dark:text-slate-400">
+                    <p className="flex items-center gap-1.5 font-medium">
+                        <Sparkles className="h-3.5 w-3.5" />
+                        Suggested actions
+                    </p>
+                    <ul className="mt-2 space-y-1">
+                        <li>• Search and compare medicines</li>
+                        <li>• Manage cart and checkout review</li>
+                        <li>• Track and support orders</li>
+                    </ul>
+                </div>
+            )}
         </aside>
     );
 
     return (
         <div className="flex h-full bg-slate-100 dark:bg-slate-950">
-            <SessionsSidebar />
+            {renderSessionsSidebar()}
 
             {mobileSidebarOpen && (
                 <div className="md:hidden fixed inset-0 z-50 flex">
@@ -199,7 +228,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
                         onClick={() => setMobileSidebarOpen(false)}
                     />
                     <div className="relative transition-transform duration-300 ease-out">
-                        <SessionsSidebar mobile />
+                        {renderSessionsSidebar(true)}
                     </div>
                 </div>
             )}
@@ -217,6 +246,20 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
                         >
                             <Menu className="h-4 w-4" />
                         </button>
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            className="hidden md:inline-flex"
+                            onClick={() => setDesktopSidebarCollapsed((prev) => !prev)}
+                            aria-label={desktopSidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                            title={desktopSidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                        >
+                            {desktopSidebarCollapsed ? (
+                                <ChevronRight className="h-4 w-4" />
+                            ) : (
+                                <ChevronLeft className="h-4 w-4" />
+                            )}
+                        </Button>
                         <div>
                         <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">Pharma Guide AI</h1>
                         <p className="text-slate-500 dark:text-slate-400">Welcome, {userEmail || 'pharma explorer'}</p>

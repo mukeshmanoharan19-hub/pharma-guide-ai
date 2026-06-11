@@ -10,6 +10,7 @@ from app.retrieval.query_rewriter import rewrite_query
 from app.retrieval.filters import apply_filters, extract_filters
 from app.retrieval.context import build_grounded_context, dedupe_documents
 from app.retrieval.verification import check_grounding, validate_retrieval
+from app.observability.langsmith import runnable_config
 from loguru import logger
 
 GROUNDING_CAVEAT = (
@@ -153,7 +154,14 @@ class RAGService:
                 "Invoking LLM"
             )
 
-            response = llm.invoke(prompt)
+            response = llm.invoke(
+                prompt,
+                config=runnable_config(
+                    run_name="rag.generate_answer",
+                    tags=["rag", "llm"],
+                    metadata={"component": "RAGService", "mode": "sync"},
+                ),
+            )
 
             logger.success(
                 "LLM response generated "
@@ -219,7 +227,14 @@ class RAGService:
             logger.info("Invoking LLM with streaming")
 
             accumulated = ""
-            for chunk in llm.stream(prompt):
+            for chunk in llm.stream(
+                prompt,
+                config=runnable_config(
+                    run_name="rag.generate_answer_stream",
+                    tags=["phase10", "rag", "llm", "stream"],
+                    metadata={"component": "RAGService", "mode": "stream"},
+                ),
+            ):
                 token = getattr(chunk, "content", "") or ""
                 if not isinstance(token, str):
                     token = str(token)

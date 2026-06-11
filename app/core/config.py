@@ -1,3 +1,4 @@
+import os
 from typing import Optional
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -76,3 +77,15 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+# Keep LangSmith tracing env vars in sync with config.
+# This runs as soon as settings are imported, so LangChain clients initialized
+# later in import order pick up the right tracing behavior.
+if settings.LANGCHAIN_TRACING_V2 and settings.LANGSMITH_API_KEY:
+    os.environ["LANGCHAIN_TRACING_V2"] = "true"
+    os.environ["LANGSMITH_API_KEY"] = settings.LANGSMITH_API_KEY
+    os.environ["LANGSMITH_PROJECT"] = settings.LANGSMITH_PROJECT
+    # Compatibility with older LangChain builds.
+    os.environ["LANGCHAIN_PROJECT"] = settings.LANGSMITH_PROJECT
+else:
+    os.environ.setdefault("LANGCHAIN_TRACING_V2", "false")

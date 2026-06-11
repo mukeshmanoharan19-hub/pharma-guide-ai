@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { Button } from '@/components/ui';
+import { Badge, Button, Card, Separator, Sheet, SheetContent, Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui';
 import { useCartStore } from '@/store';
+import { CheckCircle2, Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
 
 const formatDate = (iso?: string) =>
     iso ? new Date(iso).toLocaleString() : '';
@@ -36,247 +37,218 @@ export const CartDrawer: React.FC = () => {
         }
     }, [isOpen, activeTab, fetchCart]);
 
-    if (!isOpen) return null;
-
     const items = cart?.items ?? [];
     const reviewItems = pendingConfirmation?.items ?? [];
 
     return (
-        <div className="fixed inset-0 z-50 flex justify-end">
-            {/* Backdrop */}
-            <div
-                className="absolute inset-0 bg-black/40"
-                onClick={closeDrawer}
-                aria-hidden
-            />
-
-            {/* Panel */}
-            <div className="relative w-full max-w-md h-full bg-white shadow-xl flex flex-col">
-                <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gradient-to-r from-blue-600 to-cyan-500">
-                    <h2 className="text-lg font-bold text-white">Your Pharmacy</h2>
-                    <button
-                        onClick={closeDrawer}
-                        className="text-white hover:text-gray-200 text-xl"
-                        aria-label="Close"
-                    >
+        <Sheet open={isOpen} onOpenChange={(open) => !open && closeDrawer()}>
+            <SheetContent className="flex flex-col p-0" side="right">
+                <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-4 py-3 dark:border-slate-800 dark:bg-slate-900">
+                    <div>
+                        <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Your Pharmacy</p>
+                        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                            Cart & Orders
+                        </h2>
+                    </div>
+                    <Button variant="ghost" size="sm" onClick={closeDrawer} aria-label="Close drawer">
                         ✕
-                    </button>
+                    </Button>
                 </div>
 
-                {/* Tabs */}
-                <div className="flex border-b border-gray-200">
-                    {(['cart', 'orders'] as const).map((tab) => (
-                        <button
-                            key={tab}
-                            onClick={() => setTab(tab)}
-                            className={`flex-1 py-3 text-sm font-medium capitalize transition-colors ${
-                                activeTab === tab
-                                    ? 'text-blue-600 border-b-2 border-blue-600'
-                                    : 'text-gray-500 hover:text-gray-700'
-                            }`}
-                        >
-                            {tab === 'cart' ? `Cart (${cart?.item_count ?? 0})` : 'Orders'}
-                        </button>
-                    ))}
+                <div className="border-b border-slate-200 p-4 dark:border-slate-800">
+                    <Tabs value={activeTab} onValueChange={(value) => setTab(value as 'cart' | 'orders')}>
+                        <TabsList className="grid w-full grid-cols-2">
+                            <TabsTrigger value="cart">Cart ({cart?.item_count ?? 0})</TabsTrigger>
+                            <TabsTrigger value="orders">Orders</TabsTrigger>
+                        </TabsList>
+                    </Tabs>
                 </div>
 
                 {error && (
-                    <div className="p-3 bg-red-50 border-b border-red-200 flex justify-between">
-                        <p className="text-sm text-red-600">{error}</p>
-                        <button onClick={clearError} className="text-red-500 font-semibold">
-                            ✕
-                        </button>
+                    <div className="mx-4 mt-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 dark:border-red-900/40 dark:bg-red-950/20">
+                        <div className="flex items-center justify-between gap-3">
+                            <p className="text-sm text-red-700 dark:text-red-300">{error}</p>
+                            <Button variant="ghost" size="sm" onClick={clearError}>
+                                ✕
+                            </Button>
+                        </div>
                     </div>
                 )}
 
-                <div className="flex-1 overflow-y-auto p-4 space-y-3">
-                    {activeTab === 'cart' && checkoutStep === 'cart' && (
-                        <>
-                            {items.length === 0 && !isLoading && (
-                                <p className="text-center text-gray-400 mt-8">
-                                    Your cart is empty.
-                                </p>
+                <Tabs value={activeTab} onValueChange={(value) => setTab(value as 'cart' | 'orders')} className="flex min-h-0 flex-1 flex-col">
+                    <TabsContent value="cart" className="flex min-h-0 flex-1 flex-col">
+                        <div className="flex-1 space-y-3 overflow-y-auto p-4">
+                            {checkoutStep === 'cart' && items.length === 0 && !isLoading && (
+                                <div className="mt-10 flex flex-col items-center justify-center gap-2 text-center text-slate-500">
+                                    <ShoppingBag className="h-8 w-8 text-slate-400" />
+                                    <p className="text-sm">Your cart is empty.</p>
+                                </div>
                             )}
-                            {items.map((item) => (
-                                <div
-                                    key={item.sku}
-                                    className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg"
-                                >
-                                    <div className="flex-1">
-                                        <p className="font-medium text-gray-900 text-sm">
-                                            {item.title || item.sku}
-                                        </p>
-                                        <p className="text-xs text-gray-500">
-                                            ₹{item.unit_price ?? 0} each
-                                        </p>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <button
-                                            className="w-7 h-7 rounded border border-gray-300 text-gray-700 hover:bg-gray-100"
-                                            onClick={() =>
-                                                updateItem(item.sku!, Math.max(0, item.quantity - 1))
-                                            }
-                                            disabled={isLoading}
-                                        >
-                                            −
-                                        </button>
-                                        <span className="w-6 text-center text-sm">
-                                            {item.quantity}
-                                        </span>
-                                        <button
-                                            className="w-7 h-7 rounded border border-gray-300 text-gray-700 hover:bg-gray-100"
-                                            onClick={() => updateItem(item.sku!, item.quantity + 1)}
-                                            disabled={isLoading}
-                                        >
-                                            +
-                                        </button>
-                                    </div>
-                                    <div className="w-16 text-right text-sm font-semibold text-blue-600">
-                                        ₹{item.line_total}
-                                    </div>
-                                    <button
-                                        onClick={() => removeItem(item.sku!)}
-                                        className="text-gray-400 hover:text-red-500"
-                                        aria-label="Remove"
-                                        disabled={isLoading}
-                                    >
-                                        🗑
-                                    </button>
-                                </div>
-                            ))}
-                        </>
-                    )}
 
-                    {activeTab === 'cart' && checkoutStep === 'review' && (
-                        <>
-                            <div className="p-3 rounded-lg bg-blue-50 border border-blue-200">
-                                <p className="text-sm font-semibold text-blue-700">
-                                    Review your order before placing
-                                </p>
-                                <p className="text-xs text-blue-600 mt-1">
-                                    Confirmation expires at {formatDate(pendingConfirmation?.expires_at)}
-                                </p>
-                            </div>
-                            {reviewItems.map((item) => (
-                                <div
-                                    key={item.sku}
-                                    className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg bg-gray-50"
-                                >
-                                    <div className="flex-1">
-                                        <p className="font-medium text-gray-900 text-sm">
-                                            {item.title || item.sku}
-                                        </p>
-                                        <p className="text-xs text-gray-500">
-                                            ₹{item.unit_price ?? 0} each
-                                        </p>
-                                    </div>
-                                    <span className="text-sm text-gray-700">
-                                        x {item.quantity}
-                                    </span>
-                                    <span className="w-16 text-right text-sm font-semibold text-blue-600">
-                                        ₹{item.line_total}
-                                    </span>
-                                </div>
-                            ))}
-                        </>
-                    )}
+                            {checkoutStep === 'cart' &&
+                                items.map((item) => (
+                                    <Card key={item.sku} className="rounded-xl p-3">
+                                        <div className="flex items-start gap-3">
+                                            <div className="min-w-0 flex-1">
+                                                <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
+                                                    {item.title || item.sku}
+                                                </p>
+                                                <p className="mt-0.5 text-xs text-slate-500">
+                                                    ₹{item.unit_price ?? 0} each
+                                                </p>
+                                            </div>
+                                            <Button
+                                                variant="ghost"
+                                                size="sm"
+                                                onClick={() => removeItem(item.sku!)}
+                                                disabled={isLoading}
+                                                aria-label="Remove item"
+                                            >
+                                                <Trash2 className="h-4 w-4 text-slate-500" />
+                                            </Button>
+                                        </div>
+                                        <Separator className="my-3" />
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-2">
+                                                <Button
+                                                    variant="outline"
+                                                    size="sm"
+                                                    onClick={() => updateItem(item.sku!, Math.max(0, item.quantity - 1))}
+                                                    disabled={isLoading}
+                                                >
+                                                    <Minus className="h-3.5 w-3.5" />
+                                                </Button>
+                                                <span className="w-8 text-center text-sm font-medium text-slate-900 dark:text-slate-100">
+                                                    {item.quantity}
+                                                </span>
+                                                <Button
+                                                    variant="outline"
+                                                    size="sm"
+                                                    onClick={() => updateItem(item.sku!, item.quantity + 1)}
+                                                    disabled={isLoading}
+                                                >
+                                                    <Plus className="h-3.5 w-3.5" />
+                                                </Button>
+                                            </div>
+                                            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                                                ₹{item.line_total}
+                                            </p>
+                                        </div>
+                                    </Card>
+                                ))}
 
-                    {activeTab === 'orders' && (
-                        <>
-                            {lastOrder && (
-                                <div className="p-3 rounded-lg bg-green-50 border border-green-200 mb-2">
-                                    <p className="text-sm font-semibold text-green-700">
-                                        Order placed! ✅
+                            {checkoutStep === 'review' && (
+                                <Card className="rounded-xl border-blue-200 bg-blue-50 p-3 dark:border-blue-900/40 dark:bg-blue-950/20">
+                                    <p className="text-sm font-semibold text-blue-700 dark:text-blue-300">
+                                        Review your order before placing
                                     </p>
-                                    <p className="text-xs text-green-600">
+                                    <p className="mt-1 text-xs text-blue-600 dark:text-blue-300/90">
+                                        Confirmation expires at {formatDate(pendingConfirmation?.expires_at)}
+                                    </p>
+                                </Card>
+                            )}
+
+                            {checkoutStep === 'review' &&
+                                reviewItems.map((item) => (
+                                    <Card key={item.sku} className="rounded-xl p-3">
+                                        <div className="flex items-center justify-between gap-3">
+                                            <div className="min-w-0 flex-1">
+                                                <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
+                                                    {item.title || item.sku}
+                                                </p>
+                                                <p className="mt-0.5 text-xs text-slate-500">
+                                                    ₹{item.unit_price ?? 0} each
+                                                </p>
+                                            </div>
+                                            <Badge variant="secondary">x {item.quantity}</Badge>
+                                            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                                                ₹{item.line_total}
+                                            </p>
+                                        </div>
+                                    </Card>
+                                ))}
+                        </div>
+
+                        {checkoutStep === 'cart' && items.length > 0 && (
+                            <div className="border-t border-slate-200 p-4 dark:border-slate-800">
+                                <div className="mb-3 flex items-center justify-between text-sm font-semibold text-slate-900 dark:text-slate-100">
+                                    <span>Total</span>
+                                    <span>₹{cart?.total ?? 0}</span>
+                                </div>
+                                <Button className="w-full" onClick={() => prepareCheckout()} disabled={isLoading}>
+                                    {isLoading ? 'Preparing review...' : 'Proceed to review'}
+                                </Button>
+                            </div>
+                        )}
+
+                        {checkoutStep === 'review' && (
+                            <div className="space-y-3 border-t border-slate-200 p-4 dark:border-slate-800">
+                                <div className="flex items-center justify-between text-sm font-semibold text-slate-900 dark:text-slate-100">
+                                    <span>Total</span>
+                                    <span>₹{pendingConfirmation?.total ?? 0}</span>
+                                </div>
+                                <Button className="w-full" onClick={() => confirmCheckout()} disabled={isLoading}>
+                                    {isLoading ? 'Placing order...' : 'Confirm & place order'}
+                                </Button>
+                                <div className="grid grid-cols-2 gap-2">
+                                    <Button variant="secondary" className="w-full" onClick={() => backToCart()} disabled={isLoading}>
+                                        Back to cart
+                                    </Button>
+                                    <Button variant="danger" className="w-full" onClick={() => cancelCheckout()} disabled={isLoading}>
+                                        Cancel review
+                                    </Button>
+                                </div>
+                            </div>
+                        )}
+                    </TabsContent>
+
+                    <TabsContent value="orders" className="flex min-h-0 flex-1 flex-col">
+                        <div className="flex-1 space-y-3 overflow-y-auto p-4">
+                            {lastOrder && (
+                                <Card className="rounded-xl border-emerald-200 bg-emerald-50 p-3 dark:border-emerald-900/40 dark:bg-emerald-950/20">
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-300" />
+                                        <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">
+                                            Order placed successfully
+                                        </p>
+                                    </div>
+                                    <p className="mt-1 text-xs text-emerald-700/90 dark:text-emerald-300/90">
                                         #{lastOrder.order_id.slice(0, 8)} · ₹{lastOrder.total_amount}
                                     </p>
-                                </div>
+                                </Card>
                             )}
+
                             {orders.length === 0 && !isLoading && (
-                                <p className="text-center text-gray-400 mt-8">No orders yet.</p>
+                                <p className="mt-10 text-center text-sm text-slate-500">No orders yet.</p>
                             )}
+
                             {orders.map((order) => (
-                                <div
-                                    key={order.order_id}
-                                    className="p-3 border border-gray-200 rounded-lg"
-                                >
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-sm font-medium text-gray-900">
+                                <Card key={order.order_id} className="rounded-xl p-3">
+                                    <div className="flex items-center justify-between gap-2">
+                                        <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                                             #{order.order_id.slice(0, 8)}
-                                        </span>
-                                        <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 capitalize">
+                                        </p>
+                                        <Badge variant="outline" className="capitalize">
                                             {order.status}
-                                        </span>
+                                        </Badge>
                                     </div>
-                                    <div className="flex justify-between items-center mt-1">
-                                        <span className="text-xs text-gray-500">
-                                            {order.item_count} item(s) · {formatDate(order.created_at)}
-                                        </span>
-                                        <span className="text-sm font-semibold text-blue-600">
-                                            ₹{order.total_amount}
-                                        </span>
-                                    </div>
-                                    <p className="text-xs text-gray-400 mt-1 capitalize">
-                                        Payment: {order.payment_status.replace('_', ' ')}
+                                    <p className="mt-2 text-xs text-slate-500">
+                                        {order.item_count} item(s) · {formatDate(order.created_at)}
                                     </p>
-                                </div>
+                                    <div className="mt-2 flex items-center justify-between">
+                                        <p className="text-xs capitalize text-slate-500">
+                                            Payment: {order.payment_status.replace('_', ' ')}
+                                        </p>
+                                        <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                                            ₹{order.total_amount}
+                                        </p>
+                                    </div>
+                                </Card>
                             ))}
-                        </>
-                    )}
-                </div>
-
-                {/* Footer / checkout */}
-                {activeTab === 'cart' && checkoutStep === 'cart' && items.length > 0 && (
-                    <div className="border-t border-gray-200 p-4 space-y-3">
-                        <div className="flex justify-between font-semibold text-gray-900">
-                            <span>Total</span>
-                            <span>₹{cart?.total ?? 0}</span>
                         </div>
-                        <Button
-                            className="w-full"
-                            onClick={() => prepareCheckout()}
-                            disabled={isLoading}
-                        >
-                            {isLoading ? 'Preparing review…' : 'Proceed to review'}
-                        </Button>
-                    </div>
-                )}
-
-                {activeTab === 'cart' && checkoutStep === 'review' && (
-                    <div className="border-t border-gray-200 p-4 space-y-3">
-                        <div className="flex justify-between font-semibold text-gray-900">
-                            <span>Total</span>
-                            <span>₹{pendingConfirmation?.total ?? 0}</span>
-                        </div>
-                        <Button
-                            className="w-full"
-                            onClick={() => confirmCheckout()}
-                            disabled={isLoading}
-                        >
-                            {isLoading ? 'Placing order…' : 'Confirm & place order'}
-                        </Button>
-                        <div className="grid grid-cols-2 gap-2">
-                            <Button
-                                variant="secondary"
-                                className="w-full"
-                                onClick={() => backToCart()}
-                                disabled={isLoading}
-                            >
-                                Back to cart
-                            </Button>
-                            <Button
-                                variant="danger"
-                                className="w-full"
-                                onClick={() => cancelCheckout()}
-                                disabled={isLoading}
-                            >
-                                Cancel review
-                            </Button>
-                        </div>
-                    </div>
-                )}
-            </div>
-        </div>
+                    </TabsContent>
+                </Tabs>
+            </SheetContent>
+        </Sheet>
     );
 };

@@ -21,6 +21,7 @@ from app.core.security import get_current_user
 from app.db.database import get_db
 from app.models.request_model import QueryRequest
 from app.models.user import User
+from app.observability.langsmith import runnable_config
 from app.services import session_service
 
 router = APIRouter(tags=["agent"], prefix="/api/agent")
@@ -49,7 +50,16 @@ async def agent_chat(
         checkpointer=get_checkpointer(),
     )
 
-    config = {"configurable": {"thread_id": thread_id}}
+    config = runnable_config(
+        run_name="agent.graph_request",
+        tags=["phase10", "agent", "graph"],
+        metadata={
+            "route": "/api/agent/chat",
+            "thread_id": thread_id,
+            "user_id": current_user.id,
+        },
+        base={"configurable": {"thread_id": thread_id}},
+    )
     input_state = {
         "user_id": current_user.id,
         "session_id": thread_id,
